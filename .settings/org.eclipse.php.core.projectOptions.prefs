@@ -1,5 +1,0 @@
-#Tue Mar 11 22:51:15 EDT 2008
-eclipse.preferences.version=1
-org.eclipse.php.core.contextRoot=
-org.eclipse.php.core.defaultEncoding=
-org.eclipse.php.core.includePath=<?xml version\="1.0" encoding\="UTF-8"?>\n<includepath>\n\t<includepathentry kind\="lib" path\="/usr/share/pear" createdReference\="false" contentKind\="source">\n</includepathentry>\n</includepath>\n
