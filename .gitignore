@@ -1,1 +1,8 @@
 .svn
+.DS_Store
+LocalSettings.php
+TestSettings.php
+.project
+.cache
+.settings
+.buildpath
