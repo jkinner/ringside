@@ -1,0 +1,56 @@
+<html> 
+<head>
+<title>Ringside Widget Demo</title>
+	<script src="http://localhost:8080/rswidget.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+	function init() {
+		// Check to see if we are logged in to a social server
+		if(rswidget.isAuthenticated()){
+			var sample2=document.getElementById('sample2');
+			sample2.class='rs-fbml';
+			sample2.innerHTML=sample2.innerHTML+"<p><input name='Logout' type='button' id='Authenticate' value='logout' onClick='rswidget.logout(\"trail_map_7/\")' />";
+		} else {
+			var sample2=document.getElementById('sample2');
+			sample2.innerHTML="<b>Unuthorized.</b> "+rswidget.authenticationLogonFbml; ;		
+		}
+	
+		rswidget.renderAllWidgets({apiKey:'cecdc629adb83f81236ba9342ce68492',
+		loginServer:'http://localhost:8080',
+		forceAuthentication:false,
+		renderEndpoint:'http://localhost:8080/render.php',
+		trustEndpoint:'http://localhost:8080/trust.php'
+		});
+	}
+	</script>
+</head> 
+<body onLoad="init()" > 
+	<h1>Ringside Widget Demo</h1> 
+	<p>A Ringside Widget can be used to render FBML documents contained inside of div tags with the class rs-fbml.</p>
+	<p>Regions of your HTML page will be sent back to your Ringside server to be rendered using the social context 
+	of the currently logged in user and the api_key/application of your choice.</p> 
+	<p/>
+	<h2>Anonymous Access</h2>
+	<p>Below is an example widget which will render FBML as the anonymous user:</p> 
+
+	<div id="sample1" class="rs-fbml" style="border: 1px dashed gray; width: 600px; height: 200px; padding: 3px; background: lightyellow"> 
+		<fb:success>
+			<fb:message>Your anonymous widget has been rendered.
+			</fb:message>
+		</fb:success>
+	</div>
+	
+	<h2>Authenticated Access</h2>
+	Below is a block of FBML that requires your user to be logged in to be evaluated.
+	
+	<div id="sample2" class="rs-fbml-disabled" style="border: 1px dashed gray; width: 600px; height: 200px; padding: 3px; background: lightyellow"> 
+		<p>If you see an image below then your FBML was rendered.</p>
+		It is a picture of <fb:name uid="100001"> <fb:profile-pic uid="100000" size="square" linked="true"><p>
+	</div>
+<br>
+<p>If you are having any problems running this demo page, verify that you have created an application for it first. This is done by logging in, going to the developer tab and selecting 
+Add New Application... . Give it the name trail_7 and push the create application button. Enter a callback url of http://localhost:8080/trust.php. You must use this application's
+API_KEY in the javascript of this page in place of what is provided in the renderAllWidgets({apiKey:'cecdc629adb83f81236ba9342ce68492',... command.
+
+Please read Trailmap 7 at <a href="http://wiki.ringsidenetworks.org/display/ringside/FBML+on+any+website">http://wiki.ringsidenetworks.org/display/ringside/FBML+on+any+website</a> for more informaiton.</p>
+</body> 
+</html>

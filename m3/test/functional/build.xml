@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<project name="m3-functional-tests" default="all-tests" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="m3" />
+	<property name="group" value="functional" />
+	<property name="build.dir" value="${root.dir}/build" />
+	
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+
+	<path id="m3.test.path">
+		<!-- M3 has access to the API tier -->
+		<pathelement dir="${root.dir}/m3/includes"/>
+		<pathelement dir="${root.dir}/m3/clients/php"/>
+		<pathelement dir="${root.dir}/api/includes"/>
+		<pathelement dir="${root.dir}/api/clients/php"/>
+		<pathelement dir="${root.dir}/social/includes"/>
+	</path>
+
+	<target name="test-unit" description="Run a single test -Dsuite=XXX -Dtest=RunSomeTest" >
+		<phing phingfile='${build-test}' target='test-unit' haltonfailure='true' inheritRefs='true' >
+	    	<property name="suite" value="${test.pkg}" />
+	    	<property name="test" value="${test.unit}" />
+		</phing>
+	</target>
+
+	<target name="all-tests" description="Run all tests" depends="api-tests" />
+	
+	<target name="api-tests" description="Run the api tests"  depends='rebuild-db'>
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs='true'>
+			<property name="suite" value="api" />
+		</phing>
+	</target>
+		
+	<target name="rebuild-db" description="Rebuild the DB">
+		<!-- we don't need this yet
+		<exec command="php -f build/includes/ringside/pear/dbsetup.php start" dir="${root.dir}" passthru="TRUE" />
+		-->
+	</target>
+
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<delete dir="./reports" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+	
+</project>

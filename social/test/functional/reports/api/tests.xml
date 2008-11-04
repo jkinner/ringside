@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AdminGetTrustInfoTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetTrustInfoTestCase.php" tests="3" failures="0" errors="0" time="0.067628">
+    <testcase name="testGetAllInfo" class="AdminGetTrustInfoTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetTrustInfoTestCase.php" line="64" time="0.011765"/>
+    <testcase name="testGetOneInfo" class="AdminGetTrustInfoTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetTrustInfoTestCase.php" line="88" time="0.046078"/>
+    <testcase name="testGetTwoInfo" class="AdminGetTrustInfoTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetTrustInfoTestCase.php" line="99" time="0.009785"/>
+  </testsuite>
+  <testsuite name="AdminGetUserMapsTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetUserMapsTestCase.php" tests="2" failures="0" errors="0" time="0.118502">
+    <testcase name="testMapFromPrincipal" class="AdminGetUserMapsTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetUserMapsTestCase.php" line="87" time="0.069390"/>
+    <testcase name="testMapFromSubject" class="AdminGetUserMapsTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminGetUserMapsTestCase.php" line="98" time="0.049112"/>
+  </testsuite>
+  <testsuite name="AdminMapUserTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminMapUserTestCase.php" tests="1" failures="0" errors="0" time="0.076755">
+    <testsuite name="AdminMapUserTestCase::testMap" tests="1" failures="0" errors="0" time="0.076755">
+      <testcase name="testMap" class="AdminMapUserTestCase" file="/ringside/workspace/ringside/social/test/functional/api/AdminMapUserTestCase.php" line="82" time="0.076755"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" tests="9" failures="0" errors="0" time="0.207680">
+    <testsuite name="UsersMapTestCase::testMapToPrincipal" tests="5" failures="0" errors="0" time="0.118602">
+      <testcase name="testMapToPrincipal" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="78" time="0.025309"/>
+      <testcase name="testMapToPrincipal" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="78" time="0.025205"/>
+      <testcase name="testMapToPrincipal" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="78" time="0.027902"/>
+      <testcase name="testMapToPrincipal" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="78" time="0.025664"/>
+      <testcase name="testMapToPrincipal" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="78" time="0.014522"/>
+    </testsuite>
+    <testsuite name="UsersMapTestCase::testMapToSubject" tests="4" failures="0" errors="0" time="0.089078">
+      <testcase name="testMapToSubject" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="113" time="0.025346"/>
+      <testcase name="testMapToSubject" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="113" time="0.024916"/>
+      <testcase name="testMapToSubject" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="113" time="0.024509"/>
+      <testcase name="testMapToSubject" class="UsersMapTestCase" file="/ringside/workspace/ringside/social/test/functional/api/UsersMapTestCase.php" line="113" time="0.014307"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+
+<!--
+Prepares your development environment's SVN working copy to be deployable in Apache.
+See the Ringside Wiki for further information on setting up a development environment.
+-->
+
+<project name="ringside.build.development" default="dev" basedir="..">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<!-- the names of the files this script will produce -->
+	<property name="ringside.conf" value="ringside.conf" />
+	<property name="LocalSettings" value="LocalSettings.php" />
+	<property name="TestSettings" value="TestSettings.php" />
+
+	<target name="dev" description="Build the files necessary for a dev environment">
+
+		<!-- get rid of any old local settings -->
+		<delete file="${LocalSettings}" />
+
+		<echo file="${LocalSettings}" append="true">&lt;?php
+
+// ===== Developer Only Settings START =====
+if (!isset($GLOBALS['_ringsideDeveloperIncludePathSet']))
+{
+    $GLOBALS['_ringsideDeveloperIncludePathSet'] = true;
+    $root = dirname( __FILE__ );
+    $include_path = ".".PATH_SEPARATOR."$root;";
+</echo>
+
+		<echo file="${ringside.conf}" >## RINGSIDE_START Generated for Development Environment
+## Add the following line uncommented to your apache's httpd.conf, end of file should be fine
+## Include "${project.basedir}/${ringside.conf}"
+
+</echo>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="api" />
+			<property name="project.vendors" value="facebook" />
+			<property name="project.patches" value="vendor/Doctrine/lib" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="social" />
+			<property name="project.vendors" value="shindig" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="web" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="m3" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			
+			<property name="project.name" value="system-apps" />
+			<property name="project.vendors" value="openid" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="extension-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="demo-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="build" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<echo file="${ringside.conf}" append="true">&lt;Directory "${project.basedir}/*">
+    Options Indexes MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+&lt;/Directory>
+			
+&lt;Directory "${project.basedir}/social/public/gadgets">
+		    Options Indexes FollowSymLinks
+		    AllowOverride All
+		    Order deny,allow
+		    Allow from all
+			RewriteEngine On
+			RewriteBase /
+			RewriteCond %{REQUEST_FILENAME} !-f
+			RewriteCond %{REQUEST_FILENAME} !-d
+			RewriteRule . ${social.root}/gadgets/index.php [L]
+&lt;/Directory>
+			
+## RINGSIDE_STOP Generated for development environment
+</echo>
+
+		<echo file="${LocalSettings}" append="true">
+    $include_path .= PATH_SEPARATOR . get_include_path();
+    set_include_path( $include_path );
+}
+// ===== Developer Only Settings STOP =====
+?&gt;
+</echo>
+
+		<append destFile="${LocalSettings}" file="LocalSettings.php.sample">
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="RS_WEBSERVER_HOST_PORT" replace="${webserver.hostport}" />
+					<regexp pattern="RS_DB_TYPE" replace="${db.type}" />
+					<regexp pattern="RS_DB_SERVER" replace="${db.server}" />
+					<regexp pattern="RS_DB_NAME" replace="${db.name}" />
+					<regexp pattern="RS_DB_USERNAME" replace="${db.user}" />
+					<regexp pattern="RS_DB_PASSWORD" replace="${db.password}" />
+					<regexp pattern="RS_WEB_ROOT" replace="${web.root}" />
+					<regexp pattern="RS_SOCIAL_ROOT" replace="${social.root}" />
+					<regexp pattern="RS_API_ROOT" replace="${api.root}" />
+					<regexp pattern="RS_DEMO_ROOT" replace="${demo.root}" />
+					<regexp pattern="socialApiKey.*=.*\'\'" replace="socialApiKey = '${social.key}'" />
+					<regexp pattern="socialSecretKey.*=.*\'\'" replace="socialSecretKey = '${social.secret}'" />
+					<regexp pattern="serverUrl = (.*)\$webRoot" replace="serverUrl = \1${api.root}" />
+					<regexp pattern="RS_APACHE_DIR" replace="${m3.webserver.install.dir}" />
+					<regexp pattern="RS_DATA_DIR" replace="${project.basedir}/data" />
+				</replaceregexp>
+			</filterchain>
+		</append>
+
+		<delete file="${TestSettings}" />
+		<append destFile="${TestSettings}" file="TestSettings.php.sample">
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="RS_DB_USERNAME" replace="${db.user}" />
+					<regexp pattern="RS_DB_PASSWORD" replace="${db.password}" />
+					<regexp pattern="RS_DB_SERVER" replace="${db.server}" />
+					<regexp pattern="RS_DB_NAME" replace="${db.name}" />
+					<regexp pattern="RS_DB_TYPE" replace="${db.type}" />
+					<regexp pattern="RS_WEB_ROOT" replace="${web.root}" />
+					<regexp pattern="RS_API_ROOT" replace="${api.root}" />
+					<regexp pattern="RS_SOCIAL_ROOT" replace="${social.root}" />
+					<regexp pattern="RS_DEMO_ROOT" replace="${demo.root}" />
+					<regexp pattern="RS_WEBSERVER_HOST_PORT" replace="${webserver.hostport}" />
+				</replaceregexp>
+			</filterchain>
+		</append>
+
+	</target>
+
+	<!-- private target that puts a project's include/config/publi/clients in the PHP include dir -->
+	<target name="project.do">
+
+		<!-- Apache.conf file update -->
+		<echo file="${ringside.conf}" append="true">Alias /${project.name} "${project.basedir}/${project.name}/public"
+</echo>
+
+		<echo file="${LocalSettings}" append="true">
+    $include_path .= PATH_SEPARATOR . '${project.basedir}' . "/${project.name}/includes";
+    $include_path .= PATH_SEPARATOR . '${project.basedir}' . "/${project.name}/config";
+    $include_path .= PATH_SEPARATOR . '${project.basedir}' . "/${project.name}/public";
+    $include_path .= PATH_SEPARATOR . '${project.basedir}' . "/${project.name}/clients/php";
+</echo>
+
+		<!-- Put patches in front of the vendors in include path in case we need to override vendor lib behavior -->
+		<if>
+			<isset property="project.patches" />
+			<then>
+				<foreach list="${project.patches}" target="patch.do" param="patch.name" delimiter="," />
+			</then>
+		</if>
+
+		<!-- Push vendor related activity to include path -->
+		<!-- TODO how to execute on PEAR updates if need be -->
+		<if>
+			<isset property="project.vendors" />
+			<then>
+				<foreach list="${project.vendors}" target="vendor.do" param="vendor.name" delimiter="," />
+			</then>
+		</if>
+
+	</target>
+
+	<!-- private target that puts patches in the PHP include path -->
+	<target name="patch.do">
+		<echo file="${LocalSettings}" append="true">    $include_path .= PATH_SEPARATOR . '${project.basedir}' . "/${project.name}/${patch.name}";
+</echo>
+	</target>
+
+	<!-- private target that puts 3rd party vendor includes in the PHP include path -->
+	<target name="vendor.do">
+		<echo file="${LocalSettings}" append="true">    $include_path .= PATH_SEPARATOR . '${project.basedir}' . "/${project.name}/vendor/${vendor.name}/includes";
+</echo>
+	</target>
+
+	<target name="clean">
+		<echo>this clean target implementation does nothing</echo>
+	</target>
+
+</project>

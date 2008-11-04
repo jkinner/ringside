@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<project name="ringside.build.tar" default="tar.dist" basedir="..">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<!-- Default Properties for managing OpenFB -->
+	<property name="tar.dir" value="./dist/tar" />
+	<property name="tar.src" value="${tar.dir}/src/ringside" />
+	<property name="tar.distro" value="${tar.dir}/distro" />
+
+	<if>
+		<isset property="env.BUILD_NUMBER" />
+		<then>
+			<property name="pkg.version" value="${pkg.version.base}.${env.BUILD_NUMBER}" />
+		</then>
+		<else>
+			<property name="pkg.version" value="${pkg.version.base}.0" />
+		</else>
+	</if>
+	
+	<!-- Prep and create source directory to build distribution. -->
+	<target name="tar.src" description="Build a sourcing directory to create the distribution TAR from.">
+
+		<phingcall target="project.do">
+			<property name="project.name" value="api" />
+			<property name="project.vendors" value="facebook,PEAR" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="social" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="web" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="m3" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="system-apps" />
+			<property name="project.vendors" value="PEAR" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="extension-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="demo-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+		
+		<delete file="${tar.src}/LocalSettings.php.sample" />
+		<append destFile="${tar.src}/LocalSettings.php.sample" file="LocalSettings.php.sample">
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="RS_DB_USERNAME" replace="root" />
+					<regexp pattern="RS_DB_PASSWORD" replace="" />
+					<regexp pattern="RS_DB_SERVER" replace="localhost:3306" />
+					<regexp pattern="RS_DB_NAME" replace="ringfb" />
+					<regexp pattern="RS_WEB_ROOT" replace="/ringside" />
+				  </replaceregexp>
+			</filterchain>
+		</append>
+	
+		
+	</target>
+
+	<!-- Build the TAR file for distribution -->
+	<target name="tar.dist" description="Create the TAR file for distribution" depends="tar.src">
+		<mkdir dir="${tar.distro}"/>
+		<tar destfile="${tar.distro}/ringside-${pkg.version}.tar.gz" compression="gzip" basedir="${tar.src}/.." />
+	</target>
+
+	<target name="project.do" description="For each project we would like create the distribution">
+
+		<!-- Copy the include path files -->
+		<copy todir="${tar.src}">
+			<fileset dir="${project.name}/includes">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the web files -->
+		<copy todir="${tar.src}">
+			<fileset dir="${project.name}/public">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the configuration files -->
+		<copy todir="${tar.src}">
+			<fileset dir="${project.name}/config">
+				<include name="**/*" />
+				<exclude name="LocalSettings.php.sample"/>
+			</fileset>
+		</copy>
+				
+		<!-- Copy the client to the include path -->
+		<if>
+			<available file="${project.name}/clients/php" />
+			<then>
+				<copy todir="${tar.src}">
+					<fileset dir="${project.name}/clients/php">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+			</then>
+		</if>
+
+		<!-- Push vendor related activity to include path -->
+		<foreach list="${project.vendors}" target="vendor.do" param="vendor.name" delimiter="," />
+
+	</target>
+
+	<target name="vendor.do" description="Copy third party dependencies in.">
+
+		<copy todir="${tar.src}">
+			<fileset dir="${project.name}/vendor/${vendor.name}/includes/">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="clean" description="remove the build src and distro directories">
+		<delete dir="${tar.dir}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+
+</project>

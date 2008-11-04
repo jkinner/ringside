@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<project name="social-functional-tests" default="api-tests" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties for managing OpenFB -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="social" />
+	<property name="group" value="functional" />
+	<property name="build.dir" value="${root.dir}/build" />
+	
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+
+	<path id="social.test.path">
+		<pathelement dir="${root.dir}/api/includes"/>
+	</path>
+			
+	<!-- 
+		To run a single or group of unti tests
+		phing -Dsuite=XXX -Dtest=RunSomeTestCase
+	-->
+	<target name="test-unit" description="Run a single test -Dsuite=XXX -Dtest=RunSomeTest" >
+		<phing phingfile='${build-test}' target='test-unit' haltonfailure='true'  inheritRefs='true'/>
+	</target>
+	
+	<target name="api-tests" description="Run the social API tests">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true'  inheritRefs='true'>
+	    	<property name="suite" value="api" />
+		</phing>
+	</target>
+
+	<target name="db-tests" description="Run the social DB tests">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true'  inheritRefs='true'>
+	    	<property name="suite" value="db" />
+		</phing>
+	</target>
+
+	<target name="all-tests" description="Run all tests" depends="db-tests,api-tests" />
+
+	<target name="clean" description="Erase the reports directory which contains all test information">
+		<delete dir="${reports.dir}" />
+	</target>
+	
+</project>

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+<!--
+This script is usually not run as a standalone script.
+Each project normally test scripts that call this script's targets.
+Therefore, this test script is really to be considered a generic, shared
+resource for other modules to use.
+-->
+<project name="ringside.build.test" default="test-suite" basedir="..">
+	
+    <property name="root.dir" value="." />
+	<includepath classpath="${root.dir}" />
+	<includepath classpath="${root.dir}/api/vendor/PEAR/includes" />
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="${root.dir}/build/build.local.properties" />
+	<property file="${root.dir}/build/build.properties" />
+
+	<!-- used for reports and support files for generating reports -->
+	<property name="reports.dir" value="${root.dir}/${project}/test/${group}/reports" />
+	<property name="phing.styles" value="${root.dir}/${project}/test/includes/etc" />
+
+	<!-- The path used to run the tests -->
+	<path id="test.path">
+		
+		<!-- By default load the project's includes and public -->
+		<pathelement dir="${root.dir}/${project}/includes/"/>
+		<pathelement dir="${root.dir}/${project}/public/"/>
+		
+		<!-- Include the shared test stuff and the specific tests directory -->
+		<pathelement dir="${root.dir}/${project}/test/${group}/"/>
+		<pathelement dir="${root.dir}/${project}/test/includes"/>
+
+		<!-- Include the ROOT for finding the master configuration file -->
+		<pathelement dir="${root.dir}" />
+
+		<!-- Allow each test file to add its own includes, for example use another projects client or a vendor directory -->
+		<path refId="${project}.test.path" />
+		
+		<!-- M3 path, since it's cross cutting -->
+		<pathelement dir="${root.dir}/m3/includes"/>
+		
+	</path>
+
+	<!-- 
+			This selects which files from the source code should be watched for coverage.
+			This selects ALL files from includes and clients/php. 
+			It does not have coverage setup for the web files yet. 
+			There is no override for this as it already includes all appropriate subprojects.
+	-->
+	<fileset id="source.files" dir="${root.dir}" >
+
+		<include name="*/clients/php/**/*.php" />
+		<include name="*/includes/**/*.php" />
+		
+		<!-- system-apps uses active record and the way the way we load the files makes it harder to use coverage -->
+		<exclude name="system-apps/includes/**/*.php" />
+        <exclude name="api/includes/ringside/api/dao/records/*.php" />
+        <exclude name="api/includes/ringside/api/dao/records/generated/*.php" />
+		
+	</fileset>
+	
+	
+	<!-- 
+		    This sets up the files to include for code coverage. 
+		    Notice we by default include every projects includes
+		    and the clients we currently know about.  This is helps
+		    see what cross over we have between projects as well. 
+	-->
+	<path id="source.path">
+
+		<dirset dir="${root.dir}" includes="*/clients/php" />
+		<dirset dir="${root.dir}" includes="*/includes" />
+		<dirset dir="${root.dir}" includes="*/vendor/*/includes" />		
+		
+	</path>
+
+	<!--
+		Run a specific test
+
+		We expect certain properties and refs to be preconfigured
+		$root.dir - the base directory of the ringside svn checkout
+		$project - the name of the project, ie  api, social, web
+		$group - type of test group, ie functional, unit,system
+		$suite - the suite of the test for example db, api, ..
+		$test - The specifi test to run, ie FriendTestCase or *Friend*
+
+	-->
+	<target name="test-unit" description="Run a single test">
+		<phpunit2 haltonfailure="true" haltonerror="true">
+			<formatter type="plain" usefile="false" />
+				<batchtest>
+					<classpath refid="test.path" />
+					<fileset dir="${root.dir}/${project}/test/${group}">
+						<include name="${suite}/${test}.php"/>
+					</fileset>
+				</batchtest>
+		</phpunit2>
+	</target>
+
+
+	<!--
+		Run a test suite for a given project
+		We expect certain properties and refs to be preconfigured
+		$root.dir - the base directory of the ringside svn checkout
+		$project - the name of the project, ie  api, social, web
+		$group - type of test group, ie functional, unit,system
+		$suite - the suite of the test for example db, api, ..
+
+		The following are flags which can be set via -D as well
+		$failonerror - should we FAIL on an error and abort tests.
+		$coverage - should code coverage be run
+	-->
+	<target name="test-suite" description="Run some test suite">
+
+		<mkdir dir="${reports.dir}/${suite}/tests" />
+		
+		<property name="coverage.do" value="false"/>
+		<if>
+			<isset property="coverage" />
+			<then>
+				<property name="coverage.do" value="true"/>
+				<mkdir dir="${reports.dir}/${suite}/coverage" />
+
+				<coverage-setup database="${reports.dir}/${suite}/coverage.db">
+					<fileset refid="source.files" />
+					<classpath refid="source.path" />
+				</coverage-setup>
+			</then>
+		</if>
+
+		<phpunit2 codecoverage="${coverage.do}" printsummary="true" failureproperty="testfailed" errorproperty="testerror">
+			<formatter type="xml" todir="${reports.dir}/${suite}" outfile="tests.xml" />
+			<batchtest>
+				<classpath refid="test.path" />
+				<fileset dir=".">
+					<include name="${suite}/*TestCase.php"/>
+				</fileset>
+			</batchtest>
+		</phpunit2>
+
+		<!-- if halt on failure the cause build to bomb out -->
+		<phpunit2report infile="${reports.dir}/${suite}/tests.xml" format="frames" todir="${reports.dir}/${suite}/tests" styledir="${phing.styles}"/>
+
+		<if>
+			<isset property="coverage" />
+			<then>
+				<coverage-report outfile="${reports.dir}/${suite}/coverage.xml">
+				  <report todir="${reports.dir}/${suite}/coverage" styledir="${phing.styles}"/>
+				</coverage-report>
+			</then>
+		</if>
+
+		<fail if='testfailed' message='Unit tests for suite ${suite} failed, exiting.' />
+		<fail if='testerror' message='Unit tests for suite ${suite} had errors, exiting.' />
+
+	</target>
+
+	<!--
+		Run a WEB test suite for a given project
+		We expect certain properties and refs to be preconfigured
+		$root.dir - the base directory of the ringside svn checkout
+		$project - the name of the project, ie  api, social, web
+		$group - type of test group, ie functional, unit,system
+		$suite - the suite of the test for example db, api, ..
+	-->
+	<target name="web-suite" description="Run some web test suite">
+
+		<mkdir dir="${reports.dir}/${suite}/tests" />
+
+		<simpletest failureproperty="testfailed" errorproperty="testerror">
+			<formatter type="plain" todir="${reports.dir}/${suite}" outfile="tests.log" />
+			<fileset dir=".">
+				<include name="${suite}/*TestCase.php"/>
+			</fileset>
+		</simpletest>
+
+		<fail if='testfailed' message='Unit tests for suite ${suite} failed, exiting.' />
+		<fail if='testerror' message='Unit tests for suite ${suite} had errors, exiting.' />
+
+	</target>
+
+	<!-- 
+	       A script to build the database prior to running tests.
+	       TODO: Is this needed?  Move to doctrine should remove this?
+	-->
+    <target name="rebuild-db" description="drops and re-creates the test database">
+        <exec passthru="TRUE" command="php -f build/includes/ringside/pear/dbsetup.php start" dir="${root.dir}" />
+    </target>
+    <!-- Setup sample database information -->
+    <target name="sample-db" description="Inserts test data into the database" depends="rebuild-db">
+            <exec passthru="TRUE" command="php -f api/test/includes/AllTestsDbInit.php" dir="." />
+    </target>
+
+	
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">
+		<delete dir="${reports.dir}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+
+</project>

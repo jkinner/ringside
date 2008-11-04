@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<project name="m3-system-tests" default="client-tests-php" basedir=".">
+
+	<!--
+	<includepath classpath="../../vendor/PEAR/includes" />
+	-->
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Default properties required by the parent build file. (build-test.xml) -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="m3" />
+	<property name="group" value="system" />
+	<property name="build.dir" value="${root.dir}/build" />
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+	
+	<!-- Properties required for this build file. -->
+	<property name="api.dir" value="${root.dir}/m3" />
+	<property name="test.dir" value="." />
+	<property name="clients.dir" value="${api.dir}/clients" />	
+	
+	<!-- Used as additional path for build-test.xml -->
+	<path id="m3.test.path">
+		<pathelement dir="${root.dir}/api/clients/php"/>
+		<pathelement dir="${root.dir}/m3/clients/php"/>
+	</path>
+
+	<target name="client-tests-php" description="Run the PHP Client test suite" depends="rebuild-db">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs='true' >
+	    	<property name="suite" value="client/php" />
+		</phing>
+	</target>
+
+	<!-- Deploy a Server -->
+	<target name="deploy" description="Call the deploy task defined in main build directory.">
+		<phing phingfile="${api.dir}/build.xml" inheritRefs="false" inheritAll="false" target="deploy" />
+	</target>
+
+	<!-- setup the database for testing -->
+	<target name="rebuild-db" description="drops and re-creates the test database">
+		<!-- don't need this yet
+		<exec passthru="TRUE" command="php -f build/includes/ringside/pear/dbsetup.php start" dir="${root.dir}" />
+		-->
+	</target>
+	
+	<!-- Setup sample database information -->
+	<target name="sample-db" description="Inserts test data into the database" depends="rebuild-db">
+			<exec passthru="TRUE" command="php -f ../includes/AllTestsDbInit.php" dir="." />
+	</target>
+
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<delete dir="./reports" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+	
+</project>

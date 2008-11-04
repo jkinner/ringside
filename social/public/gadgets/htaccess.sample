@@ -1,0 +1,11 @@
+# This file remaps calls to gadgets/ to gadgets/index.php for
+# Shindig. This may already be confiured in your ringside.conf
+# To use this file rename it to .htaccess
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /ringdev/social/gadgets/index.php [L]
+#	RewriteRule (.*) index.php [L]
+</IfModule>

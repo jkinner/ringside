@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" tests="30" failures="0" errors="0" time="0.217349">
+    <testcase name="testGetUserAppSession" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="37" time="0.101414"/>
+    <testcase name="testSetUserAppSession" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="53" time="0.003570"/>
+    <testcase name="testDeleteUserAppSession" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="69" time="0.002504"/>
+    <testcase name="testGetUserApp" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="85" time="0.002240"/>
+    <testcase name="testCheckUserHasPermission" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="101" time="0.002393"/>
+    <testcase name="testIsUsersApp" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="117" time="0.002084"/>
+    <testcase name="testRemoveUsersApp" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="133" time="0.001844"/>
+    <testcase name="testSetUsersApp" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="149" time="0.001602"/>
+    <testcase name="testCreateApp" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="165" time="0.002165"/>
+    <testcase name="testUpdateAppProperties" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="181" time="0.001547"/>
+    <testcase name="testGetApplicationListByUserId" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="197" time="0.001401"/>
+    <testcase name="testGetAllApplications" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="213" time="0.001323"/>
+    <testcase name="testGetAllApplicationsAndKeys" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="218" time="0.067695"/>
+    <testcase name="testGetApplicationInfoByName" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="239" time="0.001451"/>
+    <testcase name="testGetApplicationInfoByCanvasName" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="255" time="0.001365"/>
+    <testcase name="testGetApplicationInfoByApiKey" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="271" time="0.001354"/>
+    <testcase name="testGetApplicationInfoById" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="287" time="0.001381"/>
+    <testcase name="testRemoveAppByApiKey" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="303" time="0.001381"/>
+    <testcase name="testCheckUserOwnsApp" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="319" time="0.001659"/>
+    <testcase name="testGetAppIdByApiKey" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="335" time="0.001348"/>
+    <testcase name="testGetAppIdByApiKeyAndSecret" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="351" time="0.001554"/>
+    <testcase name="testGetAppIdByName" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="367" time="0.001379"/>
+    <testcase name="testGetApplicationPreferences" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="383" time="0.001571"/>
+    <testcase name="testHasAppPrefs" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="399" time="0.001513"/>
+    <testcase name="testSaveAppPrefs" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="415" time="0.001626"/>
+    <testcase name="testSetAppKeys" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="431" time="0.001628"/>
+    <testcase name="testGetUsersAppKeys" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="447" time="0.001501"/>
+    <testcase name="testSetUsersAppKeys" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="463" time="0.001731"/>
+    <testcase name="testGetFBML" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="479" time="0.001494"/>
+    <testcase name="testSetFBML" class="AppBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppBoTestCase.php" line="495" time="0.001631"/>
+  </testsuite>
+  <testsuite name="AppServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppServiceImplTestCase.php" tests="1" failures="0" errors="0" time="0.240363">
+    <testcase name="testStuff" class="AppServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/AppServiceImplTestCase.php" line="9" time="0.240363"/>
+  </testsuite>
+  <testsuite name="CommentsBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/CommentsBoTestCase.php" tests="4" failures="0" errors="0" time="0.007655">
+    <testcase name="testGetComments" class="CommentsBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/CommentsBoTestCase.php" line="35" time="0.001984"/>
+    <testcase name="testCreateComment" class="CommentsBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/CommentsBoTestCase.php" line="51" time="0.002231"/>
+    <testcase name="testDeleteComment" class="CommentsBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/CommentsBoTestCase.php" line="67" time="0.001825"/>
+    <testcase name="testGetCommentCount" class="CommentsBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/CommentsBoTestCase.php" line="83" time="0.001615"/>
+  </testsuite>
+  <testsuite name="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" tests="7" failures="0" errors="0" time="0.550896">
+    <testcase name="testServiceFactoryCreatedDomainServiceObject" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="18" time="0.045252"/>
+    <testcase name="testCreatingDomainObject" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="23" time="0.049771"/>
+    <testcase name="testGetDomain" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="29" time="0.060953"/>
+    <testcase name="testGetAllDomains" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="34" time="0.183083"/>
+    <testcase name="testDeleteDomain" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="53" time="0.097379"/>
+    <testcase name="testGetNativeIdByApiKey" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="62" time="0.055957"/>
+    <testcase name="testGetNativeIdByName" class="DomainServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/DomainServiceImplTestCase.php" line="67" time="0.058501"/>
+  </testsuite>
+  <testsuite name="EventsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/EventsTestCase.php" tests="4" failures="0" errors="0" time="0.005591">
+    <testcase name="testGetEvents" class="EventsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/EventsTestCase.php" line="33" time="0.001484"/>
+    <testcase name="testGetMembers" class="EventsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/EventsTestCase.php" line="47" time="0.001506"/>
+    <testcase name="testGetRsvpStatusCode" class="EventsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/EventsTestCase.php" line="61" time="0.001321"/>
+    <testcase name="testGetRsvpStatusString" class="EventsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/EventsTestCase.php" line="75" time="0.001280"/>
+  </testsuite>
+  <testsuite name="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" tests="7" failures="0" errors="0" time="0.010647">
+    <testcase name="testGetUsers" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="34" time="0.001733"/>
+    <testcase name="testGetLists" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="50" time="0.001193"/>
+    <testcase name="testCreateList" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="66" time="0.001359"/>
+    <testcase name="testDeleteFavorite" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="82" time="0.001591"/>
+    <testcase name="testGetFavorites" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="98" time="0.001444"/>
+    <testcase name="testSetFavorite" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="114" time="0.001723"/>
+    <testcase name="testGetFBML" class="FavoritesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FavoritesTestCase.php" line="130" time="0.001604"/>
+  </testsuite>
+  <testsuite name="FeedBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FeedBoTestCase.php" tests="3" failures="0" errors="0" time="5.654445">
+    <testcase name="testCreateTemplatizedFeed" class="FeedBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FeedBoTestCase.php" line="34" time="5.645427"/>
+    <testcase name="testCreateFeed" class="FeedBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FeedBoTestCase.php" line="50" time="0.006144"/>
+    <testcase name="testGetFeedEntries" class="FeedBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FeedBoTestCase.php" line="66" time="0.002874"/>
+  </testsuite>
+  <testsuite name="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" tests="7" failures="0" errors="0" time="0.009447">
+    <testcase name="testSearchFriends" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="34" time="0.001365"/>
+    <testcase name="testGetFriendsAreFriends" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="49" time="0.001348"/>
+    <testcase name="testGetFriends" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="65" time="0.001368"/>
+    <testcase name="testCheckFriends" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="81" time="0.001248"/>
+    <testcase name="testGetAppUsers" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="97" time="0.001251"/>
+    <testcase name="testCreateFriend" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="113" time="0.001355"/>
+    <testcase name="testAcceptInvite" class="FriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/FriendsTestCase.php" line="129" time="0.001512"/>
+  </testsuite>
+  <testsuite name="GroupTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/GroupTestCase.php" tests="2" failures="0" errors="0" time="0.002341">
+    <testcase name="testGetGroups" class="GroupTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/GroupTestCase.php" line="34" time="0.001176"/>
+    <testcase name="testGetGroupMembers" class="GroupTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/GroupTestCase.php" line="50" time="0.001165"/>
+  </testsuite>
+  <testsuite name="ItemsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/ItemsTestCase.php" tests="4" failures="0" errors="0" time="0.005489">
+    <testcase name="testIsItem" class="ItemsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/ItemsTestCase.php" line="34" time="0.001234"/>
+    <testcase name="testDeleteItem" class="ItemsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/ItemsTestCase.php" line="50" time="0.001285"/>
+    <testcase name="testSetInfo" class="ItemsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/ItemsTestCase.php" line="66" time="0.001613"/>
+    <testcase name="testGetInfo" class="ItemsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/ItemsTestCase.php" line="82" time="0.001357"/>
+  </testsuite>
+  <testsuite name="KeyServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/KeyServiceImplTestCase.php" tests="1" failures="0" errors="0" time="0.120485">
+    <testcase name="testAppKeysets" class="KeyServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/KeyServiceImplTestCase.php" line="8" time="0.120485"/>
+  </testsuite>
+  <testsuite name="M3MeasApiCallTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/M3MeasApiCallTestCase.php" tests="3" failures="0" errors="0" time="0.108234">
+    <testsuite name="M3MeasApiCallTestCase::testInsertPurge" tests="2" failures="0" errors="0" time="0.036065">
+      <testcase name="testInsertPurge" class="M3MeasApiCallTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/M3MeasApiCallTestCase.php" line="58" time="0.019183"/>
+      <testcase name="testInsertPurge" class="M3MeasApiCallTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/M3MeasApiCallTestCase.php" line="58" time="0.016882"/>
+    </testsuite>
+    <testcase name="testGetApiDurations" class="M3MeasApiCallTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/M3MeasApiCallTestCase.php" line="64" time="0.072169"/>
+  </testsuite>
+  <testsuite name="NetworkBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NetworkBoTestCase.php" tests="4" failures="0" errors="0" time="0.007823">
+    <testcase name="testCreateNetwork" class="NetworkBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NetworkBoTestCase.php" line="34" time="0.002357"/>
+    <testcase name="testDeleteNetwork" class="NetworkBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NetworkBoTestCase.php" line="50" time="0.001889"/>
+    <testcase name="testSetNetworkProperties" class="NetworkBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NetworkBoTestCase.php" line="66" time="0.001920"/>
+    <testcase name="testGetNetworkProperties" class="NetworkBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NetworkBoTestCase.php" line="82" time="0.001657"/>
+  </testsuite>
+  <testsuite name="NotificationTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NotificationTestCase.php" tests="5" failures="0" errors="0" time="11.786218">
+    <testcase name="testSendNotification" class="NotificationTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NotificationTestCase.php" line="34" time="11.776591"/>
+    <testcase name="testSendEmail" class="NotificationTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NotificationTestCase.php" line="50" time="0.002790"/>
+    <testcase name="testCreateMail" class="NotificationTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NotificationTestCase.php" line="66" time="0.002152"/>
+    <testcase name="testAddMessage" class="NotificationTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NotificationTestCase.php" line="82" time="0.002801"/>
+    <testcase name="testAddUserToMail" class="NotificationTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/NotificationTestCase.php" line="98" time="0.001884"/>
+  </testsuite>
+  <testsuite name="PagesBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PagesBoTestCase.php" tests="5" failures="0" errors="0" time="0.007459">
+    <testcase name="testIsFan" class="PagesBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PagesBoTestCase.php" line="34" time="0.001553"/>
+    <testcase name="testIsAdmin" class="PagesBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PagesBoTestCase.php" line="50" time="0.001299"/>
+    <testcase name="testHasApp" class="PagesBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PagesBoTestCase.php" line="66" time="0.001458"/>
+    <testcase name="testGetPages" class="PagesBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PagesBoTestCase.php" line="82" time="0.001523"/>
+    <testcase name="testGetPagesInfo" class="PagesBoTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PagesBoTestCase.php" line="98" time="0.001626"/>
+  </testsuite>
+  <testsuite name="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" tests="8" failures="0" errors="0" time="0.011089">
+    <testcase name="testGetGateway" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="33" time="0.001123"/>
+    <testcase name="testCreateGateway" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="49" time="0.001410"/>
+    <testcase name="testGetSubscriptionsByUidAndNidAndAid" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="65" time="0.001403"/>
+    <testcase name="testGetFriendSubscriptionsByUidAndNidAndAid" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="81" time="0.001784"/>
+    <testcase name="testCreatePlan" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="97" time="0.001932"/>
+    <testcase name="testDeletePlan" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="113" time="0.001112"/>
+    <testcase name="testGetPlansByAid" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="129" time="0.001100"/>
+    <testcase name="testGetSubscriptionsByUidNid" class="PayementsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PaymentsTestCase.php" line="145" time="0.001225"/>
+  </testsuite>
+  <testsuite name="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" tests="7" failures="0" errors="0" time="0.009135">
+    <testcase name="testGetPhotoTags" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="34" time="0.001161"/>
+    <testcase name="testCreatePhotoTag" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="50" time="0.001745"/>
+    <testcase name="testGetNumberOfPhotots" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="66" time="0.001085"/>
+    <testcase name="testGetPhotos" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="82" time="0.000970"/>
+    <testcase name="testGetAlbums" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="98" time="0.001247"/>
+    <testcase name="testCreateAlbum" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="114" time="0.001709"/>
+    <testcase name="testCreateAlbumLink" class="PhotosTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PhotosTestCase.php" line="130" time="0.001218"/>
+  </testsuite>
+  <testsuite name="PokesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PokesTestCase.php" tests="1" failures="0" errors="0" time="0.000978">
+    <testsuite name="PokesTestCase::testUserSession" tests="1" failures="0" errors="0" time="0.000978">
+      <testcase name="testUserSession" class="PokesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/PokesTestCase.php" line="39" time="0.000978"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="RatingsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/RatingsTestCase.php" tests="3" failures="0" errors="0" time="0.004283">
+    <testcase name="testGetRatings" class="RatingsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/RatingsTestCase.php" line="34" time="0.001430"/>
+    <testcase name="testGetAverage" class="RatingsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/RatingsTestCase.php" line="48" time="0.001363"/>
+    <testcase name="testSetRating" class="RatingsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/RatingsTestCase.php" line="62" time="0.001490"/>
+  </testsuite>
+  <testsuite name="SharesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/SharesTestCase.php" tests="1" failures="0" errors="0" time="0.000962">
+    <testsuite name="SharesTestCase::testUserSession" tests="1" failures="0" errors="0" time="0.000962">
+      <testcase name="testUserSession" class="SharesTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/SharesTestCase.php" line="39" time="0.000962"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="SubscriptionsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/SubscriptionsTestCase.php" tests="2" failures="0" errors="0" time="0.004083">
+    <testcase name="testCreateAppSubscription" class="SubscriptionsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/SubscriptionsTestCase.php" line="34" time="0.001906"/>
+    <testcase name="testCreateFriendsAppSubscription" class="SubscriptionsTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/SubscriptionsTestCase.php" line="48" time="0.002177"/>
+  </testsuite>
+  <testsuite name="UsersProfileServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersProfileServiceImplTestCase.php" tests="1" failures="0" errors="0" time="0.011009">
+    <testcase name="testService" class="UsersProfileServiceImplTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersProfileServiceImplTestCase.php" line="7" time="0.011009"/>
+  </testsuite>
+  <testsuite name="UsersTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersTestCase.php" tests="4" failures="0" errors="0" time="8.919430">
+    <testcase name="testGetUsersInfo" class="UsersTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersTestCase.php" line="33" time="0.001321"/>
+    <testcase name="testSetStatus" class="UsersTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersTestCase.php" line="47" time="8.914137"/>
+    <testcase name="testSearchUsers" class="UsersTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersTestCase.php" line="61" time="0.002119"/>
+    <testcase name="testIsUserAdmin" class="UsersTestCase" file="/ringside/workspace/ringside/api/test/functional/bo/UsersTestCase.php" line="75" time="0.001853"/>
+  </testsuite>
+</testsuites>

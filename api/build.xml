@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<project name="ringside.api" default="deploy" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties for managing OpenFB -->
+	<property name="dir.includes" value="./includes" />
+	<property name="dir.public" value="./public" />
+	<property name="dir.test" value="./test" />
+	<property name="dir.vendor" value="./vendor" />	
+	<property name="dir.config" value="./config" />
+	<property name="dir.clients" value="./clients" />
+	
+	<!-- Set deployment properties and other local settings, prefer overrides in your build.local.properties -->
+	<property file="build.local.properties" />
+	<property file="build.properties" />
+	
+	<!-- Create the RAMP directory structure in the deploy directory -->
+	<target name="deploy-init" description="Create directories in the RAMP distribution">
+		<mkdir dir="${deploy.includes}" />
+		<mkdir dir="${deploy.public}" />
+		<mkdir dir="${deploy.config}" />
+		<mkdir dir="${deploy.clients}" />
+	</target>
+	
+	<!-- Deploy OpenFB to a Server -->
+	<target name="deploy" description="Deploy to a distribution structure." depends="deploy-init">
+
+		<!-- Copy the include path files -->
+		<copy todir="${deploy.includes}">
+			<fileset dir="${dir.includes}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the web files -->
+		<copy todir="${deploy.public}">
+			<fileset dir="${dir.public}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the configuration files -->
+		<copy todir="${deploy.config}">
+			<fileset dir="${dir.config}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	
+		<!-- Copy the client to the include path -->
+		<copy todir="${deploy.clients}">
+			<fileset dir="${dir.clients}/php">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Push vendor related activity to include path -->
+		<!-- TODO how to execute on PEAR updates if need be -->
+		<foreach list="${vendors}" target="vendor.do" param="vendor.name" delimiter="|" />
+				
+	</target>
+	
+	<target name="vendor.do" description="deals with vendor" >
+
+		<copy todir="${deploy.includes}/">
+			<fileset dir="${dir.vendor}/${vendor.name}/includes/">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		 
+	</target>
+	
+	<target name="docs" description="Generate all the documentation">
+		<mkdir dir="${reports.dir}/docs${date.append}" />
+		<phpdoc title="Ringside.OpenFB.Documentation"
+		  destdir="${reports.dir}/docs${date.append}"
+		  sourcecode="yes"
+		  output="HTML:Smarty:PHP">
+		  <fileset dir="src">
+		    <include name="**/*.php"/>
+		  </fileset>
+		</phpdoc>		
+	</target>
+	
+	
+</project>

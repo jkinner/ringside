@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/* foodtv.css */
+
+/*-- reset default browser styles --*/
+ul, ol, li, form, h1, h2, h3, h4, h5, p, dl, dt, dd, iframe, embed, input, form{padding:0; margin:0;}
+address {font-style:normal;}
+img{border:0;}
+
+html{
+	height:100.01%;
+	background:#fff url(../images/head-bg.gif) repeat-x;
+}
+body{
+	min-width:670px;
+	margin:0;
+	padding:0;
+	font:8pt/1.5 "Lucida Grande",Geneva,Verdana,Arial,Helvetica,sans-serif;
+	background: url(../images/bg-header.gif) no-repeat 49% 0;
+}
+img{
+	border:0;
+	margin:0;
+}
+#foodtv-wrapper {
+	border:1px solid #a7cd3a;
+	margin:0;
+	padding:0 0 10px 0;
+	width:670px;
+}
+	#title-bar {
+		background:#a7cd3a url(../images/bkg-title-bar.png) no-repeat top center;
+		height:38px;
+	}
+	#content-cell {
+		background:#fff;
+	}
+		h2.food-mate {
+			color:#96bc29;
+			font-size:1.3em;
+			margin:5px 0;
+			text-align:center;
+		}
+		h3.your-ratings {
+			color:#c4d64c;
+			text-align:center;
+		}
+		#most-compatible {
+			background:#f7f7f7;
+			border:1px solid #d6d5d5;
+			margin:0 10px 10px 10px;
+			padding:10px;
+			text-align:center;
+		}
+			#most-compatible-view {
+				margin:0 auto;
+				width:75%;
+			}
+			#compatible-with {
+				float:left;
+				font-size:1.2em;
+				font-weight:bold;
+				padding:40px 30px;
+			}
+			.user-view {
+				color:#c4d64c;
+				float:left;
+				font-weight:bold;
+				padding:0 0 0 0;
+				text-align:center;
+				width:85px;
+			}
+			
+		.recipe-to-rate {
+			border-bottom:1px solid #ededed;
+			height:75px;
+			margin:10px 10px 0 10px;
+			padding:2px 0px 8px 0px;
+		}
+		
+		.recipe-to-rate h2 {
+				color:#96bc29;
+				display:inline;
+				font-size:1.3em;
+				padding-right: 5px;
+		}
+			
+		.recipe-to-rate img {
+			float: left;
+			width: 100px;
+			padding-right: 10px;
+		}
+			
+			p.courtesy-of {
+				color:#666;
+				display:inline;
+				font-size:.95em;
+				font-style:italic;
+			}
+			p.what-do-you-think {
+				font-weight:bold;
+				margin:6px 0;
+			}
+			.ratings label {
+				color:#c4d64c;
+				font-size:.98em;
+				font-weight:bold;
+				margin:0 10px 0 0;
+			}
+			.ratings label.last {
+				margin:0;
+			}
+	#btn-submit-quiz {
+		margin:15px 0 4px 112px;
+	}
+	#recipe-ratings {
+		margin:15px 10px;
+	}
+
+	#recipe-ratings table {
+		font-size: 1em;
+	}
+
+	#recipe-ratings th {
+			color:#666;
+		}
+		#recipe-ratings td {
+			border-bottom:1px solid #ededed;
+			color:#96bc29;
+			text-align:center;
+		}
+		#recipe-ratings td.recipe-title {
+			height:95px;
+/*			padding-left:108px;*/
+			text-align:left;
+		}
+		.recipe-title h2 {
+			color:#96bc29;
+			font-size:1.3em;
+		}
+		.recipe-title img {
+			float: left;
+			width: 100px;
+			padding-right: 10px;
+		}
+		
+		.recipe-title .chef-contrib {
+			color:#666;
+			font-size:.95em;
+			font-style:italic;
+		}
+	
+.clearfix {clear:both;}
+.float-right {float:right;}

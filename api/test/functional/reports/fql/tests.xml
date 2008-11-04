@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="BaseFQLTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/BaseFQLTestCase.php" tests="1" failures="0" errors="0" time="1.655187">
+    <testcase name="testSetUp" class="BaseFQLTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/BaseFQLTestCase.php" line="50" time="1.655187"/>
+  </testsuite>
+  <testsuite name="FQLFriendQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLFriendQueryTestCase.php" tests="3" failures="0" errors="0" time="0.315526">
+    <testcase name="testFriendQuery" class="FQLFriendQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLFriendQueryTestCase.php" line="30" time="0.119167"/>
+    <testcase name="testRestrictedAccess" class="FQLFriendQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLFriendQueryTestCase.php" line="52" time="0.103993"/>
+    <testcase name="testSetUp" class="FQLFriendQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLFriendQueryTestCase.php" line="50" time="0.092366"/>
+  </testsuite>
+  <testsuite name="FQLGroupMemberQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLGroupMemberQueryTestCase.php" tests="2" failures="0" errors="0" time="0.190084">
+    <testcase name="testSimpleQuery" class="FQLGroupMemberQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLGroupMemberQueryTestCase.php" line="30" time="0.097672"/>
+    <testcase name="testSetUp" class="FQLGroupMemberQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLGroupMemberQueryTestCase.php" line="50" time="0.092412"/>
+  </testsuite>
+  <testsuite name="FQLGroupQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLGroupQueryTestCase.php" tests="2" failures="0" errors="0" time="0.191510">
+    <testcase name="testSimpleQuery" class="FQLGroupQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLGroupQueryTestCase.php" line="30" time="0.098662"/>
+    <testcase name="testSetUp" class="FQLGroupQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLGroupQueryTestCase.php" line="50" time="0.092848"/>
+  </testsuite>
+  <testsuite name="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" tests="7" failures="0" errors="0" time="0.022516">
+    <testcase name="testParserValidSimple" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="41" time="0.002472"/>
+    <testcase name="testParserValidNested" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="65" time="0.002709"/>
+    <testcase name="testParserTokenizedField" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="98" time="0.001525"/>
+    <testcase name="testParserSelectFunctions" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="104" time="0.003993"/>
+    <testcase name="testWhereFunctions" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="142" time="0.002693"/>
+    <testcase name="testParserInvalid" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="167" time="0.007898"/>
+    <testcase name="testReplaceVariables" class="FQLParsedStatementTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLParsedStatementTestCase.php" line="194" time="0.001226"/>
+  </testsuite>
+  <testsuite name="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" tests="12" failures="0" errors="0" time="1.400882">
+    <testcase name="testQuery" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="30" time="0.144921"/>
+    <testcase name="testMultipleQuery" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="54" time="0.148578"/>
+    <testcase name="testNestedQuery1" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="83" time="0.117935"/>
+    <testcase name="testNestedQuery2" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="96" time="0.117439"/>
+    <testcase name="testDotNotationSelect" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="117" time="0.116910"/>
+    <testcase name="testDotNotationWhere" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="199" time="0.105598"/>
+    <testcase name="testSelectFunction" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="213" time="0.110140"/>
+    <testcase name="testWhereFunction" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="253" time="0.105495"/>
+    <testcase name="testRestrictedAccess" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="267" time="0.106776"/>
+    <testcase name="testCase1" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="292" time="0.117544"/>
+    <testcase name="testCase2" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="308" time="0.116551"/>
+    <testcase name="testSetUp" class="FQLUserQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/fql/FQLUserQueryTestCase.php" line="50" time="0.092995"/>
+  </testsuite>
+</testsuites>

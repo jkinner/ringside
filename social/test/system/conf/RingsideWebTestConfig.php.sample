@@ -1,0 +1,6 @@
+<?php
+class RingsideWebTestConfig {
+	static $server = 'http://localhost:8888/';
+	static $webRoot = '/web';
+}
+?>

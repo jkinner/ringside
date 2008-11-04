@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<project name="api-system-tests" default="client-tests-php" basedir=".">
+
+	<includepath classpath="../../vendor/PEAR/includes" />
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Default properties required by the parent build file. (build-test.xml) -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="api" />
+	<property name="group" value="system" />
+	<property name="build.dir" value="${root.dir}/build" />
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+	
+	<!-- Properties required for this build file. -->
+	<property name="api.dir" value="${root.dir}/api" />
+	<property name="test.dir" value="." />
+	<property name="clients.dir" value="${api.dir}/clients" />	
+	
+	<!-- Used as additional path for build-test.xml -->
+	<path id="api.test.path">
+		<!-- Needed for RingsideSocialConfig to retrieve network key -->
+		<pathelement dir="${root.dir}/social/includes"/>
+		<pathelement dir="${root.dir}/api/clients/php"/>
+		<!-- This TEST suite still has configuration at the CONF location -->
+		<pathelement dir="${root.dir}/${project}/test/${group}/conf"/>
+	</path>
+
+	<target name="init-java">
+		<if>
+			<os family="windows"/>
+			<then>
+				<property name="path.separator" value=";"/>
+			</then>
+			<else>
+				<property name="path.separator" value=":"/>
+			</else>
+		</if>
+		<property name="ringsidesrestjava.jar.path" value="${clients.dir}/java/bin/RingsideRestJava.jar" />
+		<property name="compile.classpath" value=".${path.separator}..${path.separator}${clients.dir}/java/bin${path.separator}${clients.dir}/java/bin/json_simple.jar${path.separator}${clients.dir}/java/bin/BrowserLauncher2-10rc4.jar${path.separator}${clients.dir}/java/bin/RingsideRestJava.jar${path.separator}${clients.dir}/java/bin/junit-4.4.jar${path.separator}${ringsidesrestjava.jar.path}" />
+		<property name="java.bin" value="${env.JAVA_HOME}/bin/java" />
+		<property name="javac.bin" value="${env.JAVA_HOME}/bin/javac" />
+		<property name="jar.bin" value="${env.JAVA_HOME}/bin/jar" />
+	</target>
+
+	<target name="client-tests-php" description="Run the DB test suite" depends="rebuild-db">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs='true' >
+	    	<property name="suite" value="client/php" />
+		</phing>
+	</target>
+
+	<target name="trust-tests" description="Test Facebook AuthN delegation">
+		<phing phingfile='${build-test}' target='web-suite' haltonfailure='true' inheritRefs='true' >
+	    	<property name="suite" value="fbtrust" />
+		</phing>
+	</target>
+
+	<!-- Compile the Facebook Java client library -->
+	<target name="compile-client-java" depends="init-java">
+		<property name="java.temp.dir" value="${clients.dir}/java/temp" />		
+
+		<!-- Compile modified FB Java client source code -->
+		<mkdir dir="${java.temp.dir}" />
+		<exec passthru="TRUE" command="${javac.bin} -d ${java.temp.dir} -cp ${compile.classpath} ${clients.dir}/java/com/facebook/api/*.java" dir="." />	
+			
+		<!-- Jar up modified FB Java client -->
+		<exec passthru="TRUE" command="${jar.bin} cf RingsideRestJava.jar *" dir="${java.temp.dir}" />
+		
+		<!-- Copy facebook jar -->
+		<copy file="${java.temp.dir}/RingsideRestJava.jar" todir="${clients.dir}/java/bin" />
+		
+		<!-- Delete temp directory -->		
+		<delete dir="${java.temp.dir}" includeemptydirs="true" failonerror="false" />
+	</target>
+	
+	<!-- Compile and run the Java client unit tests -->
+	<target name="client-tests-java" description="Java client test" depends="init-java,compile-client-java">
+		<!-- Compile unit test -->		
+		<delete file="${test.dir}/client/java/*.class" failonerror="false" />
+		<exec passthru="TRUE" command="${javac.bin} -cp ${compile.classpath} ${test.dir}/client/java/*.java"  checkreturn="true" />  
+
+		<property name="run.classpath" value="${compile.classpath}${path.separator}${test.dir}/client/java" />
+	
+		<!-- Wipe DB clean, re-insert sample data -->
+		<phingcall target="sample-db" />
+		<!-- Run unit test for XML response format -->		
+		<exec passthru="TRUE" command="${java.bin} -cp ${run.classpath} JavaClientTestRunner XML" checkreturn="true" />
+		
+		<!-- Wipe DB clean, re-insert sample data -->
+		<phingcall target="sample-db" />
+		<!-- Run unit test for JSON response format -->		
+		<exec passthru="TRUE" command="${java.bin} -cp ${run.classpath} JavaClientTestRunner JSON"  checkreturn="true" />
+	
+	</target>
+
+	<!-- Run the ruby client unit tests -->
+	<target name="client-tests-ruby" description="Ruby client test" depends="deploy">
+
+		<!-- Run DB init routines in PHP -->
+		<exec passthru="TRUE" command="php -f AllTestsDbInit.php" dir="${test.dir}" />		
+		
+		<!-- Run unit test for XML response format -->		
+		<exec passthru="TRUE" command="ruby ${test.dir}/client/ruby/ruby_client_test_runner.rb" />
+			
+	</target>
+	
+	<!-- Deploy OpenFB to a Server -->
+	<target name="deploy" description="Call the deploy task defined in main build directory.">
+		<phing phingfile="${api.dir}/build.xml" inheritRefs="false" inheritAll="false" target="deploy" />
+	</target>
+
+	<!-- setup the database for testing -->
+	<target name="rebuild-db" description="drops and re-creates the test database">
+		<exec passthru="TRUE" command="php -f build/includes/ringside/pear/dbsetup.php start" dir="${root.dir}" />
+	</target>
+	
+	<!-- Setup sample database information -->
+	<target name="sample-db" description="Inserts test data into the database" depends="rebuild-db">
+			<exec passthru="TRUE" command="php -f ../includes/AllTestsDbInit.php" dir="." />
+	</target>
+
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<delete dir="./reports" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+	
+</project>

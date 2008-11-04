@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/* admin.css */
+/* contains styles for admin view */
+
+/************************************************** Reset Default Browser Styles */
+ul, ol, li, form, h1, h2, h3, h4, h5, p, dl, dt, dd, iframe, embed, input, form{padding:0; margin:0;}
+address {font-style:normal;}
+img{border:0;}
+table,td{font-size:inherit;}
+ul{list-style:none;}
+
+
+
+
+/************************************************** Main Structure */
+html{height:100.01%;}  /* forces consistent browser scrollbar */
+body {
+	background:#fff;
+	color:#525252;
+	font:76%/1.5 "Lucida Grande",Geneva,Verdana,Arial,Helvetica,sans-serif;
+	padding: 0;
+	margin: 0;
+}
+#wrapper {
+	background:transparent;
+}	
+
+
+
+
+/************************************************** Header */
+#header {
+	background:#fff;
+	height:80px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:900px;
+}	
+#logo {
+	float:left;
+	margin:15px 0 0 10px;
+}
+#profile {
+	background-color:#efefef;
+	border:1px solid #bab9b9;
+	float:right;
+	margin:7px 0 0 0;
+	padding:4px;
+	width:250px;
+}
+	#profile a {
+		color:#717171;
+		font-size:.90em;
+	}
+	#profilePic {
+		float:left;
+	}
+	#userInfo {
+		float:left;
+		margin:0 0 0 4px
+	}
+		#profileName {
+			font-weight:bold;
+			font-size:1.1em;
+		}
+	#logout {
+		float:right;
+		margin:0 4px 0 0;
+	}
+
+
+
+
+		/************************************************** Nav Top */
+		#nav-top {
+			bottom:0px;
+			background:#fff;
+			clear:both;
+			color:#fff;
+			left:220px;
+			margin:0;
+			position:absolute;
+		}
+			#nav-top li {
+				background:#b7b8b8 url(images/bkg-tab.png) repeat-x;
+				border:1px solid #7b7b7b;
+				border-bottom-style:none;
+				display:inline;
+				float:left;
+				margin:0 6px;
+			}
+				#nav-top li a {
+					color:#666;
+					float:left;
+					font-size:1.14em;
+					font-weight:bold; 
+					text-decoration:none;
+				}
+				#nav-top li a:hover {
+					text-decoration:underline;
+				}
+					#nav-top li a span {
+						display:block;
+						padding:4px 8px 2px 8px;
+					}
+			#nav-top li.selected {
+				background:#000 url(images/bkg-tab-active.png) repeat-x;
+				border:1px solid #000;
+				border-bottom-style:none;
+			}
+			#nav-top li.selected a {
+				color:#fff;
+			}
+		#nav-top-sub {
+			background:#000;
+			clear:both;
+			height:10px;
+			font-size:1px;
+		}
+		
+		
+		
+		
+		
+/************************************************** Welcome App */
+#welcome-content {
+	display:none;
+}
+#welcome-bottom-edge {
+	font-size:1px;
+}
+	
+
+
+
+
+/************************************************** Main Content */
+#content-wrapper {
+	border-top:6px solid #a1a1a1;
+}
+	#content {
+		width:900px;		
+	}	
+		#welcome-tab {
+			background:#a1a1a1;
+			float:right;
+		}
+			#welcome-tab li {
+				background:#a1a1a1 url(images/bkg-tab-welcome.png) bottom repeat-x;
+				display:inline;
+				float:left;
+			}
+				#welcome-tab li a {
+					color:#000;
+					float:left;
+					padding:0 8px 0 0;
+					text-decoration:none;
+				}
+					#welcome-tab li a span {
+						display:block;
+						padding:1px 16px 4px 8px;
+					}
+					.arrow-down{background:transparent url(images/icon-arrow-down.png) right no-repeat;}
+					.arrow-up{background:transparent url(images/icon-arrow-up.png) right no-repeat;}
+
+
+
+
+		/************************************************** Stage */
+		#stage-wrapper {
+			float:left;
+			height:400px;
+			padding:10px;
+		}
+			#stage {
+				/*  ADMIN STYLES GO HERE ******************************************************/
+			}	
+
+
+
+
+		/************************************************** Headers */
+		h1 {
+			font-size:2em;
+		}
+
+
+
+
+/************************************************** Footer */
+#footer {
+	border-top:6px solid #000;
+	clear:both;
+	color:#b0b0b0;
+	font-size:.85em;
+	height:30px;
+	margin:10px 0 0 0;
+	padding:5px 10px;
+}
+
+
+
+
+
+
+
+
+
+

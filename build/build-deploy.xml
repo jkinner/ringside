@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+
+<!--
+This will deploy the Ringside code to a local distribution directory.
+You can use this deployment to run Ringside locally.
+
+[As 5/5/2008, this lays down a deployment directory structure that is
+slightly different than an installer deployment.]
+-->
+
+<project name="ringside.build.deploy" default="deploy" basedir="..">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<!-- Consolidate all files to deployment directory -->
+	<target name="deploy">
+		<if>
+			<not>
+				<and>					
+					<isset property="${deploy.includes}" />
+					<isset property="${deploy.public}" />
+				</and>
+			</not>
+			<then>
+				<!-- Default locations (fallback if for some reason build.properties doesn't define this) -->
+				<property name="deploy.dir" value="./dist/deploy/ringside" />
+				<property name="deploy.includes" value="${deploy.dir}"/>
+				<property name="deploy.public" value="${deploy.dir}"/>
+				<property name="deploy.config" value="${deploy.dir}"/>
+				<property name="deploy.clients" value="${deploy.dir}"/>		
+			</then>
+			
+		</if>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="api" />
+			<property name="project.vendors" value="facebook,PEAR" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="social" />
+			<property name="project.vendors" value="shindig" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="web" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="m3" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="system-apps" />
+			<property name="project.vendors" value="PEAR" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="extension-apps" />
+			<property name="project.vendors" value="PEAR" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="demo-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+		
+		<if>
+			<not>
+				<isset property="no.config.rewrite" />
+			</not>
+			<then>		
+				<echo message="Overwriting ${deploy.includes}/LocalSettings.php" />
+				<delete file="${deploy.includes}/LocalSettings.php" />
+				<append destFile="${deploy.includes}/LocalSettings.php" file="LocalSettings.php.sample">
+					<filterchain>
+						<replaceregexp>
+							<regexp pattern="RS_WEBSERVER_HOST_PORT" replace="${webserver.hostport}" />
+							<regexp pattern="RS_DB_TYPE" replace="${db.type}" />
+							<regexp pattern="RS_DB_SERVER" replace="${db.server}" />
+							<regexp pattern="RS_DB_NAME" replace="${db.name}" />
+							<regexp pattern="RS_DB_USERNAME" replace="${db.user}" />
+							<regexp pattern="RS_DB_PASSWORD" replace="${db.password}" />
+							<regexp pattern="RS_WEB_ROOT" replace="${web.root}" />
+							<regexp pattern="RS_SOCIAL_ROOT" replace="${social.root}" />
+							<regexp pattern="RS_API_ROOT" replace="${api.root}" />
+							<regexp pattern="RS_DEMO_ROOT" replace="${demo.root}" />
+							<regexp pattern="socialApiKey.*=.*\'\'" replace="socialApiKey = '${social.key}'" />
+							<regexp pattern="socialSecretKey.*=.* \'\'" replace="socialSecretKey = '${social.secret}'" />
+							<regexp pattern="RS_APACHE_DIR" replace="${m3.webserver.install.dir}" />
+							<regexp pattern="RS_DATA_DIR" replace="${deploy.includes}data" />
+						</replaceregexp>
+					</filterchain>
+				</append>
+			</then>
+		</if>
+
+	</target>
+
+	<!--
+	Private target that consolidates a project module's code.
+	All modules have most, if not all, of the following subdirectories:
+		clients
+		config
+		includes
+		public
+		test
+		vendor
+	-->
+	<target name="project.do">
+
+		<!-- Copy the include path files -->
+		<copy todir="${deploy.includes}">
+			<fileset dir="${project.name}/includes">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the web files -->
+		<if>
+			<available file="${project.name}/public" />
+			<then>
+				<copy todir="${deploy.public}">
+					<fileset dir="${project.name}/public">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+			</then>
+		</if>
+
+		<!-- Copy the configuration files -->
+		<if>
+			<available file="${project.name}/config" />
+			<then>
+				<copy todir="${deploy.config}">
+					<fileset dir="${project.name}/config">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+			</then>
+		</if>
+				
+		<!-- Copy the client to the include path -->
+		<if>
+			<available file="${project.name}/clients/php" />
+			<then>
+				<copy todir="${deploy.clients}">
+					<fileset dir="${project.name}/clients/php">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+			</then>
+		</if>
+
+		<!-- Push vendor related activity to include path -->
+		<foreach list="${project.vendors}"
+				target="vendor.do"
+				param="vendor.name"
+				delimiter="," />
+
+	</target>
+
+	<!-- private target that consolidates 3rd party vendor code -->
+	<target name="vendor.do">
+		<if>
+			<available file="${project.name}/vendor/${vendor.name}/includes/" />
+			<then>
+				<copy todir="${deploy.includes}">
+					<fileset dir="${project.name}/vendor/${vendor.name}/includes/">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+			</then>
+		</if>
+	</target>
+
+	<target name="clean" description="remove the deploy directory">
+		<delete dir="${deploy.clients}" includeemptydirs="true" verbose="false" failonerror="true" />
+		<delete dir="${deploy.config}" includeemptydirs="true" verbose="false" failonerror="true" />
+		<delete dir="${deploy.public}" includeemptydirs="true" verbose="false" failonerror="true" />
+		<delete dir="${deploy.includes}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+
+</project>

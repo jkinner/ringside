@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<div>
+<fb:header />
+<fb:dashboard>
+  <fb:action href="<?php echo $_SERVER['REQUEST_URI']?>#action1">Dashboard Action 1</fb:action>
+  <fb:action href="<?php echo $_SERVER['REQUEST_URI']?>#action2">Dashboard Action 2</fb:action>
+  <fb:action href="<?php echo $_SERVER['REQUEST_URI']?>#action3">Dashboard Action 3</fb:action>
+  <fb:help href="<?php echo $_SERVER['REQUEST_URI']?>#help">Help</fb:help>
+  <fb:help href="<?php echo $_SERVER['REQUEST_URI']?>#more_help">More Help</fb:help>
+  <fb:create-button href="<?php echo $_SERVER['REQUEST_URI']?>#button">Button</fb:create-button>
+</fb:dashboard>
+
+<fb:tabs>
+	<fb:tab_item href="./home.html" title="Home" selected="true" />
+	<fb:tab_item href="./usersgroups.html" title="Users/Groups" />
+	<fb:tab-item href="./tools.html" title="Tools" />
+	<fb:tab-item href="./editor.html" title="Editor Display" />
+</fb:tabs>
+
+<p>
+The following elements should be at the top of the page. In addition, you should be able to click on each of the following parts
+and verify the results in the browser's location bar (the actions all point to different #-fragments on this page).
+<ul>
+<li>There should be the application name in an fb:header block above.</li>
+<li>There should be 3 dashboard actions (Dashboard Action [1..3]) in the Dashboard above with 2 dashboard help
+items on the right (Dashboard Help and More Dashboard Help)</li>
+<li>There should be a dashboard button pushed to the right-hand side named "Button"</li>
+</ul>
+
+<P>There should be 4 tabs: Home, Users/Groups, Tools, and Editor Display. Home should be highlighted (selected).
+</p>
+<p>
+The time is now <b><fb:time t='<?php echo time() ?>' tz='America/Los_Angeles' /></b> in Los Angeles (<b><fb:time t='<?php echo time()?>' tz='America/New_York' /></b> at Ringside Central in NJ).
+</p>
+<p>
+Below, you should see 6 message boxes: "Error Message", "Error Message" with a description, "Explanation", "Explanation" with a description, "Success",
+and "Success" with a description.
+
+<fb:error message="Error Message"/>
+
+<fb:error message="Error Message">
+	<fb:message>An error has occurred. But not really. This is just a rendering example.</fb:message>
+</fb:error>
+
+<fb:explanation message="Explanation"/>
+
+<fb:explanation message="Explanation">
+	<fb:message>If I had really had something to explain, you would have seen it here.</fb:message>
+</fb:explanation>
+
+<fb:success message="Success"/>
+
+<fb:success message="Success">
+	<fb:message>Something good must have happened... but I have absolutely no idea what.</fb:message>
+</fb:success>
+</p>
+</div>

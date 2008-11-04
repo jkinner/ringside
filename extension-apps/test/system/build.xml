@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<project name="extension-apps-system-tests" default="client-tests-php" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties for managing OpenFB -->
+	<property name="api.dir" value="../../../api"/>
+	<property name="api.config.dir" value="${api.dir}/config"/>
+	<property name="core.dir" value="../.." />
+	<property name="core.config.dir" value="${core.dir}/config" />
+	<property name="conf.dir" value="./conf" />
+	<property name="api.test.dir" value="${api.dir}/test" />
+	<property name="api.test.functional.dir" value="${api.test.dir}/functional" />
+	<property name="test.dir" value="." />
+	<property name="test.functional.dir" value="../functional" />
+	<property name="clients.dir" value="${core.dir}/clients" />	
+	<property name="reports.dir" value="./reports" />
+	<property name="date.append" value="" description="If you would like each run to generate test and coverage in a directory override this with something like curly DATE curly" />
+	
+	<!-- Java client properties -->
+	<property name="facebook.jar.path" value="${clients.dir}/java/bin/facebook.jar" />
+	<property name="compile.classpath" value=".:..:${clients.dir}/java/bin/json_simple.jar:${clients.dir}/java/bin/BrowserLauncher2-10rc4.jar:${clients.dir}/java/bin/facebook.jar:${clients.dir}/java/bin/junit-4.4.jar:${facebook.jar.path}" />
+
+	<!-- Set deployment properties and other local settings, prefer overrides in your build.local.properties -->
+	<property file="build.properties" />
+	
+	<path id="test.path">
+	  	<pathelement dir="${conf.dir}"/>
+	  	<pathelement dir="${api.test.functional.dir}"/>
+		<pathelement dir="${core.dir}/includes"/>
+		<pathelement dir="${core.config.dir}"/>
+		<pathelement dir="${test.dir}"/>
+		<pathelement dir="${test.functional.dir}"/>
+		<pathelement dir="${clients.dir}/php"/>
+	</path>
+
+	<path id="db.path">
+		<pathelement dir="${conf.dir}"/>
+		<pathelement dir="${core.dir}/includes"/>
+		<pathelement dir="${core.config.dir}"/>
+		<pathelement dir="${test.dir}"/>
+		<pathelement dir="${test.functional.dir}"/>
+	  	<pathelement dir="${api.test.functional.dir}"/>
+		<pathelement dir="${clients.dir}/php"/>
+		<pathelement dir="${test.functional.dir}/sql"/>
+	</path>
+	
+	<target name="client-tests-php" description="Run the DB test suite">
+	    <phingcall target="test-suite"><property name="suite" value="client/php" /><property name="src.dir" value="${clients.dir}/php"/></phingcall>
+	</target>
+
+	<!-- PHP Client Test Suite -->
+	<target name="test-suite" description="Run a test suite">
+		
+		<mkdir dir="${reports.dir}/${suite}${date.append}/tests" />
+		<if>
+			<isset property="coverage"/>
+			<then>
+				<mkdir dir="${reports.dir}/${suite}${date.append}/coverage" />
+			
+				<property name="coverage.do" value="true"/>
+				<coverage-setup database="${reports.dir}/${suite}${date.append}/coverage.db">
+				  <classpath refid="test.path" />
+				  <fileset dir="${src.dir}">
+				    <include name="**/*.php"/>
+				  </fileset>
+				</coverage-setup>
+			</then>
+			<else>
+				<property name="coverage.do" value="false"/>
+			</else>
+		</if>
+	
+		<phpunit2 codecoverage="${coverage.do}" printsummary="true" haltonfailure="false" haltonerror="false">
+  	 		<!-- Add back in haltonskipped="false" if you have the updated phing -->
+  	 		<formatter type="xml" todir="${reports.dir}/${suite}${date.append}" outfile="tests.xml" />
+  				<batchtest>
+					<classpath refid="test.path" />
+	    			<fileset dir="${test.dir}">
+		      		<include name="${suite}/*TestCase.php"/>	    				
+	    			</fileset>
+  				</batchtest>
+		</phpunit2>
+		<phpunit2report infile="${reports.dir}/${suite}${date.append}/tests.xml" format="frames" todir="${reports.dir}/${suite}${date.append}/tests" styledir="${conf.dir}"/>
+
+		<if>
+			<isset property="coverage"/>
+			<then>
+				<coverage-report outfile="${reports.dir}/${suite}${date.append}/coverage.xml">
+				  <report todir="${reports.dir}/${suite}${date.append}/coverage" styledir="${conf.dir}"/>
+				</coverage-report>
+			</then>
+		</if>
+		
+	</target>
+	
+	<!-- Compile the Facebook Java client library -->
+	<target name="compile-client-java">
+		<property name="java.temp.dir" value="${clients.dir}/java/temp" />		
+
+		<!-- Compile modified FB Java client source code -->
+		<mkdir dir="${java.temp.dir}" />
+		<exec passthru="TRUE" command="javac -d ${java.temp.dir} -cp ${compile.classpath} ${clients.dir}/java/com/facebook/api/*.java" dir="." />	
+			
+		<!-- Jar up modified FB Java client -->
+		<exec passthru="TRUE" command="jar cf ../../../${facebook.jar.path} *" dir="${java.temp.dir}" />
+		
+		<!-- Delete temp directory -->		
+		<delete dir="${java.temp.dir}" includeemptydirs="true" failonerror="false" />
+	</target>
+	
+	<!-- Compile and run the Java client unit tests -->
+	<target name="client-tests-java" description="Java client test" depends="compile-client-java,deploy,rebuild-db">
+		<!-- Compile unit test -->		
+		<delete file="${test.dir}/client/java/*.class" failonerror="false" />
+		<exec passthru="TRUE" command="javac -cp ${compile.classpath} ${test.dir}/client/java/*.java" />  
+
+		<property name="run.classpath" value="${compile.classpath}:${test.dir}/client/java" />
+						
+		<!-- Run unit test for XML response format -->		
+		<exec passthru="TRUE" command="java -cp ${run.classpath} JavaClientTestRunner XML" />
+		
+		<!-- Run DB init routines in PHP -->
+		<exec passthru="TRUE" command="php -f AllTestsDbInit.php" dir="${test.dir}" />		
+		<!-- Run unit test for JSON response format -->		
+		<exec passthru="TRUE" command="java -cp ${run.classpath} JavaClientTestRunner JSON" />
+	
+	</target>
+
+	<!-- Run the ruby client unit tests -->
+	<target name="client-tests-ruby" description="Ruby client test" depends="deploy">
+
+		<!-- Run DB init routines in PHP -->
+		<exec passthru="TRUE" command="php -f AllTestsDbInit.php" dir="${test.dir}" />		
+		
+		<!-- Run unit test for XML response format -->		
+		<exec passthru="TRUE" command="ruby ${test.dir}/client/ruby/ruby_client_test_runner.rb" />
+			
+	</target>
+	
+	<!-- Deploy OpenFB to a Server -->
+	<target name="deploy" description="Call the deploy task defined in main build directory.">
+		<phing phingfile="${core.dir}/build.xml" inheritRefs="false" inheritAll="false" target="deploy" />
+	</target>
+
+	<!-- setup the database for testing -->
+	<target name="rebuild-db" description="drops and re-creates the test database">
+		<!-- Run DB init routines in PHP -->
+		<property name="includePath" value="${conf.dir}:${core.config.dir}:${test.dir}:${test.functional.dir}:${test.functional.dir}/sql:${clients.dir}/php:${core.dir}/includes" />
+		<includepath><classpath refid="db.path"/></includepath>
+		<php expression="include 'AllTestsDbInit.php'" />
+	</target>
+	
+
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<delete>
+		  <fileset dir=".">
+		    <include name="cache-lite*" />
+		  </fileset>
+		</delete>
+
+		<delete dir="${reports.dir}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+	
+</project>

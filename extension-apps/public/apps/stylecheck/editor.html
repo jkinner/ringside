@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<div>
+<fb:header />
+<fb:dashboard>
+  <fb:action href="<?php echo $_SERVER['REQUEST_URI']?>">Dashboard Action 1</fb:action>
+  <fb:action href="<?php echo $_SERVER['REQUEST_URI']?>">Dashboard Action 2</fb:action>
+  <fb:action href="<?php echo $_SERVER['REQUEST_URI']?>">Dashboard Action 3</fb:action>
+  <fb:help href="<?php echo $_SERVER['REQUEST_URI']?>">Help</fb:help>
+  <fb:help href="<?php echo $_SERVER['REQUEST_URI']?>">More Help</fb:help>
+  <fb:create-button href="<?php echo $_SERVER['REQUEST_URI']?>">Button</fb:create-button>
+</fb:dashboard>
+
+<fb:tabs>
+	<fb:tab_item href="./home.html" title="Home" />
+	<fb:tab_item href="./usersgroups.html" title="Users/Groups" />
+	<fb:tab-item href="./tools.html" title="Tools" />
+	<fb:tab-item href="./editor.html" title="Editor Display" selected="true" />
+</fb:tabs>
+
+<p>
+<h2>Empty Form</h2>
+<p>
+<fb:editor action="?do-it" labelwidth="100">
+     <fb:editor-text label="Title" name="title" value=""/>
+     <fb:editor-text label="Author" name="author" value=""/>
+     <fb:editor-custom label="Status">
+          <select name="state">
+               <option value="0" selected>have read</option>
+               <option value="1">am reading</option>
+               <option value="2">want to read</option>
+          </select>
+     </fb:editor-custom>
+     <fb:editor-textarea label="Comment" name="comment"/>
+     <fb:editor-buttonset>
+          <fb:editor-button value="Add"/>
+          <fb:editor-button value="Recommend"/>
+          <fb:editor-cancel />
+     </fb:editor-buttonset>
+</fb:editor>
+</p>
+
+<h2>Populated Form</h2>
+<p>
+<fb:editor action="?do-it" labelwidth="100">
+     <fb:editor-text label="Title" name="title" value="Foo"/>
+     <fb:editor-text label="Author" name="author" value="Bar Baz"/>
+     <fb:editor-custom label="Status">
+          <select name="state">
+               <option value="0" selected>have read</option>
+               <option value="1">am reading</option>
+               <option value="2">want to read</option>
+          </select>
+     </fb:editor-custom>
+     <fb:editor-textarea label="Comment" name="comment">Glurp</fb:editor-textarea>
+     <fb:editor-buttonset>
+          <fb:editor-button value="Add"/>
+          <fb:editor-button value="Recommend"/>
+          <fb:editor-cancel />
+     </fb:editor-buttonset>
+</fb:editor>
+</p>
+</div>

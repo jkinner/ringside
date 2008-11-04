@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="hello world example">
+		<Require feature="opensocial-0.7"/>
+	</ModulePrefs>
+	<Content type="html" view="default">
+	<![CDATA[
+
+<div id='loading'><img src='http://www.viphaklay.com/jquery/spinner.gif'/></div>
+<div id='message' style='margin: 4px'></div>
+<script type='text/javascript'>
+function init() {
+  MYOS_TRACE = true;
+  trace('Init...');
+  
+  var os = opensocial.Container.get();
+  var dataReqObj = os.newDataRequest();
+  var viewerReq = os.newFetchPersonRequest(opensocial.DataRequest.PersonId.VIEWER);
+  dataReqObj.add(viewerReq);
+  
+  var viewerFriendsReq = os.newFetchPeopleRequest(opensocial.DataRequest.Group.VIEWER_FRIENDS);
+  
+  dataReqObj.add(viewerFriendsReq);
+  
+  trace('Sending...');
+  dataReqObj.send(dataLoadCallback);
+}   
+  
+function dataLoadCallback(dataResponse) {
+  trace('Got data...');
+
+  if (dataResponse.hadError()) {
+    var data = dataResponse.get(opensocial.DataRequest.Group.VIEWER_FRIENDS);
+    alert(data.getErrorCode() + '\n' + data.getErrorMessage());
+  } else {
+    var viewerData = dataResponse.get(opensocial.DataRequest.PersonId.VIEWER).getData();
+    var viewerName = viewerData.getField(opensocial.Person.Field.NAME);
+
+    trace('<p><h3>Friends Of "' + viewerName + '":</h3><hr/>');
+
+    var friendsData = dataResponse.get(opensocial.DataRequest.Group.VIEWER_FRIENDS).getData();
+    friendsData.each(
+     function(friendData) {
+        var friendName = friendData.getField(opensocial.Person.Field.NAME);
+        var friendThumbnailUrl = friendData.getField(opensocial.Person.Field.THUMBNAIL_URL);
+        trace(friendName + '<br>' + '<image src="' + friendThumbnailUrl + '"/><hr/>');
+     }
+    );
+  }
+    document.getElementById('loading').style.display = 'none';
+}
+ 
+function trace(msg) {
+    document.getElementById('message').innerHTML += msg + '<br>';
+}
+ 
+init();
+</script>
+]]>
+	</Content>
+</Module>

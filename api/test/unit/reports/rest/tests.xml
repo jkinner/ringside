@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" tests="9" failures="0" errors="0" time="0.012119">
+    <testsuite name="FeedGetTestCase::testConstructor" tests="9" failures="0" errors="0" time="0.012119">
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001585"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001190"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001161"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001197"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001188"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001668"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001338"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001424"/>
+      <testcase name="testConstructor" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/FeedGetTestCase.php" line="48" time="0.001368"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" tests="21" failures="0" errors="0" time="0.032396">
+    <testsuite name="SubscribeUsersToAppTestCase::testConstructor" tests="21" failures="0" errors="0" time="0.032396">
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001569"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001413"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001411"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001355"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001407"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001448"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001388"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001537"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001462"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001397"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001547"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001525"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001671"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001703"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001677"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001698"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001677"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001693"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001886"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001498"/>
+      <testcase name="testConstructor" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUsersToAppTestCase.php" line="82" time="0.001434"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" tests="19" failures="0" errors="0" time="0.027061">
+    <testsuite name="SubscribeUserToAppTestCase::testConstructor" tests="19" failures="0" errors="0" time="0.027061">
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001544"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001377"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001387"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001324"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001355"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001547"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001337"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001470"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001387"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001339"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001406"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001549"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001646"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001621"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001336"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001301"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001321"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001389"/>
+      <testcase name="testConstructor" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/unit/rest/SubscribeUserToAppTestCase.php" line="76" time="0.001425"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+<project name="web-system-tests" default="canvas-tests-php" basedir=".">
+	<!-- TODO: Note dependency from web project to api project -->
+	<includepath classpath="../../../api/vendor/PEAR/includes" />
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties for managing OpenFB -->
+	<property name="web.dir" value="../.." />
+	<property name="web.config.dir" value="${web.dir}/config" />
+	<property name="web.apps.dir" value="../../../system-apps" />
+	<property name="web.apps.config.dir" value="${web.apps.dir}/config" />
+	<property name="social.dir" value="../../../social" />
+	<property name="social.config.dir" value="${social.dir}/config" />
+	<property name="api.dir" value="../../../api" />
+	<property name="api.config.dir" value="${api.dir}/config" />
+	<property name="conf.dir" value="./conf" />
+	<property name="test.dir" value="." />
+	<property name="test.includes.dir" value="${test.dir}/../includes"/>
+	<property name="test.functional.dir" value="../functional" />
+	<property name="clients.dir" value="${api.dir}/clients" />	
+	<property name="reports.dir" value="./reports" />
+	<property name="date.append" value="" description="If you would like each run to generate test and coverage in a directory override this with something like curly DATE curly" />
+	
+	<!-- Java client properties -->
+	<property name="facebook.jar.path" value="${clients.dir}/java/bin/facebook.jar" />
+	<property name="compile.classpath" value=".:..:${clients.dir}/java/bin/json_simple.jar:${clients.dir}/java/bin/BrowserLauncher2-10rc4.jar:${clients.dir}/java/bin/facebook.jar:${clients.dir}/java/bin/junit-4.4.jar:${facebook.jar.path}" />
+
+	<!-- Set deployment properties and other local settings, prefer overrides in your build.local.properties -->
+	<property file="build.properties" />
+	
+	<path id="test.path">
+	  	<pathelement dir="${conf.dir}"/>
+		<pathelement dir="${api.dir}/includes"/>
+		<pathelement dir="${api.config.dir}"/>
+		<pathelement dir="${web.dir}/includes"/>
+		<pathelement dir="${web.config.dir}"/>
+		<pathelement dir="${web.apps.dir}/includes"/>
+		<pathelement dir="${web.apps.config.dir}"/>
+		<pathelement dir="${social.dir}/includes"/>
+		<pathelement dir="${social.config.dir}"/>
+		<pathelement dir="${test.dir}"/>
+		<pathelement dir="${test.functional.dir}"/>
+		<pathelement dir="${clients.dir}/php"/>
+		<pathelement dir="${test.includes.dir}"/>
+	</path>
+
+	<path id="db.path">
+		<pathelement dir="${conf.dir}"/>
+		<pathelement dir="${api.dir}/includes"/>
+		<pathelement dir="${api.config.dir}"/>
+		<pathelement dir="${test.dir}"/>
+		<pathelement dir="${test.functional.dir}"/>
+		<pathelement dir="${clients.dir}/php"/>
+		<pathelement dir="${test.functional.dir}/sql"/>
+	</path>
+	
+	<target name="canvas-tests-php" description="Run the DB test suite">
+	    <phingcall target="simpletest-suite"><property name="suite" value="canvas" /></phingcall>
+	</target>
+
+	<!-- PHP Client Test Suite -->
+	<target name="simpletest-suite" description="Run a simpletest suite">
+		
+		<mkdir dir="${reports.dir}/${suite}${date.append}/tests" />
+		<if>
+			<isset property="coverage"/>
+			<then>
+				<mkdir dir="${reports.dir}/${suite}${date.append}/coverage" />
+			
+				<property name="coverage.do" value="true"/>
+				<coverage-setup database="${reports.dir}/${suite}${date.append}/coverage.db">
+				  <classpath refid="test.path" />
+				  <fileset dir="${src.dir}">
+				    <include name="**/*.php"/>
+				  </fileset>
+				</coverage-setup>
+				<echo>WARNING: Code coverage is not suppored by SimpleTest test suites</echo>
+			</then>
+			<else>
+				<property name="coverage.do" value="false"/>
+			</else>
+		</if>
+	
+		<!-- TODO: This needs to be updated in the simpletest task; for now it's a viscious hack -->
+		<includepath><classpath refid="test.path"/></includepath>
+		<!-- **** WARNING: IF YOU CHECK IN WITH HALTON* SET TO FALSE, YOU MAY BE FORCED TO WEAR A FUNNY HAT FOR UP TO ONE (1) WEEK **** -->
+		<simpletest printsummary="true" haltonfailure="true" haltonerror="true">
+  	 		<!-- Add back in haltonskipped="false" if you have the updated phing -->
+  	 		<!-- formatter type="xml" todir="${reports.dir}/${suite}${date.append}" outfile="tests.xml" / -->
+ 			<fileset dir="${test.dir}">
+      		<include name="${suite}/*TestCase.php"/>	    				
+ 			</fileset>
+		</simpletest>
+		<!-- simpletestreport infile="${reports.dir}/${suite}${date.append}/tests.xml" format="frames" todir="${reports.dir}/${suite}${date.append}/tests" styledir="${conf.dir}"/ -->
+
+		<if>
+			<isset property="coverage"/>
+			<then>
+				<coverage-report outfile="${reports.dir}/${suite}${date.append}/coverage.xml">
+				  <report todir="${reports.dir}/${suite}${date.append}/coverage" styledir="${conf.dir}"/>
+				</coverage-report>
+			</then>
+		</if>
+		
+	</target>
+	
+	<!-- Deploy OpenFB to a Server -->
+	<target name="deploy" description="Call the deploy task defined in main build directory.">
+		<phing phingfile="${web.dir}/build.xml" inheritRefs="false" inheritAll="false" target="deploy" />
+	</target>
+
+	<!-- setup the database for testing -->
+	<target name="rebuild-db" description="drops and re-creates the test database">
+		<!-- Run DB init routines in PHP -->
+		<property name="includePath" value="${conf.dir}:${api.config.dir}:${test.dir}:${test.functional.dir}:${test.functional.dir}/sql:${clients.dir}/php:${api.dir}/includes" />
+		<includepath><classpath refid="db.path"/></includepath>
+		<php expression="include 'AllTestsDbInit.php'" />
+	</target>
+	
+
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<delete>
+		  <fileset dir=".">
+		    <include name="cache-lite*" />
+		  </fileset>
+		</delete>
+
+		<delete dir="${reports.dir}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+	
+</project>

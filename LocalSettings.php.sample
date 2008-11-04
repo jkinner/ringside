@@ -1,0 +1,170 @@
+<?php
+###############################################################################
+# Ringside Local Settings
+#
+# This file defines local configuration settings used within the Ringside
+# Social Application Server. These settings are globally accessible to all
+# components within the Ringside server and will be used to configure their
+# runtime behavior.
+#
+# Note: This file must conform to two basic formatting rules in order for
+# it to be manageable by Ringside itself:
+#
+# 1) each "$name=value;" assignment statement must start on the left-most
+#    column of this file. Any line that starts with $ on the left-most
+#    column is assumed to be an assignment of a configuration setting.
+# 2) you can use the normal comment syntax such as #, // and /* */ to
+#    add comment lines but do not use /* */ to comment out "$name=value;"
+#    assignment statements - it is recommended you set the value of the
+#    assignment to null. If you want to comment out the value, use # or //. 
+###############################################################################
+
+### Database Information ######################################################
+# Defines information that the Ringside server will use to connect to the DB.
+###############################################################################
+$db_type = 'RS_DB_TYPE';
+$db_server = 'RS_DB_SERVER';
+$db_name = 'RS_DB_NAME';
+$db_username = 'RS_DB_USERNAME';
+$db_password = 'RS_DB_PASSWORD';
+
+### E-mail Server Information #################################################
+# Defines connection settings for sending emails
+###############################################################################
+$smtp_server = 'ssl://mail.example.com:999';
+$smtp_username = 'example@example.com';
+$smtp_password = 'password';
+$smtp_use_auth = false;
+$smtp_default_sender = 'no-reply@example.com';
+$smtp_default_sender_name = 'Ringside Server';
+
+### Server Host/Port Endpoint #################################################
+# Defines the host and port that this server is listening to, in the form
+# of "hostname:port". This is typically set to:
+#    {$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}
+###############################################################################
+$myHostPort = "RS_WEBSERVER_HOST_PORT";
+
+### Social Tier Keys ##########################################################
+# These are the API and Secret keys used by the Social tier to authenicate
+# with the API tier. This MUST be configured before running the web based
+# setup. The keys should be between 6 to 8 characters in length.
+###############################################################################
+$socialApiKey = '';
+$socialSecretKey = '';
+
+### Network Key ###############################################################
+# Every WEB/ThirdParty that connects to Ringside must maintain a NETWORK key
+# indicating which WEB is connecting. This the internal network key
+# identifying this Ringside deployment's WEB tier.
+###############################################################################
+$networkKey = 'RS_NETWORK_KEY';
+
+### Web Server Context Paths ##################################################
+# Define the Ringside server's context paths for the different tiers (Web,
+# Social, API) that are deployed in the web server. These context paths
+# (aka "root" paths) define the prefix to all URLs to each tier (i.e. they
+# define the root of their deployments). In a single-stack deployment
+# laid down by the installer, the root path is the same for all
+# tiers (e.g. "/ringside"). In a deployment using an SVN working copy, each
+# tier has its own root path (e.g. "/web", "/social", "/api") - these values
+# are usually overridden by build.local.properties when the software is built.
+# We also define the root deployment location for the demo applications here.
+###############################################################################
+$socialRoot = 'RS_SOCIAL_ROOT';
+$socialUrl = "http://$myHostPort$socialRoot";
+$webRoot = 'RS_WEB_ROOT';
+$webUrl = "http://$myHostPort$webRoot";
+$demoRoot = 'RS_DEMO_ROOT';
+$demoUrl = "http://$myHostPort$demoRoot";
+
+### REST Server ###############################################################
+# The URL endpoint of the REST server. This is the REST Server URL that all
+# REST clients will use to talk to this Ringside instance.
+# If this Ringside installation was not a single-stack deployment (i.e. was
+# not laid down by the installer), you might need to change this to point
+# to the REST server deployed in the API tier.
+###############################################################################
+$serverUrl = "http://$myHostPort$webRoot/restserver.php";
+
+### M3 ########################################################################
+# Settings used to configure the management subsystem within Ringside.
+###############################################################################
+# Where the REST API classes can be found. These paths are relative to
+# the PHP include path.  It is assumed these directories exist somewhere under
+# an include path directory. The paths must be comma-separated.
+#    default: /ringside/rest,/m3/rest,/ringside/api/facebook
+$m3DeployedApiLocations='/ringside/rest,/m3/rest,/ringside/api/facebook';
+
+# Defines where the M3 will store its data.
+# Right now, only 'db' is valid - 'memory' might be a future value allowed
+#    valid values: db
+#    default: db
+$m3Datastore='db';
+
+# Defines where on the file system M3 should write its data.
+#    default: your system's temporary directory
+$m3DataDirectory='RS_DATA_DIR';
+
+# All M3 clients must sign their requests using this M3 secret key; otherwise
+# an improperly signed request will be rejected.
+$m3SecretKey='r1ngs1d3';
+
+# Define the location of your web server install directory.
+# This is so we can find the logs and configuration.
+$m3WebServerInstallDir='RS_APACHE_DIR';
+
+# Enables the m3.operation.evaluatePhpCode REST API.
+# If you disable this, you will reduce the capabilities of the Ringside management tools.
+$m3AllowOperationEvaluatePhpCode=true;
+
+# The maximum size of file allowed to be served by m3.operation.getFileContent REST API
+# Set this to 0 to effectively disable that REST API.
+# If you disable this, you will reduce the capabilities of the Ringside management tools.
+$m3MaxSizeAllowedOperationGetFileContent=1000000;
+
+# Enable Doctrine's database profiler so we can collect statistics from our data access layer 
+$m3DbProfilerEnable=false;
+
+### Support Email #############################################################
+# Set the support email address to be used during installation.
+###############################################################################
+$supportEmail = 'admin@localhost';
+
+### Facebook Specific Configuration ###########################################
+# Settings for Facebook-specific components.
+###############################################################################
+# Turn on/off noisy warning messages caused by the Facebook Rest Client.
+$GLOBALS['facebook_config']['debug']=0;
+
+# Decide whether API clients who originally called Facebook should be able
+# to use their existing Facebook session to authenticate to the API server.
+$trust_facebook = false;
+
+### Social Tier API Client Configuration ######################################
+# Initializes the configuration of the API client used by the Social tier.
+###############################################################################
+require_once('ringside/api/clients/RingsideApiClientsConfig.php');
+RingsideApiClientsConfig::$serverUrl = $serverUrl;
+RingsideApiClientsConfig::$webUrl = $webUrl;
+RingsideApiClientsConfig::$socialUrl = $socialUrl;
+
+### Upload Configuration ######################################################
+# Application and Photo upload base configuration for the htdocs provider.
+###############################################################################
+$uploadRootDir = "." . DIRECTORY_SEPARATOR . "appimages";
+$uploadRootUrl = $webUrl . "/appimages";
+
+### DB Cache ##################################################################
+# This flag sets whether we want caching turned on or off for our database
+###############################################################################
+$useDbCache = false;
+
+### DSL Tag Configuration #####################################################
+# $cacheTags: Turn caching on or off for your tags.
+# $scanTags: Whether to scan for new tags. 
+###############################################################################
+$cacheTags = false; 
+$scanTags = true;
+
+?>

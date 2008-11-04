@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" tests="7" failures="0" errors="0" time="0.473695">
+    <testcase name="testCreate" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="52" time="0.071719"/>
+    <testcase name="testDoNotCreateTwice" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="58" time="0.039063"/>
+    <testcase name="testLink" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="82" time="0.090175"/>
+    <testcase name="testLinkExistingPrincipal" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="99" time="0.071684"/>
+    <testcase name="testLinkExistingPrincipalReverse" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="128" time="0.075779"/>
+    <testcase name="testUnlink" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="157" time="0.076925"/>
+    <testcase name="testGetSubjectsBySubject" class="DatabaseIdMappingServiceTestCase" file="/ringside/workspace/ringside/social/test/functional/db/DatabaseIdMappingServiceTestCase.php" line="176" time="0.048350"/>
+  </testsuite>
+  <testsuite name="RingsideSocialDbSessionTestCase" file="/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbSessionTestCase.php" tests="2" failures="1" errors="0" time="0.008421">
+    <testcase name="testLogSessionHistory" class="RingsideSocialDbSessionTestCase" file="/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbSessionTestCase.php" line="50" time="0.004366">
+      <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testLogSessionHistory(RingsideSocialDbSessionTestCase)
+Failed asserting that <boolean:false> is true.
+Session not logged!
+Failed asserting that <boolean:false> is true.
+
+/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbSessionTestCase.php:71
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+    </testcase>
+    <testcase name="testGetAuthTokenApprovalClass" class="RingsideSocialDbSessionTestCase" file="/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbSessionTestCase.php" line="77" time="0.004055"/>
+  </testsuite>
+  <testsuite name="RingsideSocialDbTrustTestCase" file="/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbTrustTestCase.php" tests="2" failures="0" errors="0" time="0.014714">
+    <testcase name="testGetAllTrustAuthorities" class="RingsideSocialDbTrustTestCase" file="/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbTrustTestCase.php" line="61" time="0.007027"/>
+    <testcase name="testGetOneTrustAuthority" class="RingsideSocialDbTrustTestCase" file="/ringside/workspace/ringside/social/test/functional/db/RingsideSocialDbTrustTestCase.php" line="84" time="0.007687"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AdminCreateAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminCreateAppTestCase.php" tests="3" failures="1" errors="1" time="0.335069">
+    <testsuite name="AdminCreateAppTestCase::testConstructorFailures" tests="2" failures="1" errors="0" time="0.210720">
+      <testcase name="testConstructorFailures" class="AdminCreateAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminCreateAppTestCase.php" line="46" time="0.127776"/>
+      <testcase name="testConstructorFailures" class="AdminCreateAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminCreateAppTestCase.php" line="46" time="0.082944">
+        <failure type="PHPUnit_Framework_AssertionFailedError"><![CDATA[testConstructorFailures(AdminCreateAppTestCase) with data set #1 (3021, 3100, array(3100), array('some new app'))
+Constructor should have failed
+
+/ringside/workspace/ringside/api/test/functional/api/AdminCreateAppTestCase.php:59
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+      </testcase>
+    </testsuite>
+    <testcase name="testExecute" class="AdminCreateAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminCreateAppTestCase.php" line="62" time="0.124349">
+      <error type="OpenFBAPIException"><![CDATA[testExecute(AdminCreateAppTestCase)
+OpenFBAPIException: Application with id 17100 is not a default app: Cross the social graph permissions Error. You can only cross check application information if the calling application is a default application.
+
+/ringside/workspace/ringside/api/test/functional/api/AdminCreateAppTestCase.php:78
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></error>
+    </testcase>
+  </testsuite>
+  <testsuite name="AdminCreateDeleteNetworkPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminCreateDeleteNetworkTestCase.php" tests="1" failures="0" errors="0" time="0.210825">
+    <testcase name="testExecute" class="AdminCreateDeleteNetworkPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminCreateDeleteNetworkTestCase.php" line="33" time="0.210825"/>
+  </testsuite>
+  <testsuite name="AdminDeleteAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminDeleteAppTestCase.php" tests="1" failures="0" errors="1" time="0.130667">
+    <testcase name="testExecute" class="AdminDeleteAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminDeleteAppTestCase.php" line="34" time="0.130667">
+      <error type="OpenFBAPIException"><![CDATA[testExecute(AdminDeleteAppTestCase)
+OpenFBAPIException: Application with id 17100 is not a default app: Cross the social graph permissions Error. You can only cross check application information if the calling application is a default application.
+
+/ringside/workspace/ringside/api/test/functional/api/AdminDeleteAppTestCase.php:50
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></error>
+    </testcase>
+  </testsuite>
+  <testsuite name="AdminGetAppKeysTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppKeysTestCase.php" tests="1" failures="0" errors="0" time="0.187439">
+    <testcase name="testExecute" class="AdminGetAppKeysTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppKeysTestCase.php" line="33" time="0.187439"/>
+  </testsuite>
+  <testsuite name="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" tests="12" failures="0" errors="0" time="1.274147">
+    <testsuite name="AdminGetAppPropertiesTestCase::testConstructor" tests="5" failures="0" errors="0" time="0.454720">
+      <testcase name="testConstructor" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="111" time="0.088945"/>
+      <testcase name="testConstructor" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="111" time="0.087603"/>
+      <testcase name="testConstructor" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="111" time="0.092169"/>
+      <testcase name="testConstructor" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="111" time="0.093849"/>
+      <testcase name="testConstructor" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="111" time="0.092154"/>
+    </testsuite>
+    <testsuite name="AdminGetAppPropertiesTestCase::testExecute" tests="6" failures="0" errors="0" time="0.724026">
+      <testcase name="testExecute" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="169" time="0.118451"/>
+      <testcase name="testExecute" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="169" time="0.119867"/>
+      <testcase name="testExecute" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="169" time="0.120195"/>
+      <testcase name="testExecute" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="169" time="0.117848"/>
+      <testcase name="testExecute" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="169" time="0.124338"/>
+      <testcase name="testExecute" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="169" time="0.123327"/>
+    </testsuite>
+    <testsuite name="AdminGetAppPropertiesTestCase::testPermissionError" tests="1" failures="0" errors="0" time="0.095401">
+      <testcase name="testPermissionError" class="AdminGetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetAppPropertiesTestCase.php" line="208" time="0.095401"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="AdminGetNetworkPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetNetworkPropertiesTestCase.php" tests="1" failures="0" errors="0" time="0.108674">
+    <testcase name="testExecute" class="AdminGetNetworkPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetNetworkPropertiesTestCase.php" line="33" time="0.108674"/>
+  </testsuite>
+  <testsuite name="AdminGetServerInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetServerInfoTestCase.php" tests="1" failures="0" errors="0" time="0.093347">
+    <testcase name="testExecute" class="AdminGetServerInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminGetServerInfoTestCase.php" line="33" time="0.093347"/>
+  </testsuite>
+  <testsuite name="AdminPaymentGatewayTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminPaymentGatewayTestCase.php" tests="1" failures="0" errors="0" time="0.143078">
+    <testcase name="testExecute" class="AdminPaymentGatewayTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminPaymentGatewayTestCase.php" line="33" time="0.143078"/>
+  </testsuite>
+  <testsuite name="AdminSetAppKeysTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminSetAppKeysTestCase.php" tests="1" failures="0" errors="0" time="0.233502">
+    <testcase name="testExecute" class="AdminSetAppKeysTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminSetAppKeysTestCase.php" line="33" time="0.233502"/>
+  </testsuite>
+  <testsuite name="AdminSetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminSetAppPropertiesTestCase.php" tests="1" failures="0" errors="0" time="0.229814">
+    <testcase name="testExecute" class="AdminSetAppPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminSetAppPropertiesTestCase.php" line="32" time="0.229814"/>
+  </testsuite>
+  <testsuite name="AdminSetNetworkPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminSetNetworkPropertiesTestCase.php" tests="1" failures="0" errors="0" time="0.211584">
+    <testcase name="testExecute" class="AdminSetNetworkPropertiesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AdminSetNetworkPropertiesTestCase.php" line="34" time="0.211584"/>
+  </testsuite>
+  <testsuite name="AuthCreateAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthCreateAppSessionTestCase.php" tests="1" failures="0" errors="0" time="0.101050">
+    <testsuite name="AuthCreateAppSessionTestCase::testExecute" tests="1" failures="0" errors="0" time="0.101050">
+      <testcase name="testExecute" class="AuthCreateAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthCreateAppSessionTestCase.php" line="60" time="0.101050"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="AuthCreateTokenTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthCreateTokenTestCase.php" tests="3" failures="0" errors="0" time="0.296387">
+    <testsuite name="AuthCreateTokenTestCase::testExecute" tests="3" failures="0" errors="0" time="0.296387">
+      <testcase name="testExecute" class="AuthCreateTokenTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthCreateTokenTestCase.php" line="62" time="0.098419"/>
+      <testcase name="testExecute" class="AuthCreateTokenTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthCreateTokenTestCase.php" line="62" time="0.099664"/>
+      <testcase name="testExecute" class="AuthCreateTokenTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthCreateTokenTestCase.php" line="62" time="0.098304"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="AuthGetSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthGetSessionTestCase.php" tests="1" failures="0" errors="0" time="0.094604">
+    <testcase name="testDummyFunction" class="AuthGetSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/AuthGetSessionTestCase.php" line="46" time="0.094604"/>
+  </testsuite>
+  <testsuite name="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" tests="14" failures="0" errors="0" time="2.448763">
+    <testsuite name="CommentsAllTestCase::testConstructor" tests="10" failures="0" errors="0" time="0.943109">
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.094525"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.093200"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.094756"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.095018"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.095350"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.094599"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.094396"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.093803"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.093262"/>
+      <testcase name="testConstructor" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="77" time="0.094200"/>
+    </testsuite>
+    <testsuite name="CommentsAllTestCase::testExecute" tests="4" failures="0" errors="0" time="1.505654">
+      <testcase name="testExecute" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="105" time="0.329626"/>
+      <testcase name="testExecute" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="105" time="0.412555"/>
+      <testcase name="testExecute" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="105" time="0.428771"/>
+      <testcase name="testExecute" class="CommentsAllTestCase" file="/ringside/workspace/ringside/api/test/functional/api/CommentsAllTestCase.php" line="105" time="0.334702"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" tests="8" failures="0" errors="0" time="1.037052">
+    <testsuite name="DataGetUserPreferencesTestCase::testConstructor" tests="1" failures="0" errors="0" time="0.092153">
+      <testcase name="testConstructor" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="45" time="0.092153"/>
+    </testsuite>
+    <testsuite name="DataGetUserPreferencesTestCase::testExecute" tests="7" failures="0" errors="0" time="0.944899">
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.122792"/>
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.127589"/>
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.128014"/>
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.128512"/>
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.125990"/>
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.134363"/>
+      <testcase name="testExecute" class="DataGetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferencesTestCase.php" line="97" time="0.177639"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" tests="11" failures="0" errors="0" time="1.243038">
+    <testsuite name="DataGetUserPreferenceTestCase::testConstructor" tests="6" failures="0" errors="0" time="0.594694">
+      <testcase name="testConstructor" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="56" time="0.097423"/>
+      <testcase name="testConstructor" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="56" time="0.098320"/>
+      <testcase name="testConstructor" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="56" time="0.097850"/>
+      <testcase name="testConstructor" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="56" time="0.102890"/>
+      <testcase name="testConstructor" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="56" time="0.098005"/>
+      <testcase name="testConstructor" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="56" time="0.100206"/>
+    </testsuite>
+    <testsuite name="DataGetUserPreferenceTestCase::testExecute" tests="5" failures="0" errors="0" time="0.648344">
+      <testcase name="testExecute" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="81" time="0.126673"/>
+      <testcase name="testExecute" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="81" time="0.144168"/>
+      <testcase name="testExecute" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="81" time="0.125310"/>
+      <testcase name="testExecute" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="81" time="0.127268"/>
+      <testcase name="testExecute" class="DataGetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataGetUserPreferenceTestCase.php" line="81" time="0.124925"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" tests="22" failures="0" errors="0" time="2.527978">
+    <testsuite name="DataSetUserPreferencesTestCase::testConstructor" tests="10" failures="0" errors="0" time="0.939619">
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.094668"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.093526"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.093267"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.093637"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.093660"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.094789"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.093910"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.094123"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.093958"/>
+      <testcase name="testConstructor" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="77" time="0.094082"/>
+    </testsuite>
+    <testsuite name="DataSetUserPreferencesTestCase::testExecute" tests="7" failures="0" errors="0" time="0.947100">
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.124907"/>
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.129841"/>
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.136644"/>
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.130106"/>
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.130637"/>
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.153565"/>
+      <testcase name="testExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="129" time="0.141400"/>
+    </testsuite>
+    <testsuite name="DataSetUserPreferencesTestCase::testReplaceExecute" tests="5" failures="0" errors="0" time="0.641258">
+      <testcase name="testReplaceExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="188" time="0.126788"/>
+      <testcase name="testReplaceExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="188" time="0.132455"/>
+      <testcase name="testReplaceExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="188" time="0.128694"/>
+      <testcase name="testReplaceExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="188" time="0.127861"/>
+      <testcase name="testReplaceExecute" class="DataSetUserPreferencesTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferencesTestCase.php" line="188" time="0.125460"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" tests="13" failures="0" errors="0" time="1.480165">
+    <testsuite name="DataSetUserPreferenceTestCase::testConstructor" tests="6" failures="0" errors="0" time="0.582981">
+      <testcase name="testConstructor" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="44" time="0.093942"/>
+      <testcase name="testConstructor" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="44" time="0.095734"/>
+      <testcase name="testConstructor" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="44" time="0.107989"/>
+      <testcase name="testConstructor" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="44" time="0.094792"/>
+      <testcase name="testConstructor" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="44" time="0.094960"/>
+      <testcase name="testConstructor" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="44" time="0.095564"/>
+    </testsuite>
+    <testsuite name="DataSetUserPreferenceTestCase::testExecute" tests="7" failures="0" errors="0" time="0.897184">
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.124801"/>
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.129856"/>
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.124159"/>
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.125839"/>
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.132018"/>
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.125669"/>
+      <testcase name="testExecute" class="DataSetUserPreferenceTestCase" file="/ringside/workspace/ringside/api/test/functional/api/DataSetUserPreferenceTestCase.php" line="66" time="0.134842"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" tests="6" failures="0" errors="0" time="0.701154">
+    <testcase name="testConstructor" class="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" line="47" time="0.096509"/>
+    <testcase name="testNoSuchEvent" class="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" line="74" time="0.114922"/>
+    <testcase name="testGetOneMembers" class="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" line="90" time="0.113310"/>
+    <testcase name="testGetManyMembers" class="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" line="111" time="0.115403"/>
+    <testcase name="testGetWithPrivateMembers" class="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" line="134" time="0.131312"/>
+    <testcase name="testGetWithClosedMembers" class="EventsGetMembersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetMembersTestCase.php" line="168" time="0.129698"/>
+  </testsuite>
+  <testsuite name="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" tests="18" failures="0" errors="0" time="2.280872">
+    <testcase name="testConstructor" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="55" time="0.094297"/>
+    <testcase name="testEventUserWithOneEvent" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="72" time="0.140209"/>
+    <testcase name="testUserNotFriends" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="105" time="0.103344"/>
+    <testcase name="testEventUserWithManyEvents" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="123" time="0.159862"/>
+    <testcase name="testEventUserWithNoEvents" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="152" time="0.128834"/>
+    <testcase name="testEventUserWithPrivateEvents" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="180" time="0.134234"/>
+    <testcase name="testEventGetByEIDUserHasNoEvents" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="211" time="0.114793"/>
+    <testcase name="testEventGetByEIDwithPrivateEvents" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="227" time="0.116683"/>
+    <testcase name="testEventGetByEIDandUIDandFriends" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="243" time="0.128348"/>
+    <testcase name="testEventGetByEIDandUIDandNotFriends" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="259" time="0.112892"/>
+    <testcase name="testEventFilterRsvpStatusBadData" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="290" time="0.108889"/>
+    <testcase name="testEventFilterRsvpStatusAttending" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="305" time="0.116784"/>
+    <testcase name="testEventFilterRsvpStatusNotSure" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="320" time="0.122121"/>
+    <testcase name="testEventFilterRsvpStatusDeclined" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="335" time="0.120894"/>
+    <testcase name="testEventFilterRsvpStatusNotReplied" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="351" time="0.119780"/>
+    <testcase name="testEventFilterStart" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="367" time="0.120822"/>
+    <testcase name="testEventFilterEnd" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="384" time="0.115782"/>
+    <testcase name="testEventFilterStartEnd" class="EventsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/EventsGetTestCase.php" line="400" time="0.222303"/>
+  </testsuite>
+  <testsuite name="FavoritesDeleteTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesDeleteTestCase.php" tests="2" failures="0" errors="0" time="0.363093">
+    <testcase name="testConstructor" class="FavoritesDeleteTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesDeleteTestCase.php" line="40" time="0.095700"/>
+    <testcase name="testExecute" class="FavoritesDeleteTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesDeleteTestCase.php" line="119" time="0.267393"/>
+  </testsuite>
+  <testsuite name="FavoritesFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesFBMLTestCase.php" tests="3" failures="0" errors="0" time="0.405438">
+    <testcase name="testGetFBMLConstructor" class="FavoritesFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesFBMLTestCase.php" line="40" time="0.096210"/>
+    <testcase name="testSetFBMLConstructor" class="FavoritesFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesFBMLTestCase.php" line="121" time="0.118859"/>
+    <testcase name="testExecute" class="FavoritesFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesFBMLTestCase.php" line="219" time="0.190369"/>
+  </testsuite>
+  <testsuite name="FavoritesGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesGetTestCase.php" tests="2" failures="0" errors="0" time="0.297756">
+    <testcase name="testConstructor" class="FavoritesGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesGetTestCase.php" line="40" time="0.095502"/>
+    <testcase name="testExecute" class="FavoritesGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesGetTestCase.php" line="113" time="0.202254"/>
+  </testsuite>
+  <testsuite name="FavoritesGetUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesGetUsersTestCase.php" tests="2" failures="0" errors="0" time="0.251888">
+    <testcase name="testConstructor" class="FavoritesGetUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesGetUsersTestCase.php" line="39" time="0.095692"/>
+    <testcase name="testExecute" class="FavoritesGetUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesGetUsersTestCase.php" line="110" time="0.156196"/>
+  </testsuite>
+  <testsuite name="FavoritesListTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesListTestCase.php" tests="3" failures="0" errors="0" time="0.311221">
+    <testcase name="testCreateListConstructor" class="FavoritesListTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesListTestCase.php" line="41" time="0.096836"/>
+    <testcase name="testGetListConstructor" class="FavoritesListTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesListTestCase.php" line="68" time="0.096451"/>
+    <testcase name="testExecute" class="FavoritesListTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesListTestCase.php" line="99" time="0.117934"/>
+  </testsuite>
+  <testsuite name="FavoritesSetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesSetTestCase.php" tests="2" failures="0" errors="0" time="0.302849">
+    <testcase name="testConstructor" class="FavoritesSetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesSetTestCase.php" line="39" time="0.096294"/>
+    <testcase name="testExecute" class="FavoritesSetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FavoritesSetTestCase.php" line="111" time="0.206555"/>
+  </testsuite>
+  <testsuite name="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" tests="9" failures="0" errors="0" time="1.745409">
+    <testcase name="testConstructor" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="44" time="0.006913"/>
+    <testsuite name="FbmlRefreshImgSrcTestCase::testSetRefreshImgSrc" tests="5" failures="0" errors="0" time="1.720469">
+      <testcase name="testSetRefreshImgSrc" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="79" time="0.277111"/>
+      <testcase name="testSetRefreshImgSrc" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="79" time="0.213934"/>
+      <testcase name="testSetRefreshImgSrc" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="79" time="0.249011"/>
+      <testcase name="testSetRefreshImgSrc" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="79" time="0.581946"/>
+      <testcase name="testSetRefreshImgSrc" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="79" time="0.398467"/>
+    </testsuite>
+    <testsuite name="FbmlRefreshImgSrcTestCase::testSetRefreshImgSrcBadUrl" tests="3" failures="0" errors="0" time="0.018027">
+      <testcase name="testSetRefreshImgSrcBadUrl" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="111" time="0.005628"/>
+      <testcase name="testSetRefreshImgSrcBadUrl" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="111" time="0.006615"/>
+      <testcase name="testSetRefreshImgSrcBadUrl" class="FbmlRefreshImgSrcTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshImgSrcTestCase.php" line="111" time="0.005784"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" tests="6" failures="0" errors="0" time="1.096329">
+    <testcase name="testConstructor" class="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" line="36" time="0.097920"/>
+    <testsuite name="FbmlRefreshRefUrlTestCase::testSetRefreshRefUrl" tests="2" failures="0" errors="0" time="0.710951">
+      <testcase name="testSetRefreshRefUrl" class="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" line="79" time="0.334595"/>
+      <testcase name="testSetRefreshRefUrl" class="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" line="79" time="0.376356"/>
+    </testsuite>
+    <testsuite name="FbmlRefreshRefUrlTestCase::testSetRefreshRefUrlBadUrl" tests="3" failures="0" errors="0" time="0.287458">
+      <testcase name="testSetRefreshRefUrlBadUrl" class="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" line="102" time="0.097965"/>
+      <testcase name="testSetRefreshRefUrlBadUrl" class="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" line="102" time="0.095249"/>
+      <testcase name="testSetRefreshRefUrlBadUrl" class="FbmlRefreshRefUrlTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlRefreshRefUrlTestCase.php" line="102" time="0.094244"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FbmlSetRefHandleTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlSetRefHandleTestCase.php" tests="4" failures="0" errors="0" time="0.404463">
+    <testcase name="testConstructor" class="FbmlSetRefHandleTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlSetRefHandleTestCase.php" line="36" time="0.096019"/>
+    <testsuite name="FbmlSetRefHandleTestCase::testSetRefHandle" tests="3" failures="0" errors="0" time="0.308444">
+      <testcase name="testSetRefHandle" class="FbmlSetRefHandleTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlSetRefHandleTestCase.php" line="87" time="0.098329"/>
+      <testcase name="testSetRefHandle" class="FbmlSetRefHandleTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlSetRefHandleTestCase.php" line="87" time="0.106725"/>
+      <testcase name="testSetRefHandle" class="FbmlSetRefHandleTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FbmlSetRefHandleTestCase.php" line="87" time="0.103390"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" tests="10" failures="0" errors="0" time="1.073097">
+    <testsuite name="FeedGetTestCase::testGet" tests="10" failures="0" errors="0" time="1.073097">
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.107124"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.109154"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.105985"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.109608"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.106687"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.109269"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.108662"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.103616"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.103353"/>
+      <testcase name="testGet" class="FeedGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedGetTestCase.php" line="51" time="0.109639"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" tests="9" failures="0" errors="0" time="0.918166">
+    <testsuite name="FeedPublishActionOfUserTestCase::testConstructor" tests="5" failures="0" errors="0" time="0.471913">
+      <testcase name="testConstructor" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="51" time="0.093646"/>
+      <testcase name="testConstructor" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="51" time="0.095698"/>
+      <testcase name="testConstructor" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="51" time="0.094940"/>
+      <testcase name="testConstructor" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="51" time="0.093743"/>
+      <testcase name="testConstructor" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="51" time="0.093886"/>
+    </testsuite>
+    <testsuite name="FeedPublishActionOfUserTestCase::testExecute" tests="4" failures="0" errors="0" time="0.446253">
+      <testcase name="testExecute" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="80" time="0.101503"/>
+      <testcase name="testExecute" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="80" time="0.131037"/>
+      <testcase name="testExecute" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="80" time="0.109830"/>
+      <testcase name="testExecute" class="FeedPublishActionOfUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishActionOfUserTestCase.php" line="80" time="0.103883"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" tests="9" failures="0" errors="0" time="0.915373">
+    <testsuite name="FeedPublishStoryToUserTestCase::testConstructor" tests="5" failures="0" errors="0" time="0.477141">
+      <testcase name="testConstructor" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="49" time="0.098447"/>
+      <testcase name="testConstructor" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="49" time="0.096538"/>
+      <testcase name="testConstructor" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="49" time="0.095594"/>
+      <testcase name="testConstructor" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="49" time="0.094361"/>
+      <testcase name="testConstructor" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="49" time="0.092201"/>
+    </testsuite>
+    <testsuite name="FeedPublishStoryToUserTestCase::testExecute" tests="4" failures="0" errors="0" time="0.438232">
+      <testcase name="testExecute" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="78" time="0.100974"/>
+      <testcase name="testExecute" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="78" time="0.109008"/>
+      <testcase name="testExecute" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="78" time="0.108616"/>
+      <testcase name="testExecute" class="FeedPublishStoryToUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishStoryToUserTestCase.php" line="78" time="0.119634"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" tests="32" failures="0" errors="0" time="3.244794">
+    <testsuite name="FeedPublishTemplatizedActionTestCase::testConstructor" tests="9" failures="0" errors="0" time="0.858833">
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.101873"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.093237"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.095848"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.094593"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.098024"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.095228"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.093196"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.093848"/>
+      <testcase name="testConstructor" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="69" time="0.092986"/>
+    </testsuite>
+    <testsuite name="FeedPublishTemplatizedActionTestCase::testExecute" tests="23" failures="0" errors="0" time="2.385961">
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.094001"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.101628"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.108132"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.111442"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.116720"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.105500"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.113495"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.099538"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.103408"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.100351"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.095362"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.095232"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.094633"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.101948"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.105392"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.115620"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.111957"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.098542"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.093721"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.094010"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.094603"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.100855"/>
+      <testcase name="testExecute" class="FeedPublishTemplatizedActionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FeedPublishTemplatizedActionTestCase.php" line="216" time="0.129871"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FqlQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FQLQueryTestCase.php" tests="1" failures="0" errors="0" time="0.109347">
+    <testcase name="testExecute" class="FqlQueryTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FQLQueryTestCase.php" line="37" time="0.109347"/>
+  </testsuite>
+  <testsuite name="FriendsAreFriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsAreFriendsTestCase.php" tests="2" failures="0" errors="0" time="0.227867">
+    <testcase name="testConstructor" class="FriendsAreFriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsAreFriendsTestCase.php" line="35" time="0.097367"/>
+    <testcase name="testExecute" class="FriendsAreFriendsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsAreFriendsTestCase.php" line="98" time="0.130500"/>
+  </testsuite>
+  <testsuite name="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" tests="7" failures="0" errors="0" time="0.765101">
+    <testsuite name="FriendsGetAppUsersTestCase::testConstructor" tests="2" failures="0" errors="0" time="0.190373">
+      <testcase name="testConstructor" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="49" time="0.093997"/>
+      <testcase name="testConstructor" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="49" time="0.096376"/>
+    </testsuite>
+    <testsuite name="FriendsGetAppUsersTestCase::testExecute" tests="5" failures="0" errors="0" time="0.574728">
+      <testcase name="testExecute" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="76" time="0.118982"/>
+      <testcase name="testExecute" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="76" time="0.116859"/>
+      <testcase name="testExecute" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="76" time="0.117245"/>
+      <testcase name="testExecute" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="76" time="0.117762"/>
+      <testcase name="testExecute" class="FriendsGetAppUsersTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetAppUsersTestCase.php" line="76" time="0.103880"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="FriendsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetTestCase.php" tests="5" failures="0" errors="0" time="0.510000">
+    <testcase name="testConstructor" class="FriendsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetTestCase.php" line="40" time="0.094107"/>
+    <testsuite name="FriendsGetTestCase::testExecute" tests="4" failures="0" errors="0" time="0.415893">
+      <testcase name="testExecute" class="FriendsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetTestCase.php" line="59" time="0.102908"/>
+      <testcase name="testExecute" class="FriendsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetTestCase.php" line="59" time="0.104302"/>
+      <testcase name="testExecute" class="FriendsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetTestCase.php" line="59" time="0.104878"/>
+      <testcase name="testExecute" class="FriendsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/FriendsGetTestCase.php" line="59" time="0.103805"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="ItemsGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsGetInfoTestCase.php" tests="2" failures="0" errors="0" time="0.214734">
+    <testcase name="testConstructor" class="ItemsGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsGetInfoTestCase.php" line="39" time="0.093577"/>
+    <testcase name="testExecute" class="ItemsGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsGetInfoTestCase.php" line="81" time="0.121157"/>
+  </testsuite>
+  <testsuite name="ItemsRemoveTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsRemoveTestCase.php" tests="2" failures="0" errors="0" time="0.222940">
+    <testcase name="testConstructor" class="ItemsRemoveTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsRemoveTestCase.php" line="39" time="0.093298"/>
+    <testcase name="testExecute" class="ItemsRemoveTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsRemoveTestCase.php" line="69" time="0.129642"/>
+  </testsuite>
+  <testsuite name="ItemsSetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsSetInfoTestCase.php" tests="2" failures="0" errors="0" time="0.216631">
+    <testcase name="testConstructor" class="ItemsSetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsSetInfoTestCase.php" line="39" time="0.096396"/>
+    <testcase name="testExecute" class="ItemsSetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ItemsSetInfoTestCase.php" line="99" time="0.120235"/>
+  </testsuite>
+  <testsuite name="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" tests="11" failures="0" errors="0" time="1.397862">
+    <testcase name="testConstructor" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="54" time="0.091999"/>
+    <testsuite name="NotificationsGetTestCase::testExecute" tests="10" failures="0" errors="0" time="1.305863">
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.138273"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.127792"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.132228"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.134537"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.130130"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.128928"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.127843"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.128521"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.129113"/>
+      <testcase name="testExecute" class="NotificationsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsGetTestCase.php" line="122" time="0.128498"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" tests="7" failures="0" errors="0" time="0.894258">
+    <testsuite name="NotificationsSendEmailTestCase::testConstructor" tests="4" failures="0" errors="0" time="0.386833">
+      <testcase name="testConstructor" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="43" time="0.104585"/>
+      <testcase name="testConstructor" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="43" time="0.094108"/>
+      <testcase name="testConstructor" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="43" time="0.094075"/>
+      <testcase name="testConstructor" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="43" time="0.094065"/>
+    </testsuite>
+    <testsuite name="NotificationsSendEmailTestCase::testExecute" tests="3" failures="0" errors="0" time="0.507425">
+      <testcase name="testExecute" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="63" time="0.177382"/>
+      <testcase name="testExecute" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="63" time="0.192282"/>
+      <testcase name="testExecute" class="NotificationsSendEmailTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendEmailTestCase.php" line="63" time="0.137761"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" tests="7" failures="0" errors="0" time="1.327404">
+    <testsuite name="NotificationsSendTestCase::testConstructor" tests="3" failures="0" errors="0" time="0.282204">
+      <testcase name="testConstructor" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="47" time="0.094294"/>
+      <testcase name="testConstructor" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="47" time="0.094149"/>
+      <testcase name="testConstructor" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="47" time="0.093761"/>
+    </testsuite>
+    <testsuite name="NotificationsSendTestCase::testExecute" tests="4" failures="0" errors="0" time="1.045200">
+      <testcase name="testExecute" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="70" time="0.199191"/>
+      <testcase name="testExecute" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="70" time="0.265234"/>
+      <testcase name="testExecute" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="70" time="0.340417"/>
+      <testcase name="testExecute" class="NotificationsSendTestCase" file="/ringside/workspace/ringside/api/test/functional/api/NotificationsSendTestCase.php" line="70" time="0.240358"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="OpenFBAPITestCase" file="/ringside/workspace/ringside/api/test/functional/api/OpenFBAPITestCase.php" tests="3" failures="0" errors="0" time="0.283557">
+    <testcase name="testConstructor" class="OpenFBAPITestCase" file="/ringside/workspace/ringside/api/test/functional/api/OpenFBAPITestCase.php" line="41" time="0.095228"/>
+    <testcase name="testvalidateRequiredParams" class="OpenFBAPITestCase" file="/ringside/workspace/ringside/api/test/functional/api/OpenFBAPITestCase.php" line="52" time="0.094667"/>
+    <testcase name="testcreateAlbumLink" class="OpenFBAPITestCase" file="/ringside/workspace/ringside/api/test/functional/api/OpenFBAPITestCase.php" line="67" time="0.093662"/>
+  </testsuite>
+  <testsuite name="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" tests="30" failures="0" errors="0" time="3.173698">
+    <testsuite name="PagesGetInfoTestCase::testConstructor" tests="8" failures="0" errors="0" time="0.772869">
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.093547"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.094072"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.093900"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.095076"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.113118"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.094437"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.094371"/>
+      <testcase name="testConstructor" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="77" time="0.094348"/>
+    </testsuite>
+    <testsuite name="PagesGetInfoTestCase::testExecute" tests="22" failures="0" errors="0" time="2.400829">
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.107398"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.106589"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.103974"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.104926"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.104655"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.104653"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.106851"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.106472"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.105898"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.107811"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.107915"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.106464"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.106638"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.126782"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.109801"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.133119"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.107402"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.109558"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.105582"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.110111"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.108536"/>
+      <testcase name="testExecute" class="PagesGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesGetInfoTestCase.php" line="257" time="0.109694"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" tests="6" failures="0" errors="0" time="0.589522">
+    <testsuite name="PagesIsAdminTestCase::testConstructor" tests="2" failures="0" errors="0" time="0.188200">
+      <testcase name="testConstructor" class="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" line="61" time="0.094560"/>
+      <testcase name="testConstructor" class="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" line="61" time="0.093640"/>
+    </testsuite>
+    <testsuite name="PagesIsAdminTestCase::testExecute" tests="4" failures="0" errors="0" time="0.401322">
+      <testcase name="testExecute" class="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" line="89" time="0.099883"/>
+      <testcase name="testExecute" class="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" line="89" time="0.100130"/>
+      <testcase name="testExecute" class="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" line="89" time="0.100364"/>
+      <testcase name="testExecute" class="PagesIsAdminTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAdminTestCase.php" line="89" time="0.100945"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" tests="6" failures="0" errors="0" time="0.612486">
+    <testsuite name="PagesIsAppAddedTestCase::testConstructor" tests="2" failures="0" errors="0" time="0.210247">
+      <testcase name="testConstructor" class="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" line="63" time="0.110330"/>
+      <testcase name="testConstructor" class="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" line="63" time="0.099917"/>
+    </testsuite>
+    <testsuite name="PagesIsAppAddedTestCase::testExecute" tests="4" failures="0" errors="0" time="0.402239">
+      <testcase name="testExecute" class="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" line="91" time="0.100609"/>
+      <testcase name="testExecute" class="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" line="91" time="0.100935"/>
+      <testcase name="testExecute" class="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" line="91" time="0.100078"/>
+      <testcase name="testExecute" class="PagesIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsAppAddedTestCase.php" line="91" time="0.100617"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" tests="12" failures="0" errors="0" time="1.227568">
+    <testsuite name="PagesIsFanTestCase::testConstructor" tests="2" failures="0" errors="0" time="0.191008">
+      <testcase name="testConstructor" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="63" time="0.095701"/>
+      <testcase name="testConstructor" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="63" time="0.095307"/>
+    </testsuite>
+    <testsuite name="PagesIsFanTestCase::testExecute" tests="10" failures="0" errors="0" time="1.036561">
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.101419"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.102470"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.100998"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.098073"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.107959"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.108849"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.107671"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.103036"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.102922"/>
+      <testcase name="testExecute" class="PagesIsFanTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PagesIsFanTestCase.php" line="97" time="0.103163"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="PhotosAddTagTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosAddTagTestCase.php" tests="2" failures="0" errors="0" time="0.299000">
+    <testcase name="testConstructor" class="PhotosAddTagTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosAddTagTestCase.php" line="32" time="0.101847"/>
+    <testcase name="testExecute" class="PhotosAddTagTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosAddTagTestCase.php" line="153" time="0.197153"/>
+  </testsuite>
+  <testsuite name="PhotosCreateAlbumTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosCreateAlbumTestCase.php" tests="2" failures="0" errors="0" time="0.231098">
+    <testcase name="testConstructor" class="PhotosCreateAlbumTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosCreateAlbumTestCase.php" line="33" time="0.108505"/>
+    <testcase name="testExecute" class="PhotosCreateAlbumTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosCreateAlbumTestCase.php" line="72" time="0.122593"/>
+  </testsuite>
+  <testsuite name="PhotosGetAlbumsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetAlbumsTestCase.php" tests="2" failures="0" errors="0" time="0.274511">
+    <testcase name="testConstructor" class="PhotosGetAlbumsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetAlbumsTestCase.php" line="32" time="0.098913"/>
+    <testcase name="testExecute" class="PhotosGetAlbumsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetAlbumsTestCase.php" line="85" time="0.175598"/>
+  </testsuite>
+  <testsuite name="PhotosGetTagsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetTagsTestCase.php" tests="2" failures="0" errors="0" time="0.219385">
+    <testcase name="testConstructor" class="PhotosGetTagsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetTagsTestCase.php" line="32" time="0.094852"/>
+    <testcase name="testExecute" class="PhotosGetTagsTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetTagsTestCase.php" line="77" time="0.124533"/>
+  </testsuite>
+  <testsuite name="PhotosGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetTestCase.php" tests="2" failures="0" errors="0" time="0.310342">
+    <testcase name="testConstructor" class="PhotosGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetTestCase.php" line="31" time="0.098539"/>
+    <testcase name="testExecute" class="PhotosGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/PhotosGetTestCase.php" line="114" time="0.211803"/>
+  </testsuite>
+  <testsuite name="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" tests="12" failures="2" errors="0" time="1.273452">
+    <testcase name="testConstructor" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="44" time="0.094096"/>
+    <testcase name="testProfileGetFBMLUserHasAppAndFbml" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="65" time="0.123997"/>
+    <testcase name="testProfileGetFBMLNoSuchUser" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="103" time="0.101855"/>
+    <testcase name="testProfileGetFBMLUserDoesNotHaveApp" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="117" time="0.102918"/>
+    <testcase name="testProfileGetFBMLUserasAppEmptyFBML" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="130" time="0.104257"/>
+    <testcase name="testProfileGetFBMLUserasAppNoFBML" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="143" time="0.103656"/>
+    <testsuite name="ProfileGetFBMLTestCase::testProfileGetFBMLAids" tests="6" failures="2" errors="0" time="0.642673">
+      <testcase name="testProfileGetFBMLAids" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="178" time="0.104973"/>
+      <testcase name="testProfileGetFBMLAids" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="178" time="0.104592"/>
+      <testcase name="testProfileGetFBMLAids" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="178" time="0.103089"/>
+      <testcase name="testProfileGetFBMLAids" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="178" time="0.120845">
+        <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testProfileGetFBMLAids(ProfileGetFBMLTestCase) with data set #3 ('7100', '7001', '7105', '<![CDATA[helloworld]]]]><![CDATA[>', true)
+Failed asserting that <boolean:true> is false.
+
+/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php:188
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+      </testcase>
+      <testcase name="testProfileGetFBMLAids" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="178" time="0.102795">
+        <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testProfileGetFBMLAids(ProfileGetFBMLTestCase) with data set #4 ('7105', '7001', '7100', '<![CDATA[helloworld]]]]><![CDATA[>', true)
+Failed asserting that <boolean:true> is false.
+
+/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php:188
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+      </testcase>
+      <testcase name="testProfileGetFBMLAids" class="ProfileGetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileGetFBMLTestCase.php" line="178" time="0.106379"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="ProfileSetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileSetFBMLTestCase.php" tests="5" failures="0" errors="0" time="0.667742">
+    <testcase name="testConstructor" class="ProfileSetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileSetFBMLTestCase.php" line="46" time="0.094604"/>
+    <testcase name="testProfileSetFBMLUserHasAppAndFbml" class="ProfileSetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileSetFBMLTestCase.php" line="86" time="0.190044"/>
+    <testcase name="testProfileSetFBMLUserHasAppAndEmptyFBML" class="ProfileSetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileSetFBMLTestCase.php" line="145" time="0.125624"/>
+    <testcase name="testProfileSetFBMLUserHasAppAndnullFBML" class="ProfileSetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileSetFBMLTestCase.php" line="166" time="0.119034"/>
+    <testcase name="testProfileSetFBMLUserDoesNotHaveApp" class="ProfileSetFBMLTestCase" file="/ringside/workspace/ringside/api/test/functional/api/ProfileSetFBMLTestCase.php" line="186" time="0.138436"/>
+  </testsuite>
+  <testsuite name="RatingsGetAverageTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsGetAverageTestCase.php" tests="2" failures="0" errors="0" time="0.254040">
+    <testcase name="testConstructor" class="RatingsGetAverageTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsGetAverageTestCase.php" line="35" time="0.104453"/>
+    <testcase name="testExecute" class="RatingsGetAverageTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsGetAverageTestCase.php" line="74" time="0.149587"/>
+  </testsuite>
+  <testsuite name="RatingsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsGetTestCase.php" tests="2" failures="0" errors="0" time="0.219810">
+    <testcase name="testConstructor" class="RatingsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsGetTestCase.php" line="36" time="0.100733"/>
+    <testcase name="testExecute" class="RatingsGetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsGetTestCase.php" line="82" time="0.119077"/>
+  </testsuite>
+  <testsuite name="RatingsSetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsSetTestCase.php" tests="2" failures="0" errors="0" time="0.219871">
+    <testcase name="testConstructor" class="RatingsSetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsSetTestCase.php" line="36" time="0.097718"/>
+    <testcase name="testExecute" class="RatingsSetTestCase" file="/ringside/workspace/ringside/api/test/functional/api/RatingsSetTestCase.php" line="87" time="0.122153"/>
+  </testsuite>
+  <testsuite name="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" tests="6" failures="0" errors="0" time="0.676343">
+    <testsuite name="SocialPayUserHasPaidTestCase::testConstructor" tests="1" failures="0" errors="0" time="0.094408">
+      <testcase name="testConstructor" class="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" line="48" time="0.094408"/>
+    </testsuite>
+    <testsuite name="SocialPayUserHasPaidTestCase::testExecute" tests="5" failures="0" errors="0" time="0.581935">
+      <testcase name="testExecute" class="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" line="77" time="0.113295"/>
+      <testcase name="testExecute" class="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" line="77" time="0.137647"/>
+      <testcase name="testExecute" class="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" line="77" time="0.114973"/>
+      <testcase name="testExecute" class="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" line="77" time="0.107611"/>
+      <testcase name="testExecute" class="SocialPayUserHasPaidTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SocialPayUserHasPaidTestCase.php" line="77" time="0.108409"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUsersToAppTestCase.php" tests="2" failures="0" errors="0" time="1.366368">
+    <testsuite name="SubscribeUsersToAppTestCase::testExecute" tests="2" failures="0" errors="0" time="1.366368">
+      <testcase name="testExecute" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUsersToAppTestCase.php" line="56" time="1.252742"/>
+      <testcase name="testExecute" class="SubscribeUsersToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUsersToAppTestCase.php" line="56" time="0.113626"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" tests="11" failures="0" errors="0" time="4.312179">
+    <testsuite name="SubscribeUserToAppTestCase::testExecute" tests="11" failures="0" errors="0" time="4.312179">
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.876135"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.952012"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.885346"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.877850"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.103044"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.102312"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.103108"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.103373"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.103560"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.103116"/>
+      <testcase name="testExecute" class="SubscribeUserToAppTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscribeUserToAppTestCase.php" line="101" time="0.102323"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="SubscriptionsAppPlansTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscriptionsAppPlansTestCase.php" tests="5" failures="0" errors="0" time="0.527870">
+    <testsuite name="SubscriptionsAppPlansTestCase::testConstructor" tests="2" failures="0" errors="0" time="0.187567">
+      <testcase name="testConstructor" class="SubscriptionsAppPlansTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscriptionsAppPlansTestCase.php" line="52" time="0.093861"/>
+      <testcase name="testConstructor" class="SubscriptionsAppPlansTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscriptionsAppPlansTestCase.php" line="52" time="0.093706"/>
+    </testsuite>
+    <testsuite name="SubscriptionsAppPlansTestCase::testGet" tests="1" failures="0" errors="0" time="0.102359">
+      <testcase name="testGet" class="SubscriptionsAppPlansTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscriptionsAppPlansTestCase.php" line="80" time="0.102359"/>
+    </testsuite>
+    <testsuite name="SubscriptionsAppPlansTestCase::testGetNegative" tests="1" failures="0" errors="0" time="0.100544">
+      <testcase name="testGetNegative" class="SubscriptionsAppPlansTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscriptionsAppPlansTestCase.php" line="125" time="0.100544"/>
+    </testsuite>
+    <testsuite name="SubscriptionsAppPlansTestCase::testAdd" tests="1" failures="0" errors="0" time="0.137400">
+      <testcase name="testAdd" class="SubscriptionsAppPlansTestCase" file="/ringside/workspace/ringside/api/test/functional/api/SubscriptionsAppPlansTestCase.php" line="156" time="0.137400"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="UserGetAppListTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserGetAppListTestCase.php" tests="1" failures="0" errors="0" time="0.119788">
+    <testcase name="testExecute" class="UserGetAppListTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserGetAppListTestCase.php" line="31" time="0.119788"/>
+  </testsuite>
+  <testsuite name="UserIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserIsAppAddedTestCase.php" tests="4" failures="0" errors="0" time="0.442185">
+    <testcase name="testConstructor" class="UserIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserIsAppAddedTestCase.php" line="40" time="0.094973"/>
+    <testcase name="testUserWithAppEnabled" class="UserIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserIsAppAddedTestCase.php" line="66" time="0.144403"/>
+    <testcase name="testUserWithAppDisabled" class="UserIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserIsAppAddedTestCase.php" line="84" time="0.101306"/>
+    <testcase name="testUserWithAppNotAvailaible" class="UserIsAppAddedTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UserIsAppAddedTestCase.php" line="100" time="0.101503"/>
+  </testsuite>
+  <testsuite name="UsersGetAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetAppSessionTestCase.php" tests="5" failures="0" errors="0" time="0.557921">
+    <testsuite name="UsersGetAppSessionTestCase::testConstructor" tests="4" failures="0" errors="0" time="0.438676">
+      <testcase name="testConstructor" class="UsersGetAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetAppSessionTestCase.php" line="50" time="0.153153"/>
+      <testcase name="testConstructor" class="UsersGetAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetAppSessionTestCase.php" line="50" time="0.094886"/>
+      <testcase name="testConstructor" class="UsersGetAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetAppSessionTestCase.php" line="50" time="0.095203"/>
+      <testcase name="testConstructor" class="UsersGetAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetAppSessionTestCase.php" line="50" time="0.095434"/>
+    </testsuite>
+    <testsuite name="UsersGetAppSessionTestCase::testExecute" tests="1" failures="0" errors="0" time="0.119245">
+      <testcase name="testExecute" class="UsersGetAppSessionTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetAppSessionTestCase.php" line="77" time="0.119245"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" tests="6" failures="0" errors="0" time="0.688239">
+    <testsuite name="UsersGetInfoTestCase::testCases" tests="4" failures="0" errors="0" time="0.431466">
+      <testcase name="testCases" class="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" line="71" time="0.108640"/>
+      <testcase name="testCases" class="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" line="71" time="0.106767"/>
+      <testcase name="testCases" class="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" line="71" time="0.106223"/>
+      <testcase name="testCases" class="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" line="71" time="0.109836"/>
+    </testsuite>
+    <testcase name="testExecute" class="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" line="82" time="0.150620"/>
+    <testcase name="testMultipleUserExecute" class="UsersGetInfoTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetInfoTestCase.php" line="251" time="0.106153"/>
+  </testsuite>
+  <testsuite name="UsersGetLoggedInUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetLoggedInUserTestCase.php" tests="2" failures="0" errors="0" time="0.193420">
+    <testcase name="testConstructor" class="UsersGetLoggedInUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetLoggedInUserTestCase.php" line="31" time="0.095371"/>
+    <testcase name="testExecute" class="UsersGetLoggedInUserTestCase" file="/ringside/workspace/ringside/api/test/functional/api/UsersGetLoggedInUserTestCase.php" line="42" time="0.098049"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" tests="7" failures="0" errors="0" time="2.809488">
+    <testsuite name="fbCommentsTestCase::testFbCommentsBasic" tests="4" failures="0" errors="0" time="2.799663">
+      <testcase name="testFbCommentsBasic" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="89" time="2.789786"/>
+      <testcase name="testFbCommentsBasic" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="89" time="0.003193"/>
+      <testcase name="testFbCommentsBasic" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="89" time="0.003290"/>
+      <testcase name="testFbCommentsBasic" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="89" time="0.003394"/>
+    </testsuite>
+    <testsuite name="fbCommentsTestCase::testFbCommentsAdvanced" tests="2" failures="0" errors="0" time="0.006476">
+      <testcase name="testFbCommentsAdvanced" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="104" time="0.003158"/>
+      <testcase name="testFbCommentsAdvanced" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="104" time="0.003318"/>
+    </testsuite>
+    <testcase name="testFbCommentsNumposts" class="fbCommentsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbCommentsTestCase.php" line="126" time="0.003349"/>
+  </testsuite>
+  <testsuite name="fbDashboardTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbDashboardTestCase.php" tests="2" failures="0" errors="0" time="0.006081">
+    <testsuite name="fbDashboardTestCase::testFbDashboard" tests="2" failures="0" errors="0" time="0.006081">
+      <testcase name="testFbDashboard" class="fbDashboardTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbDashboardTestCase.php" line="55" time="0.002860"/>
+      <testcase name="testFbDashboard" class="fbDashboardTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbDashboardTestCase.php" line="55" time="0.003221"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbEditorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbEditorTestCase.php" tests="3" failures="0" errors="0" time="0.013733">
+    <testsuite name="fbEditorTestCase::testFbEditor" tests="1" failures="0" errors="0" time="0.004427">
+      <testcase name="testFbEditor" class="fbEditorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbEditorTestCase.php" line="73" time="0.004427"/>
+    </testsuite>
+    <testcase name="testFbEditorCustomAjaxy" class="fbEditorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbEditorTestCase.php" line="96" time="0.005867"/>
+    <testcase name="testFbEditorCustomHrule" class="fbEditorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbEditorTestCase.php" line="136" time="0.003439"/>
+  </testsuite>
+  <testsuite name="fbErrorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbErrorTestCase.php" tests="4" failures="0" errors="0" time="0.013561">
+    <testsuite name="fbErrorTestCase::testFbError" tests="4" failures="0" errors="0" time="0.013561">
+      <testcase name="testFbError" class="fbErrorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbErrorTestCase.php" line="43" time="0.002802"/>
+      <testcase name="testFbError" class="fbErrorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbErrorTestCase.php" line="43" time="0.003202"/>
+      <testcase name="testFbError" class="fbErrorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbErrorTestCase.php" line="43" time="0.004055"/>
+      <testcase name="testFbError" class="fbErrorTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbErrorTestCase.php" line="43" time="0.003502"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbExplanationTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbExplanationTestCase.php" tests="4" failures="0" errors="0" time="0.012815">
+    <testsuite name="fbExplanationTestCase::testFbExplanation" tests="4" failures="0" errors="0" time="0.012815">
+      <testcase name="testFbExplanation" class="fbExplanationTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbExplanationTestCase.php" line="43" time="0.002792"/>
+      <testcase name="testFbExplanation" class="fbExplanationTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbExplanationTestCase.php" line="43" time="0.002978"/>
+      <testcase name="testFbExplanation" class="fbExplanationTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbExplanationTestCase.php" line="43" time="0.003502"/>
+      <testcase name="testFbExplanation" class="fbExplanationTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbExplanationTestCase.php" line="43" time="0.003543"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbGoogleAnalyticsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbGoogleAnalyticsTestCase.php" tests="1" failures="0" errors="0" time="0.002798">
+    <testsuite name="fbGoogleAnalyticsTestCase::testFbGoogleAnalytics" tests="1" failures="0" errors="0" time="0.002798">
+      <testcase name="testFbGoogleAnalytics" class="fbGoogleAnalyticsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbGoogleAnalyticsTestCase.php" line="40" time="0.002798"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbHeaderTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbHeaderTestCase.php" tests="3" failures="0" errors="0" time="0.008824">
+    <testsuite name="fbHeaderTestCase::testFbHeader" tests="3" failures="0" errors="0" time="0.008824">
+      <testcase name="testFbHeader" class="fbHeaderTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbHeaderTestCase.php" line="48" time="0.003018"/>
+      <testcase name="testFbHeader" class="fbHeaderTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbHeaderTestCase.php" line="48" time="0.002923"/>
+      <testcase name="testFbHeader" class="fbHeaderTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbHeaderTestCase.php" line="48" time="0.002883"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbIfCanSeeTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfCanSeeTestCase.php" tests="3" failures="0" errors="0" time="0.009217">
+    <testsuite name="fbIfCanSeeTestCase::testFbIfCanSee" tests="3" failures="0" errors="0" time="0.009217">
+      <testcase name="testFbIfCanSee" class="fbIfCanSeeTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfCanSeeTestCase.php" line="48" time="0.002861"/>
+      <testcase name="testFbIfCanSee" class="fbIfCanSeeTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfCanSeeTestCase.php" line="48" time="0.003059"/>
+      <testcase name="testFbIfCanSee" class="fbIfCanSeeTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfCanSeeTestCase.php" line="48" time="0.003297"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" tests="8" failures="0" errors="0" time="0.024400">
+    <testsuite name="fbIfIsAppUserTestCase::testFbIfIsAppUser" tests="8" failures="0" errors="0" time="0.024400">
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.002999"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.002917"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.003083"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.003233"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.002800"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.002773"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.003330"/>
+      <testcase name="testFbIfIsAppUser" class="fbIfIsAppUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfIsAppUserTestCase.php" line="52" time="0.003265"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" tests="8" failures="0" errors="0" time="0.024221">
+    <testsuite name="fbIfUserHasAddedAppTestCase::testFbUserHasAddedApp" tests="8" failures="0" errors="0" time="0.024221">
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.003094"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.002776"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.003063"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.003112"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.002865"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.002858"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.003158"/>
+      <testcase name="testFbUserHasAddedApp" class="fbIfUserHasAddedAppTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbIfUserHasAddedAppTestCase.php" line="53" time="0.003295"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbJsStringTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbJsStringTestCase.php" tests="2" failures="0" errors="0" time="0.007087">
+    <testsuite name="fbJsStringTestCase::testFbJsString" tests="2" failures="0" errors="0" time="0.007087">
+      <testcase name="testFbJsString" class="fbJsStringTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbJsStringTestCase.php" line="45" time="0.003272"/>
+      <testcase name="testFbJsString" class="fbJsStringTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbJsStringTestCase.php" line="45" time="0.003815"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbLinkHandlerTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbLinkHandlerTestCase.php" tests="1" failures="1" errors="0" time="0.004998">
+    <testsuite name="fbLinkHandlerTestCase::testFbLink" tests="1" failures="1" errors="0" time="0.004998">
+      <testcase name="testFbLink" class="fbLinkHandlerTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbLinkHandlerTestCase.php" line="41" time="0.004998">
+        <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testFbLink(fbLinkHandlerTestCase) with data set #0 ('<html><head><link rel="Next" href="http://www.techcrunch.com"/><title>Untitled Document</title></head><body></body></html>', '<html><head><title>Untitled Document</title></head><body><link rel="Next" href="http://www.techcrunch.com"/></body></html>')
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ -1 +1,2 @@
+-<html><head><title>Untitled Document</title></head><body><link rel="Next" href="http://www.techcrunch.com"/></body></html>
+\ No newline at end of file
++<html><head><title>Untitled Document</title></head><body><link rel="Next" href="http://www.techcrunch.com"/>
++</body></html>
+\ No newline at end of file
+
+
+/ringside/workspace/ringside/social/test/unit/fbml/fbLinkHandlerTestCase.php:47
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbMetaHandlerTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbMetaHandlerTestCase.php" tests="1" failures="0" errors="0" time="0.003237">
+    <testsuite name="fbMetaHandlerTestCase::testFbMeta" tests="1" failures="0" errors="0" time="0.003237">
+      <testcase name="testFbMeta" class="fbMetaHandlerTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbMetaHandlerTestCase.php" line="41" time="0.003237"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbNameTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbNameTestCase.php" tests="2" failures="0" errors="0" time="0.005681">
+    <testsuite name="fbNameTestCase::testFbName" tests="2" failures="0" errors="0" time="0.005681">
+      <testcase name="testFbName" class="fbNameTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbNameTestCase.php" line="45" time="0.002953"/>
+      <testcase name="testFbName" class="fbNameTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbNameTestCase.php" line="45" time="0.002728"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbProfilePicTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbProfilePicTestCase.php" tests="2" failures="2" errors="0" time="0.007841">
+    <testsuite name="fbProfilePicTestCase::testFbProfilePic" tests="2" failures="2" errors="0" time="0.007841">
+      <testcase name="testFbProfilePic" class="fbProfilePicTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbProfilePicTestCase.php" line="51" time="0.003940">
+        <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testFbProfilePic(fbProfilePicTestCase) with data set #0 (12345, array(array(array('John', 'Smith', 'http://photome/photo.jpg'))), '<fb:profile-pic uid=\'12345\' size="square" linked="false" />', '<img src="http://photome/photo.jpg" alt="John Smith" width="50"/>')
+Failed asserting that two strings are equal.
+expected string <<img src="http://photome/photo.jpg" alt="John Smith" width="50"/>>
+difference      <?????????????????????????????????????????????????????????????????>
+got string      <>
+
+/ringside/workspace/ringside/social/test/unit/fbml/fbProfilePicTestCase.php:62
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+      </testcase>
+      <testcase name="testFbProfilePic" class="fbProfilePicTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbProfilePicTestCase.php" line="51" time="0.003901">
+        <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testFbProfilePic(fbProfilePicTestCase) with data set #1 (12345, array(array(array('John', 'Smith', 'http://photome/photo.jpg'))), '<fb:profile-pic uid=\'12345\' />', '<a href=\'/web/profile.php?id=12345\'><img src="http://photome/photo.jpg" alt="John Smith" width="50"/></a>')
+Failed asserting that two strings are equal.
+expected string <<a href='/web/profile.php?id=12345'><img src="http://photome/photo.jpg" alt="John Smith" width="50"/></a>>
+difference      <?????????????????????????????????????????????????????????????????????????????????????????????????????????>
+got string      <>
+
+/ringside/workspace/ringside/social/test/unit/fbml/fbProfilePicTestCase.php:62
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbShareButtonTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbShareButtonTestCase.php" tests="2" failures="0" errors="0" time="0.008792">
+    <testsuite name="fbShareButtonTestCase::testFbShareButton" tests="2" failures="0" errors="0" time="0.008792">
+      <testcase name="testFbShareButton" class="fbShareButtonTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbShareButtonTestCase.php" line="59" time="0.002988"/>
+      <testcase name="testFbShareButton" class="fbShareButtonTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbShareButtonTestCase.php" line="59" time="0.005804"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbSuccessTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbSuccessTestCase.php" tests="4" failures="0" errors="0" time="0.012280">
+    <testsuite name="fbSuccessTestCase::testFbSuccess" tests="4" failures="0" errors="0" time="0.012280">
+      <testcase name="testFbSuccess" class="fbSuccessTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbSuccessTestCase.php" line="43" time="0.002832"/>
+      <testcase name="testFbSuccess" class="fbSuccessTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbSuccessTestCase.php" line="43" time="0.003087"/>
+      <testcase name="testFbSuccess" class="fbSuccessTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbSuccessTestCase.php" line="43" time="0.003154"/>
+      <testcase name="testFbSuccess" class="fbSuccessTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbSuccessTestCase.php" line="43" time="0.003207"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbTabsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbTabsTestCase.php" tests="1" failures="0" errors="0" time="0.003999">
+    <testsuite name="fbTabsTestCase::testFbTabs" tests="1" failures="0" errors="0" time="0.003999">
+      <testcase name="testFbTabs" class="fbTabsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbTabsTestCase.php" line="55" time="0.003999"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbUserLinkTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbUserLinkTestCase.php" tests="1" failures="0" errors="0" time="0.003024">
+    <testsuite name="fbUserLinkTestCase::testFbUserLink" tests="1" failures="0" errors="0" time="0.003024">
+      <testcase name="testFbUserLink" class="fbUserLinkTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbUserLinkTestCase.php" line="44" time="0.003024"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="fbUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbUserTestCase.php" tests="3" failures="0" errors="0" time="0.008701">
+    <testsuite name="fbUserTestCase::testFbUser" tests="3" failures="0" errors="0" time="0.008701">
+      <testcase name="testFbUser" class="fbUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbUserTestCase.php" line="48" time="0.002961"/>
+      <testcase name="testFbUser" class="fbUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbUserTestCase.php" line="48" time="0.002924"/>
+      <testcase name="testFbUser" class="fbUserTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/fbUserTestCase.php" line="48" time="0.002816"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="rsFeedsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsFeedsTestCase.php" tests="1" failures="0" errors="0" time="0.003967">
+    <testsuite name="rsFeedsTestCase::testFeeds" tests="1" failures="0" errors="0" time="0.003967">
+      <testcase name="testFeeds" class="rsFeedsTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsFeedsTestCase.php" line="82" time="0.003967"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" tests="10" failures="0" errors="0" time="0.030406">
+    <testsuite name="rsIfHasPaidTestCase::testRsIfHasPaid" tests="10" failures="0" errors="0" time="0.030406">
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.002941"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.002725"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003139"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003040"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003081"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003014"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003057"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003172"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003065"/>
+      <testcase name="testRsIfHasPaid" class="rsIfHasPaidTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsIfHasPaidTestCase.php" line="54" time="0.003172"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" tests="6" failures="0" errors="0" time="0.024802">
+    <testsuite name="rsPaymentPlansTestCase::testPlansBasic" tests="6" failures="0" errors="0" time="0.024802">
+      <testcase name="testPlansBasic" class="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" line="105" time="0.003292"/>
+      <testcase name="testPlansBasic" class="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" line="105" time="0.003715"/>
+      <testcase name="testPlansBasic" class="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" line="105" time="0.004337"/>
+      <testcase name="testPlansBasic" class="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" line="105" time="0.003395"/>
+      <testcase name="testPlansBasic" class="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" line="105" time="0.006038"/>
+      <testcase name="testPlansBasic" class="rsPaymentPlansTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/rsPaymentPlansTestCase.php" line="105" time="0.004025"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="TagRegistryTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/TagRegistryTestCase.php" tests="1" failures="0" errors="0" time="0.004022">
+    <testcase name="testDirectorySearch" class="TagRegistryTestCase" file="/ringside/workspace/ringside/social/test/unit/fbml/TagRegistryTestCase.php" line="7" time="0.004022"/>
+  </testsuite>
+</testsuites>

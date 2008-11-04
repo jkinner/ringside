@@ -1,0 +1,1 @@
+<fb:redirect url="./home.html"/>

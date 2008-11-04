@@ -1,0 +1,136 @@
+
+[
+	{	
+		"globalProperties":true,
+		"rootTableName":"groups",
+		"rootObjectName":"group",
+		"keyField":"gid"		
+	},
+
+	{
+		"name":"gid",
+	 	"type":"simple",
+	 	"sourceTable":"groups",
+	 	"sourceField":"gid",	 	
+	 	"treePath":"group"
+	}, 
+	
+	{
+		"name":"name",
+		"type":"simple",		
+		"sourceField":"name",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"pic",
+		"type":"simple",		
+		"sourceField":"image",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"pic_small",
+		"type":"simple",		
+		"sourceField":"pic_small",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"pic_big",
+		"type":"simple",		
+		"sourceField":"pic_big",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"description",
+		"type":"simple",		
+		"sourceField":"description",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"group_type",
+		"type":"simple",		
+		"sourceField":"group_type",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"group_subtype",
+		"type":"simple",		
+		"sourceField":"group_subtype",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"recent_news",
+		"type":"simple",		
+		"sourceField":"recent_news",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"creator",
+		"type":"simple",		
+		"sourceField":"creator",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"update_time",
+		"type":"simple",		
+		"sourceField":"modified",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"office",
+		"type":"simple",		
+		"sourceField":"office",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"website",
+		"type":"simple",		
+		"sourceField":"website",		
+		"treePath":"group"
+	},
+	
+	{
+		"name":"venue",
+		"type":"complex",
+		
+		"treePath":"group/venue",		
+		"values":
+		[
+			{
+				"name":"city",				
+				"sourceField":"city"				
+			},
+			{
+				"name":"state",				
+				"sourceField":"state"				
+			},
+			{
+				"name":"country",				
+				"sourceField":"country"				
+			},
+			{
+				"name":"street",				
+				"sourceField":"street"				
+			},
+			{
+				"name":"latitude",				
+				"sourceField":"latitude"				
+			},			
+			{
+				"name":"longitude",				
+				"sourceField":"longitude"				
+			}
+		]
+	}
+	
+]

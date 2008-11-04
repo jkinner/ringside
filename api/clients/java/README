@@ -1,0 +1,65 @@
+This distribution includes the following files, which comprise the Java library for interacting with the Facebook API:
+ - com/facebook/api/FacebookRestClient.java
+   -> main class of the library; your code should create an instance (xml or json) of this class and call its methods
+ - com/facebook/api/FacebookJsonRestClient.java
+   -> a FacebookRestClient that uses the JSON output format
+ - com/facebook/api/FacebookXmlRestClient.java
+   -> a FacebookRestClient that uses the XML output format
+ - com/facebook/api/IFacebookRestClient.java -> an interface counterpart to the FacebookRestClient abstract class
+
+ - com/facebook/api/FacebookMethod.java    -> enumeration of methods
+ - com/facebook/api/IFacebookMethod.java   -> interface implemented by FacebookMethods and expected by FacebookRestClients
+ - com/facebook/api/FacebookException.java -> very simple exception class
+ - com/facebook/api/ProfileField.java      -> enumeration of profile fields
+
+And the following classes, which may prove generally useful when developing Facebook applications:
+ - com/facebook/api/FacebookExtendedPerm.java -> convenience class for dealing with extended permissions
+ - com/facebook/api/FacebookParam.java        -> enumeration of parameters passed with callbacks from Facebook servers
+ - com/facebook/api/FacebookSignatureUtil.java-> utility class for verifying FacebookParam's
+
+For your convenience, bin/facebook.jar archive includes the compiled versions of the above classes
+
+It also includes the following files showing example uses of the library:
+ - com/facebook/api/ExampleClient.java
+ - settings.conf
+
+To use the ExampleClient:
+ - Edit settings.conf and replace the api_key and secret with your own.
+ - Make sure to add bin/BrowserLauncher2-10rc4.jar and bin/json_simple.jar to your classpath
+   (for example, via 'java -cp "bin/BrowserLauncher2-10rc4.jar;bin/json_simple.jar" ').
+
+BrowserLauncher (http://browserlaunch2.sourceforge.net/) is distributed under the terms of the GNU Lesser General Public License (http://www.gnu.org/licenses/lgpl.html).
+json_simple (http://json.org/java/simple.txt) is distributed under the terms of the GNU Lesser General Public License (http://www.gnu.org/licenses/lgpl.html).
+
+ +---------------------------------------------------------------------------+
+ | Facebook Development Platform Java Client                                 |
+ +---------------------------------------------------------------------------+
+ | Copyright (c) 2007 Facebook, Inc.                                         |
+ | All rights reserved.                                                      |
+ |                                                                           |
+ | Redistribution and use in source and binary forms, with or without        |
+ | modification, are permitted provided that the following conditions        |
+ | are met:                                                                  |
+ |                                                                           |
+ | 1. Redistributions of source code must retain the above copyright         |
+ |    notice, this list of conditions and the following disclaimer.          |
+ | 2. Redistributions in binary form must reproduce the above copyright      |
+ |    notice, this list of conditions and the following disclaimer in the    |
+ |    documentation and/or other materials provided with the distribution.   |
+ |                                                                           |
+ | THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR      |
+ | IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES |
+ | OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.   |
+ | IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,          |
+ | INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT  |
+ | NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, |
+ | DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY     |
+ | THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT       |
+ | (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF  |
+ | THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.         |
+ +---------------------------------------------------------------------------+
+ | For help with this library, contact developers-help@facebook.com          |
+ +---------------------------------------------------------------------------+
+
+
+

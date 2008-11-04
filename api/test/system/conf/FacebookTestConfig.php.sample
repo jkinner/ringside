@@ -1,0 +1,8 @@
+<?php
+$facebook_api_key = 'YOUR_API_KEY';
+$facebook_secret_key = 'YOUR_SECRET';
+$facebook_canvas_url = 'YOUR_CANVAS_URL';
+$local_callback_url = 'YOUR_URL_TO_FBTESTAPP';
+$facebook_email = 'YOUR_FACEBOOK_EMAIL';
+$facebook_password = 'YOUR_FACEBOOK_PASSWORD';
+?>

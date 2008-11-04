@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="ConfigGetLocalSettingsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/ConfigGetLocalSettingsTestCase.php" tests="1" failures="0" errors="0" time="0.002907">
+    <testcase name="testGetLocalSettings" class="ConfigGetLocalSettingsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/ConfigGetLocalSettingsTestCase.php" line="32" time="0.002907"/>
+  </testsuite>
+  <testsuite name="ConfigGetPhpIniSettingsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/ConfigGetPhpIniSettingsTestCase.php" tests="1" failures="0" errors="0" time="0.039421">
+    <testcase name="testGetPhpIniSettings" class="ConfigGetPhpIniSettingsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/ConfigGetPhpIniSettingsTestCase.php" line="32" time="0.039421"/>
+  </testsuite>
+  <testsuite name="ConfigSetLocalSettingsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/ConfigSetLocalSettingsTestCase.php" tests="1" failures="1" errors="0" time="0.003886">
+    <testcase name="testSetLocalSettings" class="ConfigSetLocalSettingsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/ConfigSetLocalSettingsTestCase.php" line="32" time="0.003886">
+      <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testSetLocalSettings(ConfigSetLocalSettingsTestCase)
+Failed asserting that <boolean:false> is true.
+
+/ringside/workspace/ringside/m3/test/functional/api/ConfigSetLocalSettingsTestCase.php:43
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="InventoryGetApisTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApisTestCase.php" tests="1" failures="0" errors="0" time="0.017067">
+    <testcase name="testGetApis" class="InventoryGetApisTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApisTestCase.php" line="31" time="0.017067"/>
+  </testsuite>
+  <testsuite name="InventoryGetApiTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApiTestCase.php" tests="1" failures="0" errors="0" time="0.009733">
+    <testcase name="testGetApi" class="InventoryGetApiTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApiTestCase.php" line="31" time="0.009733"/>
+  </testsuite>
+  <testsuite name="InventoryGetApplicationsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApplicationsTestCase.php" tests="1" failures="0" errors="0" time="0.079459">
+    <testcase name="testGetApplications" class="InventoryGetApplicationsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApplicationsTestCase.php" line="31" time="0.079459"/>
+  </testsuite>
+  <testsuite name="InventoryGetApplicationTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApplicationTestCase.php" tests="1" failures="0" errors="0" time="0.065683">
+    <testcase name="testGetApplication" class="InventoryGetApplicationTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetApplicationTestCase.php" line="32" time="0.065683"/>
+  </testsuite>
+  <testsuite name="InventoryGetNetworksTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetNetworksTestCase.php" tests="1" failures="0" errors="0" time="0.001190">
+    <testcase name="testGetNetworks" class="InventoryGetNetworksTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetNetworksTestCase.php" line="31" time="0.001190"/>
+  </testsuite>
+  <testsuite name="InventoryGetNetworkTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetNetworkTestCase.php" tests="1" failures="0" errors="0" time="0.001209">
+    <testcase name="testGetNetwork" class="InventoryGetNetworkTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetNetworkTestCase.php" line="31" time="0.001209"/>
+  </testsuite>
+  <testsuite name="InventoryGetVersionInfoTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetVersionInfoTestCase.php" tests="1" failures="0" errors="0" time="0.004304">
+    <testcase name="testGetVersionInfo" class="InventoryGetVersionInfoTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryGetVersionInfoTestCase.php" line="31" time="0.004304"/>
+  </testsuite>
+  <testsuite name="InventoryPingTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryPingTestCase.php" tests="1" failures="0" errors="0" time="0.001020">
+    <testcase name="testPing" class="InventoryPingTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/InventoryPingTestCase.php" line="31" time="0.001020"/>
+  </testsuite>
+  <testsuite name="MetricsGetApiDurationsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/MetricsGetApiDurationsTestCase.php" tests="1" failures="0" errors="0" time="2.120247">
+    <testcase name="testGetApiDurations" class="MetricsGetApiDurationsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/MetricsGetApiDurationsTestCase.php" line="33" time="2.120247"/>
+  </testsuite>
+  <testsuite name="MetricsPurgeApiDurationsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/MetricsPurgeApiDurationsTestCase.php" tests="1" failures="0" errors="0" time="2.039144">
+    <testcase name="testPurgeApiDurations" class="MetricsPurgeApiDurationsTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/MetricsPurgeApiDurationsTestCase.php" line="33" time="2.039144"/>
+  </testsuite>
+  <testsuite name="OperationEvaluatePhpCodeTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/OperationEvaluatePhpCodeTestCase.php" tests="1" failures="0" errors="0" time="0.005095">
+    <testcase name="testEval" class="OperationEvaluatePhpCodeTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/OperationEvaluatePhpCodeTestCase.php" line="31" time="0.005095"/>
+  </testsuite>
+  <testsuite name="OperationGetFileContentTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/OperationGetFileContentTestCase.php" tests="2" failures="1" errors="0" time="0.044740">
+    <testcase name="testErrors" class="OperationGetFileContentTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/OperationGetFileContentTestCase.php" line="32" time="0.002371"/>
+    <testcase name="testGetContent" class="OperationGetFileContentTestCase" file="/ringside/workspace/ringside/m3/test/functional/api/OperationGetFileContentTestCase.php" line="55" time="0.042369">
+      <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testGetContent(OperationGetFileContentTestCase)
+should have true local settings content
+Failed asserting that <boolean:false> is greater than <integer:0>.
+
+/ringside/workspace/ringside/m3/test/functional/api/OperationGetFileContentTestCase.php:61
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

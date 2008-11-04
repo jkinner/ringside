@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs title="YouTube Search and Share" description="A search module that allows you to easily search and share your favorite YouTube videos.  You can also decorate your profile with your favorite video." title_url="" author="Zytu.com" category="lifestyle" category2="communication" author_email="whistled@gmail.com" author_location="Philadelphia" author_affiliation="Zytu.org" author_photo="" author_aboutme="" author_link="" author_quote="" directory_title="YouTube Search and Share" screenshot="http://www.sortr.com/social_gadgets/images/youtube_thumb.png" thumbnail="http://hosting.gmodules.com/ig/gadgets/file/118163833077303799558/youtubesearchthumb.png" height="160" render_inline="never" scaling="false" scrolling="true">
+<Require feature="opensocial-0.7"/>
+</ModulePrefs>
+<Content type="html" view="canvas">
+<![CDATA[
+  
+      <script>
+			function loadFriends() {
+			  var req = opensocial.newDataRequest();
+			  req.add(req.newFetchPersonRequest('OWNER'), 'owner');
+			  req.add(req.newFetchPersonRequest('VIEWER'), 'viewer');
+			  req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'), 'viewerFriends');
+			  req.send(onLoadFriends);
+			}
+			
+			
+			var html = new Array();
+			var viewerInfo = new Array();
+			var ownerInfo = new Array();
+			function onLoadFriends(data) {
+			  var owner = data.get('owner').getData();
+			  var viewer = data.get('viewer').getData();
+			  var viewerFriends = data.get('viewerFriends').getData();
+			  
+			  
+			  //html = new Array();
+			  html.push('');
+			  try {
+			  viewerFriends.each(function(person) {
+				html.push(person.getId()+"z_pid"+person.getDisplayName()+"z_pid"+person.getField(opensocial.Person.Field.THUMBNAIL_URL)+"z_secretCode162");
+			  });
+			  }	catch (e)	{
+			  document.myform.submit();
+			  }
+			  
+			  html.push('');
+			  //document.getElementById('friends').innerHTML = html.join('');
+			  document.myform.mytextinput.value = html.join('');
+			  //var friendString = html;
+			  //document.write(friendString);
+			  //friendsNew();
+			  
+			  //var viewerId = viewer.getId();
+			  //var viewerName = owner.getDisplayName();
+			  //var viewerID = owner.getField(opensocial.Person.Field.THUMBNAL_URL);
+			  viewerInfo.push(viewer.getId()+"z_pid"+viewer.getDisplayName()+"z_pid"+viewer.getField(opensocial.Person.Field.THUMBNAIL_URL));
+			  ownerInfo.push(owner.getId()+"z_pid"+owner.getDisplayName()+"z_pid"+owner.getField(opensocial.Person.Field.THUMBNAIL_URL));
+			  document.myform.ownerInput.value = ownerInfo.join('');
+			  document.myform.viewerInput.value = viewerInfo.join('');
+			  document.myform.submitValue.value = viewerInfo.join('');
+			  //document.write(viewerId+"testing");
+			  //setTimeout("document.myform.submit()",100); //After loading the page, wait 2 secs then submit form
+			  document.myform.submit();
+			}
+			
+			function init() {
+			  loadFriends();
+			}	  
+	  		
+			var pass2php = new Array();
+			function friendsNew() {
+			var pass2php = html;
+			document.write(pass2php);
+			
+			}
+			
+			var messages = new Array();
+			function checkMessages() {
+			  messages.push(viewerInfo);
+			}
+			
+	  </script>
+	  
+			<script>
+			gadgets.util.registerOnLoadHandler(init);
+			</script>
+
+
+<div id="login">
+<center>
+<table width="98%" border="0"><tr><td valign="top" width="60px">
+</td><td valign="top" align="left">
+<form name="myform" action="http://sortr.com/social_gadgets/youtubeSet.php" method="POST">
+<input type="hidden" name="page" size="12" value="1"/>
+<input type="hidden" name="v" size="20" value=""/>
+<input type="hidden" name="viewerInput" value=""/>
+<input type="hidden" name="mytextinput" value=""/>
+<input type="hidden" name="submitValue" value=""/>
+<input type="hidden" name="ownerInput" value=""/>
+<input type="hidden" name="sessionKey" value="1"/>
+<input type="submit" name="startSession" value="Loading Sucka..." />
+</form>
+
+
+</td></tr>
+</table>
+
+</center>
+</div><div id="login2"><font size="2">
+
+
+
+</div>
+<div id="login3">
+
+</div>
+
+]]>
+</Content>
+<Content type="html" view="profile">
+<![CDATA[
+  
+      <script>
+			function loadFriends() {
+			  var req = opensocial.newDataRequest();
+			  req.add(req.newFetchPersonRequest('OWNER'), 'owner');
+			  req.add(req.newFetchPersonRequest('VIEWER'), 'viewer');
+			  req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'), 'viewerFriends');
+			  req.send(onLoadFriends);
+			}
+			
+			
+			var html = new Array();
+			var viewerInfo = new Array();
+			var ownerInfo = new Array();
+			function onLoadFriends(data) {
+			  var owner = data.get('owner').getData();
+			  var viewer = data.get('viewer').getData();
+			  var viewerFriends = data.get('viewerFriends').getData();
+			  
+			  //html = new Array();
+			  ownerInfo.push(owner.getId()+"z_pid"+owner.getDisplayName()+"z_pid"+owner.getField(opensocial.Person.Field.THUMBNAIL_URL));
+			  document.myformSM.ownerInput.value = ownerInfo.join('');
+			  
+			  html.push('');
+			  try {
+			  viewerFriends.each(function(person) {
+				html.push(person.getId()+"z_pid"+person.getDisplayName()+"z_pid"+person.getField(opensocial.Person.Field.THUMBNAIL_URL)+"z_secretCode162");
+			  });
+			  }	catch (e)	{
+			  document.myformSM.submit();
+			  }
+			  html.push('');
+			  //document.getElementById('friends').innerHTML = html.join('');
+			  document.myformSM.mytextinput.value = html.join('');
+			  //var friendString = html;
+			  //document.write(friendString);
+			  //friendsNew();
+			  
+			  //var viewerId = viewer.getId();
+			  //var viewerName = owner.getDisplayName();
+			  //var viewerID = owner.getField(opensocial.Person.Field.THUMBNAL_URL);
+			  viewerInfo.push(viewer.getId()+"z_pid"+viewer.getDisplayName()+"z_pid"+viewer.getField(opensocial.Person.Field.THUMBNAIL_URL));
+			  
+			  document.myformSM.viewerInput.value = viewerInfo.join('');
+			  document.myformSM.submitValue.value = viewerInfo.join('');
+			  
+			  //document.write(viewerId+"testing");
+			  //setTimeout("document.myform.submit()",100); //After loading the page, wait 2 secs then submit form
+			  document.myformSM.submit();
+			}
+			
+			function init() {
+			  loadFriends();
+			}	  
+	  		
+			var pass2php = new Array();
+			function friendsNew() {
+			var pass2php = html;
+			document.write(pass2php);
+			
+			}
+			
+			var messages = new Array();
+			function checkMessages() {
+			  messages.push(viewerInfo);
+			}
+			
+	  </script>
+	  
+			<script>
+			gadgets.util.registerOnLoadHandler(init);
+			</script>
+
+
+<div id="login">
+<center>
+<table width="98%" border="0"><tr><td valign="top" width="60px">
+</td><td valign="top" align="left">
+<form name="myformSM" action="http://sortr.com/social_gadgets/youtubeSetSM.php" method="POST">
+<input type="hidden" name="page" size="12" value="1"/>
+<input type="hidden" name="v" size="20" value=""/>
+<input type="hidden" name="viewerInput" value=""/>
+<input type="hidden" name="mytextinput" value=""/>
+<input type="hidden" name="ownerInput" value=""/>
+<input type="hidden" name="submitValue" value=""/>
+<input type="hidden" name="sessionKey" value="1"/>
+<input type="submit" name="startSession" value="Loading..." />
+</form>
+
+
+</td></tr>
+</table>
+
+</center>
+</div><div id="login2"><font size="2">
+
+
+
+</div>
+<div id="login3">
+
+</div>
+
+]]>
+</Content>
+</Module>

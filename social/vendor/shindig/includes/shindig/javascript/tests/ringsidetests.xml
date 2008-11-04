@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Ringside Functional Tests" author_email="william.reichardt@ringsidenetworks.com">
+    <Require feature="opensocial-0.7"></Require>
+    <Require feature="dynamic-height"></Require>
+  </ModulePrefs>
+    <Content type="html">
+<![CDATA[
+<style type="text/css">
+  body {font-family: arial, sans-serif;}
+
+  .compliance-results th {background-color: lightgrey;}
+  .compliance-results td {padding: 4px; border: 1px dotted lightgrey;}
+  .compliance-results tr {border: 1px dotted lightgrey;}
+  .compliance-results {
+      border: 1px solid black;
+      border-collapse: collapse;
+   }
+  .compliance-error {background-color: #FF4444; font-weight: bolder}
+  .compliance-pass {background-color: #BBFFAA}
+  .compliance-warning {background-color: lightyellow}
+</style>
+
+
+<script type="text/javascript">
+var totalTests;
+var passedTests;
+var failedTests;
+
+gadgets.util.registerOnLoadHandler(resetTest);
+
+// Register tests
+gadgets.util.registerOnLoadHandler(testAppDataRequest);
+gadgets.util.registerOnLoadHandler(testBadAppDataRequest);
+gadgets.util.registerOnLoadHandler(testActivityCreation);
+
+function resetTest() {
+  totalTests = {};
+  totalTests[0] = 9;
+  totalTests[2] = 2;
+
+  passedTests = {};
+  passedTests[0] = 0;
+  passedTests[2] = 0;
+
+  failedTests = {};
+  failedTests[0] = 0;
+  failedTests[2] = 0;
+
+  function resetTable(table) {
+    while(table.childNodes.length > 0) {
+      table.removeChild(table.childNodes[0]);
+    }
+
+    var th1 = document.createElement("th");
+    th1.innerHTML = "Test name";
+    var th2 = document.createElement("th");
+    th2.innerHTML = "Result";
+
+    var newRow = document.createElement("tr");
+    newRow.appendChild(th1);
+    newRow.appendChild(th2);
+    table.appendChild(newRow);
+  }
+
+  var table1 = document.getElementById("compliance-results-p0");
+  var table2 = document.getElementById("compliance-results-p2");
+  resetTable(table1);
+  resetTable(table2);
+}
+
+
+/**
+ * Objective: Write something to the App Data Store and then verify that
+ * it can be read back.
+ */
+function testAppDataRequest() {
+  try {
+
+  var testName = "testAppDataRequest";
+  var errorLevel = 0;
+  
+    function cleanup(){
+    	var reqClean = opensocial.newDataRequest();  				
+		req.add(req.newUpdatePersonAppDataRequest('VIEWER', 'coolness','undefined'), 'UPDATE');
+    	req.send(function(data){});
+    }
+ 
+	var req = opensocial.newDataRequest();  				
+	req.add(req.newUpdatePersonAppDataRequest('VIEWER', 'coolness','extremly cool'), 'UPDATE');
+	req.add(req.newFetchPersonAppDataRequest('VIEWER', 'coolness'),'RESPONSE');
+	req.send(function(data){
+		if(!assertNotNull(data,testName,"Location 1")){ 
+			cleanup();
+			return;
+		 };
+		if(!assertNotNull(data.get('RESPONSE'),testName,"Location 2")){ 
+			cleanup();
+			return; 
+		};
+		if(data.get('RESPONSE').hadError()){
+			addErrorRow(testName, errorLevel,
+	        "Got Error code " + data.get('RESPONSE').getErrorCode());
+	        cleanup();		
+			return; 
+		}
+		
+		var dataBlock = data.get('RESPONSE').getData();
+		if(!assertNotNull(dataBlock,testName,"Location 3")){ 
+			cleanup();
+			return; 
+		};
+		
+		var setting = dataBlock[100000]['coolness'];
+		if(!assertNotNull(setting,testName,"Location 4")){ 
+			cleanup();
+			return; 
+		};
+	  if(setting != 'extremly cool'){
+	    	addErrorRow(testName, errorLevel,
+	        "Wrote app data but failed to read it back: <br/> Expected "+setting+" but got " + setting);
+	        cleanup();
+	        return;
+	  } else {
+	    	addPassRow(testName, errorLevel);
+	    	cleanup();
+	  }
+	});
+   } catch (errMsg) {
+    addErrorRow(testName, errorLevel, "An exception occured " + errMsg);
+  }
+ 
+}
+
+/**
+ * Objective: Ask for App Data that does not exist and expect
+ * a Bad Data Request.
+ */
+function testBadAppDataRequest() {
+  var testName = "testBadAppDataRequest";
+  var errorLevel = 0;
+
+	var req = opensocial.newDataRequest();  				
+	req.add(req.newFetchPersonAppDataRequest('VIEWER', 'UNIT_TEST'),'RESPONSE');
+	req.send(function(data){
+		if(!assertNotNull(data.get('RESPONSE'),testName,"Location 1")){ 
+			return; 
+		};
+	
+	  var errorCode = data.get("RESPONSE").getErrorCode();
+	  if(errorCode != opensocial.ResponseItem.Error.BAD_REQUEST){
+	    	addErrorRow(testName, errorLevel,
+	        "Expected ResponseItem.Error.BAD_REQUEST but got "+errorCode);
+	        
+	  } else {
+	    	addPassRow(testName, errorLevel);
+	  }
+	});
+ 
+}
+
+/**
+ * Objective: Create a simple activity and verify its delivery
+ *
+ */
+function testActivityCreation() {
+  var testName = "testActivityCreation";
+  var errorLevel = 0;
+ 
+  try {
+  		var text = "This is a sample activity";
+  		var body = "There one was a little unit test that did great things."
+    	var params = {};  
+    	params[opensocial.Activity.Field.ID] = 'unit_test';
+    	params[opensocial.Activity.Field.TITLE] = text;
+    	params[opensocial.Activity.Field.BODY] = body;
+    	var activity = opensocial.newActivity(params); 
+    	opensocial.requestCreateActivity(activity, opensocial.CreateActivityPriority.HIGH, function(status){
+			if (status.hadError()) {
+			  	addErrorRow(testName, errorLevel,"Error creating activity: "+status.getErrorCode());
+			} else {
+			    addPassRow(testName, errorLevel);
+			}
+    	});
+  
+  } catch (errMsg) {
+    addErrorRow(testName, errorLevel, "An exception occured " + errMsg);
+  }
+ 
+}
+
+
+// ------------ Do Not Delete
+function assertNotNull(existing,testName,loc){
+	if(existing==null){
+		addErrorRow(testName, 0,
+        "Expected non null but got <NULL> at "+loc+".");
+        return false;
+	}
+	return true;
+}
+
+function assertEquals(actual,existing,testName){
+	if(actual!=existing){
+		addErrorRow(testName, 0,
+	        "Expected <"+actual+"> but got <"+existing+">");
+	        return false;
+	}
+	return true;
+}
+
+function addInfoRow(testName, errorLevel, message) {
+  addRow("compliance-info", testName, errorLevel, message ? message : "");
+}
+
+function addWarningRow(testName, errorLevel, message) {
+  addRow("compliance-warning", testName, errorLevel, message ? message : "");
+}
+
+function addErrorRow(testName, errorLevel, message) {
+  addRow("compliance-error", testName, errorLevel, message ? message : "");
+  failedTests[errorLevel] = failedTests[errorLevel] + 1;
+  updateTotalTests();
+}
+
+function addPassRow(testName, errorLevel, message) {
+  addRow("compliance-pass", testName, errorLevel, message ? message : "passed");
+  passedTests[errorLevel] = passedTests[errorLevel] + 1;
+  updateTotalTests();
+}
+
+function updateTotalTests() {
+  function logResults(failed, passed, total, divId) {
+    if (failed + passed >= total) {
+      var className = failed > 0 ? "compliance-error" : "compliance-pass";
+      document.getElementById(divId).innerHTML =
+          "<b>" + passed + "/" + total + " tests passed</b>";
+      document.getElementById(divId).className = className;
+    }
+  }
+
+  logResults(failedTests[0], passedTests[0], totalTests[0], "finalResults-p0");
+  logResults(failedTests[2], passedTests[2], totalTests[2], "finalResults-p2");
+}
+
+function addRow(className, test, errorLevel, result) {
+  var td1 = document.createElement("td");
+  td1.innerHTML = test;
+  var td2 = document.createElement("td");
+  td2.innerHTML = result;
+
+  var newRow = document.createElement("tr");
+  newRow.className = className;
+  newRow.appendChild(td1);
+  newRow.appendChild(td2);
+  var id = "compliance-results-p" + errorLevel;
+  var table = document.getElementById(id).appendChild(newRow);
+
+  if (window["gadgets"]) {
+    gadgets.window.adjustHeight();
+  }
+}
+
+
+</script>
+
+<div style="margin: 4px">
+  <h3>Ringside Functional Tests</h3>
+  <input type="button" value="Re-test" onClick="window.location.reload()"> <i>Note: Your test changes may be cached</i><p>
+  <h4>&nbsp;&nbsp;Overall Results:</br>
+    &nbsp;&nbsp;&nbsp;P0 tests: <span style="padding: 0.1em" id="finalResults-p0"></span><br/>
+    &nbsp;&nbsp;&nbsp;P2 tests: <span style="padding: 0.1em" id="finalResults-p2"></span>
+  </h4>
+
+  <h4>Tests</h4>
+  <h5>These test excercize the OpenSocial container using the demo friend data.</h5>
+  <table class="compliance-results" id="compliance-results-p0">
+    <tr><th>Test name</th><th>Result</th></tr>
+  </table>
+
+  <br/><br/>
+
+  <h4>P2 tests</h4>
+  <h5>Tests which would be nice to pass for the user but aren't necessary.
+      Includes things like not throwing exceptions when bad data is passed in.</h5>
+  <table class="compliance-results" id="compliance-results-p2">
+    <tr><th>Test name</th><th>Result</th></tr>
+  </table>
+
+  <br/><br/>
+  <i>
+    Refer to the
+    <a href="http://code.google.com/apis/opensocial/docs/0.7/spec.html">OpenSocial 0.7 spec</a>
+    for more information.
+  </i>
+</div>
+]]>
+</Content>
+</Module>

@@ -1,0 +1,186 @@
+<?php include_once('ringside/web/config/RingsideStyleConfig.php'); ?>
+
+/* apps.css */
+/* Contains css for any application running in Ringside */
+
+
+
+/************************************************** Login app */
+h1.loginh1 {
+	font-size: 22px;
+}
+div#loginform {
+	background:#a8d7e7 url(<?php echo RingsideWebConfig::$webRoot?>/images/login-bkg.gif) repeat-x;
+	border:1px solid #90cee9;
+}
+div#loginform-inner {
+	margin:7px 10px 15px 10px;	
+}
+div.explanation_message {
+	background:#d8f0fc;
+	border:1px solid #a8d7e7;
+	margin:35px 0 10px 0;	
+}
+div.explanation_message h2 {
+	color:#666;
+	font-weight:normal;
+}
+h1.logintitle {
+	font-size:20px;
+	color:#525252;
+	margin-bottom:6px;
+}
+table.editorkit td, th {
+	margin:10px 0 0 0;
+}
+.login-input-txtField {
+	font-size:20px;
+	width:300px;	
+}
+.form-spacer {
+	font-size:1px;
+}
+input.btn-login {
+	font-size:20px;
+	padding:8px 16px;
+}
+
+
+
+
+/************************************************** Registration app */
+h1.registrationh1 {
+	font-size: 22px;
+}
+div#registration {
+	background:#a8d7e7 url(<?php echo RingsideWebConfig::$webRoot?>/images/login-bkg.gif) repeat-x;
+	border:1px solid #90cee9;
+}
+div#registration-inner {
+	margin:7px 10px 15px 10px;	
+}
+h1.registrationtitle {
+	font-size:20px;
+	color:#525252;
+	margin-bottom:6px;
+}
+
+
+
+
+/************************************ Profile app ***********/
+
+.profile_sidebar_status {
+	border-bottom: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+	border-top: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+    text-align: center;	
+}
+.profile-master-column {
+}
+.profile_wide_info {
+	border-bottom: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+}
+.profile_status {
+	border-bottom: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+}
+.narrow_app {
+}
+.narrow_app_header {
+	border-bottom: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+	border-top: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+	background-color: <?php echo RingsideStyleConfig::$profileHeaderBackgroundColor ?>;
+}
+
+.wide_app_header {
+	border-bottom: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+	border-top: 1px solid <?php echo RingsideStyleConfig::$accentBorderColor ?>;
+	background-color: <?php echo RingsideStyleConfig::$profileHeaderBackgroundColor ?>;
+}
+#profilenarrowcolumn {
+	float: left;
+	padding:6px 6px 6px 10px;
+	width:210px;
+}
+#profilewidecolumn {
+	float: right;
+	width:455px;
+}
+#profilefooter {
+	float: left;
+	width: 100%;
+}
+.profile-editor-form {
+	margin:9px 0 0 0;
+}
+
+
+
+
+/************************************************** Apps & Developer Apps */
+table#apps-list {
+	margin:10px 0 40px 0;
+	width:100%;
+}
+table#apps-list td {
+	border-bottom:1px dotted #ccc;
+	font-size:11px;
+	padding:12px 0;
+}
+table#apps-list td a {
+	color:#999;
+	font-weight:normal;
+	text-decoration:underline;
+}
+table#apps-list td.first {
+	border-top:1px dotted #ccc;
+}
+table#apps-list td.app-name {
+	font-size:12px;
+}
+table#apps-list td.app-name a {
+	color:#D87B15;
+	font-weight:bold;
+}
+html body table#apps-list td.app-restrictions {
+	color:#999;
+	padding:12px 0 12px 10px;
+}
+html body table#apps-list td.app-goto {
+	color:#999;
+	text-align:center;
+}
+td.app-edit {
+	text-align:center;
+	width:105px;
+}
+table#apps-list td.app-remove {
+	text-align:right;
+	padding-right:8px;
+}
+.developer-content-block #apps-list {
+	margin-bottom:0;	
+}
+.rs-content-block {
+	background:#a0d9ed url(<?php echo RingsideWebConfig::$webRoot?>/images/login-bkg.gif) repeat-x;
+	border:1px solid #90cee9;
+	padding:12px;
+}
+
+
+/************************************************** Comments */
+/* these are original styles and might need to be refactored */
+.comments_text_area {
+	width: 450px;
+}
+.comment_author {
+	border-top: 1px solid #00f;
+	background-color: #ccc;
+}
+.comment_time {
+	background-color: #ccc;
+}
+
+
+
+
+

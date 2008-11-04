@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="BasePhpClientTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/BasePhpClientTestCase.php" tests="1" failures="0" errors="0" time="1.252296">
+    <testcase name="testInit" class="BasePhpClientTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/BasePhpClientTestCase.php" line="59" time="1.252296"/>
+  </testsuite>
+  <testsuite name="PhpClientAdminTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientAdminTestCase.php" tests="5" failures="0" errors="0" time="4.553282">
+    <testcase name="testAdminGetPropertiesByCanvasName" class="PhpClientAdminTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientAdminTestCase.php" line="31" time="0.972488"/>
+    <testcase name="testAdminGetPropertiesByApiKey" class="PhpClientAdminTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientAdminTestCase.php" line="42" time="0.949943"/>
+    <testcase name="testAdminCreateApp" class="PhpClientAdminTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientAdminTestCase.php" line="53" time="0.965255"/>
+    <testcase name="testAdminGetAppList" class="PhpClientAdminTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientAdminTestCase.php" line="62" time="0.971129"/>
+    <testcase name="testInit" class="PhpClientAdminTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientAdminTestCase.php" line="59" time="0.694467"/>
+  </testsuite>
+  <testsuite name="CommentTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientCommentsTestCase.php" tests="2" failures="0" errors="0" time="7.519868">
+    <testcase name="testComments" class="CommentTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientCommentsTestCase.php" line="46" time="6.832039"/>
+    <testcase name="testInit" class="CommentTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientCommentsTestCase.php" line="59" time="0.687829"/>
+  </testsuite>
+  <testsuite name="PhpClientEventsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientEventsTestCase.php" tests="3" failures="0" errors="0" time="2.590566">
+    <testcase name="testEventsGet" class="PhpClientEventsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientEventsTestCase.php" line="30" time="0.916465"/>
+    <testcase name="testEventsGetMembers" class="PhpClientEventsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientEventsTestCase.php" line="55" time="0.955859"/>
+    <testcase name="testInit" class="PhpClientEventsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientEventsTestCase.php" line="59" time="0.718242"/>
+  </testsuite>
+  <testsuite name="PhpClientFbmlTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFbmlTestCase.php" tests="4" failures="0" errors="0" time="4.903415">
+    <testcase name="testFbmlSetRefHandle" class="PhpClientFbmlTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFbmlTestCase.php" line="30" time="1.037013"/>
+    <testcase name="testFbmlRefreshRefUrl" class="PhpClientFbmlTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFbmlTestCase.php" line="39" time="1.381668"/>
+    <testcase name="testFbmlRefreshImgSrc" class="PhpClientFbmlTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFbmlTestCase.php" line="47" time="1.787182"/>
+    <testcase name="testInit" class="PhpClientFbmlTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFbmlTestCase.php" line="59" time="0.697552"/>
+  </testsuite>
+  <testsuite name="PhpClientFeedTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFeedTestCase.php" tests="4" failures="0" errors="0" time="3.254023">
+    <testcase name="testFeedPublishStoryToUser" class="PhpClientFeedTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFeedTestCase.php" line="32" time="0.905119"/>
+    <testcase name="testFeedPublishActionOfUser" class="PhpClientFeedTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFeedTestCase.php" line="54" time="0.941851"/>
+    <testcase name="testFeedPublishTemplatizedAction" class="PhpClientFeedTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFeedTestCase.php" line="76" time="0.711648"/>
+    <testcase name="testInit" class="PhpClientFeedTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFeedTestCase.php" line="59" time="0.695405"/>
+  </testsuite>
+  <testsuite name="PhpClientFQLTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFQLTTestCase.php" tests="2" failures="0" errors="0" time="1.990185">
+    <testcase name="testGroupsGet" class="PhpClientFQLTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFQLTTestCase.php" line="30" time="1.310799"/>
+    <testcase name="testInit" class="PhpClientFQLTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFQLTTestCase.php" line="59" time="0.679386"/>
+  </testsuite>
+  <testsuite name="PhpClientFriendsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFriendsTestCase.php" tests="4" failures="0" errors="0" time="4.184445">
+    <testcase name="testFriendsGet" class="PhpClientFriendsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFriendsTestCase.php" line="30" time="0.957071"/>
+    <testcase name="testFriendsAreFriends" class="PhpClientFriendsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFriendsTestCase.php" line="38" time="1.618477"/>
+    <testcase name="testFriendsAreAppUsers" class="PhpClientFriendsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFriendsTestCase.php" line="65" time="0.928699"/>
+    <testcase name="testInit" class="PhpClientFriendsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientFriendsTestCase.php" line="59" time="0.680198"/>
+  </testsuite>
+  <testsuite name="PhpClientGroupsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientGroupsTestCase.php" tests="3" failures="0" errors="0" time="2.780750">
+    <testcase name="testGroupsGet" class="PhpClientGroupsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientGroupsTestCase.php" line="30" time="0.974266"/>
+    <testcase name="testGroupsGetMembers" class="PhpClientGroupsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientGroupsTestCase.php" line="60" time="1.128783"/>
+    <testcase name="testInit" class="PhpClientGroupsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientGroupsTestCase.php" line="59" time="0.677701"/>
+  </testsuite>
+  <testsuite name="PhpClientNotificationsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientNotificationsTestCase.php" tests="4" failures="0" errors="0" time="6.472537">
+    <testcase name="testNotificationsGet" class="PhpClientNotificationsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientNotificationsTestCase.php" line="29" time="0.976398"/>
+    <testcase name="testNotificationsSend" class="PhpClientNotificationsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientNotificationsTestCase.php" line="56" time="2.879831"/>
+    <testcase name="testNotificationsSendEmail" class="PhpClientNotificationsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientNotificationsTestCase.php" line="72" time="1.937101"/>
+    <testcase name="testInit" class="PhpClientNotificationsTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientNotificationsTestCase.php" line="59" time="0.679207"/>
+  </testsuite>
+  <testsuite name="PhpClientPagesTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPagesTestCase.php" tests="5" failures="0" errors="0" time="5.568576">
+    <testcase name="testPagesGetInfo" class="PhpClientPagesTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPagesTestCase.php" line="30" time="0.932707"/>
+    <testcase name="testPagesIsFan" class="PhpClientPagesTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPagesTestCase.php" line="54" time="1.167955"/>
+    <testcase name="testPagesIsAdmin" class="PhpClientPagesTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPagesTestCase.php" line="69" time="1.868562"/>
+    <testcase name="testPagesIsAppAdded" class="PhpClientPagesTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPagesTestCase.php" line="79" time="0.919894"/>
+    <testcase name="testInit" class="PhpClientPagesTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPagesTestCase.php" line="59" time="0.679458"/>
+  </testsuite>
+  <testsuite name="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" tests="6" failures="1" errors="0" time="6.032009">
+    <testcase name="testPhotosGetAlbums" class="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" line="30" time="0.942845">
+      <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testPhotosGetAlbums(PhpClientPhotosTestCase)
+Failed asserting that two strings are equal.
+expected string <2008-06-30 15:27:55>
+difference      <xxxxxx?????????????>
+got string      <123456>
+
+/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php:39
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+    </testcase>
+    <testcase name="testPhotosCreateAlbum" class="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" line="57" time="1.164222"/>
+    <testcase name="testPhotosGet" class="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" line="75" time="1.143326"/>
+    <testcase name="testPhotosGetTags" class="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" line="140" time="0.919336"/>
+    <testcase name="testPhotosAddTag" class="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" line="157" time="1.165568"/>
+    <testcase name="testInit" class="PhpClientPhotosTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientPhotosTestCase.php" line="59" time="0.696712"/>
+  </testsuite>
+  <testsuite name="PhpClientProfileTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientProfileTestCase.php" tests="3" failures="0" errors="0" time="3.030431">
+    <testcase name="testProfileGetFBML" class="PhpClientProfileTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientProfileTestCase.php" line="30" time="0.931613"/>
+    <testcase name="testProfileSetFBML" class="PhpClientProfileTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientProfileTestCase.php" line="36" time="1.407920"/>
+    <testcase name="testInit" class="PhpClientProfileTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientProfileTestCase.php" line="59" time="0.690898"/>
+  </testsuite>
+  <testsuite name="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" tests="7" failures="1" errors="0" time="7.916000">
+    <testcase name="testUsersGetLoggedInUser" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="30" time="0.901487"/>
+    <testcase name="testUsersIsAppAdded" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="36" time="0.924719"/>
+    <testcase name="testUsersHasAppPermission" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="42" time="1.396373"/>
+    <testcase name="testUsersSetStatus" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="59" time="2.032415"/>
+    <testcase name="testUsersGetInfo" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="91" time="1.036741">
+      <failure type="PHPUnit_Framework_ExpectationFailedException"><![CDATA[testUsersGetInfo(PhpClientUsersTestCase)
+Failed asserting that two strings are equal.
+expected string <0>
+difference      <x??????>
+got string      <Liberal>
+
+/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php:111
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTestRunner.php:96
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:305
+/usr/share/pear/phing/tasks/ext/phpunit/PHPUnitTask.php:274
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/tasks/system/PhingTask.php:275
+/usr/share/pear/phing/tasks/system/PhingTask.php:150
+/usr/share/pear/phing/Task.php:253
+/usr/share/pear/phing/Target.php:240
+/usr/share/pear/phing/Target.php:263
+/usr/share/pear/phing/Project.php:709
+/usr/share/pear/phing/Project.php:682
+/usr/share/pear/phing/Phing.php:508
+/usr/share/pear/phing/Phing.php:164
+/usr/share/pear/phing/Phing.php:262
+/usr/share/pear/phing.php:41
+/ringside/workspace/ringside/runphing.php:32
+]]></failure>
+    </testcase>
+    <testcase name="testUsersGetAppList" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="240" time="0.932865"/>
+    <testcase name="testInit" class="PhpClientUsersTestCase" file="/ringside/workspace/ringside/api/test/system/client/php/PhpClientUsersTestCase.php" line="59" time="0.691400"/>
+  </testsuite>
+</testsuites>

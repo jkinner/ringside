@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!-- Unit tests for the M3 project -->
+
+<project name="m3-tests" default="all-tests" basedir=".">
+
+	<target name="all-tests" description="Run all tests" depends="unit-tests,functional-tests,system-tests" />
+
+	<target name="unit-tests" description="Run the Unit tests">
+		<phing phingfile="unit/build.xml" haltonfailure="true" inheritAll="false"/>
+	</target>
+
+	<target name="functional-tests" description="Run the Functional tests">
+		<phing phingfile="functional/build.xml" haltonfailure="true" inheritAll="false"/>
+	</target>
+
+	<target name="system-tests" description="Run the System tests">
+		<phing phingfile="system/build.xml" haltonfailure="true" inheritAll="false"/>
+	</target>
+
+</project>

@@ -1,0 +1,16 @@
+<?php include_once('ringside/web/config/RingsideStyleConfig.php');?>
+/*
+ * Ringside color scheme:
+ * Bright orange: #f93
+ * Dark orange:   #c63
+ * Creamsicle:    #fbecd8
+ * Dark gray:     #999
+ * Light gray:    #ccc
+ * Almost black:  #222
+ */
+
+@import url("web.css"); /* basic structure and style of global elements */
+
+@import url("tags.css"); /* styles for all fb:tags */
+
+@import url("apps.css"); /* styles for all apps */

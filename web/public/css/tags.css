@@ -1,0 +1,247 @@
+<?php include_once('ringside/web/config/RingsideStyleConfig.php'); ?>
+
+/* tags.css */
+/* Contains css for any tag running in Ringside */
+
+
+
+/************************************************** Dashboard */
+/* these are original styles and might need to be refactored */
+.dashboard_header {
+	display: block;
+}
+
+.dashboard_header h2 {
+	clear: left;
+	font-size: 22px;
+	margin: 8px;
+	padding-left: 20px;
+	background-position: left;
+	background-repeat: no-repeat;
+	}
+
+.dashboard_header h2.no_icon {
+	padding-left: 0px;
+}
+	
+.dashboard_actions {
+	float: left;
+	text-align: left;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #222;
+	padding: 8px;
+}
+
+.dashboard_help {
+	float: right;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #222;
+	padding: 8px;
+}
+
+.dashboard_pipe{
+	padding-right: 8px;
+	margin-bottom: 10px;
+}
+
+.dashboard_header a, .dashboard_header a:visited {
+	font-size: 11px;
+	font-weight: bold;
+/*	color: #fff; */
+	text-decoration: none;
+	padding-right: 8px;
+	}
+	
+.dashboard_header a:hover {
+	text-decoration: underline;
+	}
+
+.dashboard_button {
+	margin-top: 10px;
+	text-align: right;
+	margin-bottom: 25px;
+}
+
+.dashboard_button_anchor {
+}
+		
+.dashboard_button a, .dashboard_button a:visited {
+	background-color: #ccc;
+	padding: 9px;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.dashboard_button a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+/************************************************** Multi Friend Selector */
+#multi-friend-selector {
+	background-color:#fff;
+	padding:12px;
+}
+#multi-friend-selector #group-selector {
+	display:none;
+}
+#multi-friend-selector #select-all {
+	display:inline;
+	display:none;
+}
+#multi-friend-selector #search {
+	display:inline;
+	display:none;
+}
+#friends-view-navigation {
+	margin:10px 0 0 0;
+	display:none;
+}
+	#alpha-select {
+		float:left;
+	}
+		#alpha-select a {
+			margin:0 0px 0 0;
+		}
+	#selected-tab {
+		float:right;
+	}
+#friends-view {
+	background:#fff;
+	border:1px solid #999;
+	clear:both;
+	height:400px;
+	overflow:auto;
+	padding:3px 0 0 0;
+}
+	#friends-view ul {
+		
+	}
+	#friends-view ul li {
+		float:left;
+		height:72px;
+		margin:4px;
+		overflow:hidden;
+		width:152px;
+	}
+	#friends-view ul li a {
+		background:transparent url(<?php echo RingsideWebConfig::$webRoot?>/images/bkg-friend.png) no-repeat;
+		color:#525252;
+		display:block;
+		font-size:11px;
+		font-weight:normal;
+		height:72px;
+		padding:7px 6px;
+		width:152px;
+	}
+	#friends-view ul li a:hover {
+		background:transparent url(<?php echo RingsideWebConfig::$webRoot?>/images/bkg-friend-hover.png) no-repeat;
+		text-decoration:none;
+	}
+	#friends-view ul li a.friend-selected {
+		background:transparent url(<?php echo RingsideWebConfig::$webRoot?>/images/bkg-friend-selected.png) no-repeat;
+		color:#fff;
+	}
+	#friends-view ul li a.friend-selected:hover {
+		background:transparent url(<?php echo RingsideWebConfig::$webRoot?>/images/bkg-friend-selected.png) no-repeat;
+	}
+	.thumb-square {
+		background-color:#fff;
+		background-position:center center;
+		background-repeat:no-repeat;
+		border:1px solid #25568c;
+		display:block; 
+		float:left;
+		margin:0 5px 0 0;
+		height:54px; 
+		width:54px; 
+	}
+	.friend-name {
+		display:block;
+	}
+	.friend-info {
+		font-size:10px;
+	}
+	#multi-friend-selector .tabs_left ul li a.selected, .tabs_left ul li a.selected:visited, .tabs_right ul li a.selected, .tabs_right ul li a.selected:visited {
+		background:#fff;
+		border:1px solid #999;
+		border-bottom:1px solid #fff;
+		color:#333;
+	}
+	#multi-friend-selector .tabs_left ul li a.selected:hover, .tabs_right ul li a.selected:hover {text-decoration:none;}
+	#multi-friend-selector .tabs_left ul li a, .tabs_right ul li a {
+		background:#f2f2f2;
+		border:1px solid #999;
+		border-bottom:1px solid #999;
+		color:#9d9d9d;
+		display:block;
+		float:left;
+		font-size:12px;
+		padding:5px 15px;
+	}
+	#multi-friend-selector .tabs_left ul li a:hover, .tabs_right ul li a:hover {color:#666;}
+	#multi-friend-selector #tabs-subnav {
+		display:none;
+	}
+	
+	
+	
+
+/************************************************** Tabs */
+/* L2 tabs, grey color.  Not the top level orange tabs.  Additional styles will 
+   be needed for L3 tabs.  Community Panel, for example, need L3 */
+	.tabs {
+		height:36px;
+		position:relative;
+	}
+		.tabs_left {
+			position:absolute;
+			bottom:-1px;
+			float:left;
+		}
+		.tabs_right {
+			position:absolute;
+			bottom:-1px;
+			right:0px;
+			float:right;
+		}
+			.tabs_left ul li{
+				float:left;
+				margin:0 0 0 6px;
+			}
+			.tabs_right ul li{
+				float:left;
+				margin:0 6px 0 0;
+			}
+			.tabs_left ul li a, .tabs_right ul li a {
+				background:#f2f2f2;
+				border:1px solid #ccc;
+				border-bottom:1px solid #adabab;
+				color:#9d9d9d;
+				display:block;
+				float:left;
+				font-size:12px;
+				padding:5px;
+			}
+			.tabs_left ul li a:visited{color:#9d9d9d;}
+			.tabs_left ul li a:hover, .tabs_right ul li a:hover {color:#666;}
+			.tabs_left ul li a.selected, .tabs_left ul li a.selected:visited, .tabs_right ul li a.selected, .tabs_right ul li a.selected:visited {
+				background:#eaeaea;
+				border:1px solid #adabab;
+				border-bottom:1px solid #eaeaea;
+				color:#333;
+			}
+			.tabs_left ul li a.selected:hover, .tabs_right ul li a.selected:hover {text-decoration:none;}
+			html body div.ringside .tabs_left ul li a.first {}
+			html body div.ringside .tabs_left ul li a.last {}
+	#tabs-subnav {
+		border-top:1px solid #adabab;
+		clear:both;
+	}	
+	#tabs-subnav-content {
+		border-top:6px solid #eaeaea;
+		font-size:1px;
+	}
+	

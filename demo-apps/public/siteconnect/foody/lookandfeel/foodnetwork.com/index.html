@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<div id="foodtv-wrapper">
+	
+		<div id="title-bar">&nbsp;</div>
+		<form id="form1" name="form1" method="post" action="">
+			<div id="content-cell">			
+				<div class="recipe-to-rate" style="background:#fff url(<?php echo $item['img'] ?>) no-repeat;">		
+					<h2><?php echo $item['name'] ?></h2>
+					<p class="courtesy-of">courtesy of <?php echo $item['courtesy'] ?></p>
+					<p class="what-do-you-think">What do you think of this recipe?</p>		
+					<div class="ratings">						
+						<input type="radio" name="radio" id="tried-liked" value="tried-liked" />
+						<label for="tried-liked">This one was good!</label>	
+					
+						<input type="radio" name="radio" id="want-to-try" value="want-to-try" />
+						<label for="want-to-try">Would like to try</label>
+						
+						<input type="radio" name="radio" id="did-not-like" value="did-not-like" />
+						<label for="did-not-like">Didn't like this one</label>	
+					
+						<input type="radio" name="radio" id="not-interested" value="not-interested" />	
+						<label for="not-interested" class="last">Not Interested</label>	
+					</div><!-- end div#ratings -->				
+				</div><!-- end div#recipe-to-rate -->
+			
+			</div><!-- end div#content-cell -->
+			
+			<input id="btn-submit-quiz" type="submit" value="Submit!" />			
+		</form>
+	</div>
+	<!-- end div#wrapper -->

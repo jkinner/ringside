@@ -1,0 +1,5 @@
+set JAVa_HOME=C:\java\jdk1.5.0_06
+set PATH=%JAVA_HOME%\bin;%PATH%
+
+javac -version
+

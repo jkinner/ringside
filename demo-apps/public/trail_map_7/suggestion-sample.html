@@ -1,0 +1,25 @@
+<html>
+  <script src="http://localhost:8080/rswidget.js" type="text/javascript" />  
+  <head>
+	<title>Ringside Authenticated Widget Demo</title>
+  </head>
+  <body onLoad="rswidget.renderAllWidgets({apiKey:'cecdc629adb83f81236ba9342ce68492',
+		loginServer:'http://localhost:8080',
+		forceAuthentication:true,
+		renderEndpoint:'http://localhost:8080/render.php',
+		trustEndpoint:'http://localhost:8080/trust.php'
+		});">
+	<h1>Ringside Widget Demo</h1>
+	<p>A Ringside Widget can be used to display embedded FBML documents rendered in the context and permissions of your application.</p>
+	<p>Below is an example widget:</p>
+        <div id="sample1" class="rs-fbml" style="border: 1px dashed gray; width: 633px; height: 200px; padding: 3px; background: lightyellow">  		 					
+		It is a picture of <fb:name uid="100001"> <fb:profile-pic uid="100000" size="square" linked="true"><p>
+	
+	<rs:suggestions showform="true"
+                newtopics="true"
+                existingtopics="false"
+                topic="Great Band Names">
+    <rs:ratings style="yesno"/>
+</rs:suggestions>
+	</div>
+</html>

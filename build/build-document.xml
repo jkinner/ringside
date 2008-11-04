@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!--
+Generates phpdoc so it can be published and used for API documentation.
+-->
+<project name="ringside.build.doc" default="doc" basedir="..">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<!-- Default Properties for managing OpenFB -->
+	<property name="doc.dir" value="./dist/docs" />
+
+	<target name="doc" description="">
+		<phpdoc title="Ringside Api Documentation" defaultpackagename="Ringside" defaultcategoryname="Ringside" destdir="${doc.dir}" output="HTML:frames:earthli">
+			<fileset dir="api/includes">
+				<include name="**/*.php" />
+			</fileset>
+			<fileset dir="api/clients/php">
+				<include name="**/*.php" />
+			</fileset>
+			<fileset dir="m3/clients/php">
+				<include name="**/*.php" />
+			</fileset>
+			<fileset dir="social/includes/ringside/social/dsl">
+				<include name="**/*.php" />
+			</fileset>
+			<projdocfileset dir=".">
+				<include name="license.txt" />
+			</projdocfileset>
+		</phpdoc>
+	</target>
+
+	<target name="clean" description="remove the build src and distro directories">
+		<delete dir="${doc.dir}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+
+</project>

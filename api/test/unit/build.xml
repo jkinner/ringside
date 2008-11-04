@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<project name="api-unit-tests" default="all-tests" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="api" />
+	<property name="group" value="unit" />
+	<property name="build.dir" value="${root.dir}/build" />
+	
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+	
+    <path id="api.test.path">
+        <pathelement dir="${root.dir}/api/clients/php"/>
+    </path>
+
+	<!-- 
+		To run a single or group of unti tests
+		phing -Dsuite=XXX -Dtest=RunSomeTestCase
+	-->
+	<target name="test-unit" description="Run a single test -Dsuite=XXX -Dtest=RunSomeTest" >
+		<phing phingfile='${build-test}' target='test-unit' haltonfailure='true' />
+	</target>
+			
+	<target name="all-tests" description="Run all tests" depends="client-tests,rest-tests" />
+	
+	<target name="rest-tests" description="Run the REST tests">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs='true'>
+	    	<property name="suite" value="rest" />
+		</phing>
+	</target>
+
+	<target name="client-tests" description="Run the Client tests">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs="true" >
+	    	<property name="suite" value="client/php" />
+	    </phing>
+	</target>
+	
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<phing phingfile='${build-test}' target='clean' haltonfailure='true' inheritRefs='true'/>
+	</target>
+	
+</project>

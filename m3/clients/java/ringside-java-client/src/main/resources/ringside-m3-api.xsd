@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           jaxb:version="2.0"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           blockDefault="">
+
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:schemaBindings>
+                <jaxb:package name="org.ringside.client.api.m3.schema"/>
+            </jaxb:schemaBindings>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- ======================================== -->
+    <!-- Type Definitions                         -->
+    <!-- ======================================== -->
+
+    <xs:complexType name="ApiComplexType">
+        <xs:sequence>
+            <xs:element name="api_name" type="xs:string"/>
+            <xs:element name="pathname" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ApplicationComplexType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="callback_url" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="canvas_url" type="xs:string"/>
+            <xs:element name="sidenav_url" type="xs:string"/>
+            <xs:element name="isdefault" type="xs:string"/>
+            <xs:element name="desktop" type="xs:string"/>
+            <xs:element name="developer_mode" type="xs:string"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="author_url" type="xs:string"/>
+            <xs:element name="author_description" type="xs:string"/>
+            <xs:element name="support_email" type="xs:string"/>
+            <xs:element name="canvas_type" type="xs:string"/>
+            <xs:element name="application_type" type="xs:string"/>
+            <xs:element name="mobile" type="xs:string"/>
+            <xs:element name="deployed" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="default_fbml" type="xs:string"/>
+            <xs:element name="tos_url" type="xs:string"/>
+            <xs:element name="icon_url" type="xs:string"/>
+            <xs:element name="postadd_url" type="xs:string"/>
+            <xs:element name="postremove_url" type="xs:string"/>
+            <xs:element name="privacy_url" type="xs:string"/>
+            <xs:element name="ip_list" type="xs:string"/>
+            <xs:element name="about_url" type="xs:string"/>
+            <xs:element name="logo_url" type="xs:string"/>
+            <xs:element name="edit_url" type="xs:string"/>
+            <xs:element name="default_column" type="xs:string"/>
+            <xs:element name="attachment_action" type="xs:string"/>
+            <xs:element name="attachment_callback_url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NetworkComplexType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TagComplexType">
+        <xs:sequence>
+            <xs:element name="tag_namespace" type="xs:string"/>
+            <xs:element name="tag_name" type="xs:string"/>
+            <xs:element name="handler_class" type="xs:string"/>
+            <xs:element name="source_file" type="xs:string"/>
+            <xs:element name="source_file_last_modified" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ======================================== -->
+    <!-- Attribute Definitions                    -->
+    <!-- ======================================== -->
+
+    <xs:attribute name="list" type="xs:boolean"/>
+
+    <!-- ======================================== -->
+    <!-- API Response Definitions                 -->
+    <!-- ======================================== -->
+
+    <xs:element name="error_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="error_code" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="error_msg" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="request_args" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="arg" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="key" type="xs:string"/>
+                                        <xs:element name="value" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="list" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- INVENTORY -->
+
+    <xs:element name="inventory_ping_response" type="xs:int">
+    </xs:element>
+
+    <xs:element name="inventory_getApis_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="api" type="ApiComplexType" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute ref="list" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getApi_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="api" type="ApiComplexType" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getApplications_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="application" type="ApplicationComplexType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute ref="list" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getApplication_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="application" type="ApplicationComplexType" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getNetworks_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="network" type="NetworkComplexType" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute ref="list" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getNetwork_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="network" type="NetworkComplexType" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getTags_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tag" type="TagComplexType" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute ref="list" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getTag_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tag" type="TagComplexType" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inventory_getVersionInfo_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ringside">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="version" type="xs:string"/>
+                            <xs:element name="build_number" type="xs:string"/>
+                            <xs:element name="build_date" type="xs:string"/>
+                            <xs:element name="svn_revision" type="xs:string"/>
+                            <xs:element name="install_dir" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="php">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="version" type="xs:string"/>
+                            <xs:element name="doctrine_version" type="xs:string"/>
+                            <xs:element name="php_ini_file" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="extensions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="extension" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="version" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="list" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CONFIG -->
+
+    <xs:element name="config_getLocalSettings_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="local_setting" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="value" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="list" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="config_setLocalSettings_response" type="xs:int">
+    </xs:element>
+
+    <xs:element name="config_getPhpIniSettings_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="php_ini_setting" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="value" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="list" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- METRICS -->
+
+    <xs:element name="metrics_getApiDurations_response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="api_duration" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="key" type="xs:string"/>
+                            <xs:element name="count" type="xs:long"/>
+                            <xs:element name="min" type="xs:double"/>
+                            <xs:element name="max" type="xs:double"/>
+                            <xs:element name="avg" type="xs:double"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="metrics_purgeApiDurations_response" type="xs:int">
+    </xs:element>
+
+    <!-- OPERATION -->
+
+    <xs:element name="operation_evaluatePhpCode_response" type="xs:string">
+    </xs:element>
+
+    <xs:element name="operation_getFileContent_response" type="xs:string">
+    </xs:element>
+
+</xs:schema>

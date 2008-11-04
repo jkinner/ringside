@@ -1,0 +1,86 @@
+2007 Dec 7
+ + Added notifications_sendEmail methods: enhancement http://bugs.developers.facebook.com/show_bug.cgi?id=962
+ + Updated PageProfileField enumeration class to reflect the fields available for Facebook pages
+
+2007 Nov 7
+ + Added methods for Facebook Pages to FacebookMethod, FacebookRestClient, IFacebookRestClient:
+   - pages_getInfo
+   - pages_isAppAdded
+   - pages_isAdmin
+   - pages_isFan
+ + Added helper class PageProfileField, an enum for the fields of the page profile, for use with pages_getInfo
+
+2007 Nov 4
+ + Added pre-compiled facebook.jar which includes all classes other than ExampleClient
+ + Added interface IFeedImage and the classes FeedFacebookPhoto and FeedUserPhoto
+   to reflect ability to add Facebook-hosted photos to feed story methods
+ + Fixed parameter bugs in feed_publishTemplatizedAction
+ + Added some missing Javadoc
+ + Added the following SMS methods to FacebookRestClient and IFacebookRestClient:
+   - sms_sendMessageWithSession
+   - sms_sendMessage
+   - sms_sendResponse
+   - sms_canSend
+ + Added the forgotten fbml_setRefHandle method to FacebookRestClient and IFacebookRestClient
+ + http://bugs.developers.facebook.com/show_bug.cgi?id=582 fixed
+ + http://bugs.developers.facebook.com/show_bug.cgi?id=584 fixed
+
+2007 Oct 26
+ + Interfaces IFacebookRestClient and IFacebookMethod added.
+ + Turned FacebookRestClient into an abstract base class
+ + Introduced FacebookXmlRestClient (xml output format, same behavior as before)
+   and FacebookJsonRestClient (uses the more compact json output format)
+ + Switched JSON libraries from json.org to simple.json.org, because the latter
+   includes a parser necessary for FacebookJsonRestClient
+ + Created FeedImage class to fix a long-standing bug with the access level of
+   the Pair inner class as a param to the feed_publishStoryToUser and
+   feed_publishActionOfUser methods
+ + Added the helper class MarketplaceListing and the following methods for
+   interacting with Facebook Marketplace:
+    * marketplace_createListing
+    * marketplace_editListing
+    * marketplace_removeListing
+    * marketplace_getCategories
+    * marketplace_getSubCategories
+    * marketplace_search
+ + Added the following methods:
+    * feed_publishTemplatizedAction
+    * users_setStatus
+    * users_hasAppPermission
+ + Added FacebookExtendedPerm convenience class for use with users_hasAppPermission
+   and for static convenience method
+ + Updated Javadoc
+ + Removed references to deprecated API method notifications_sendRequest
+ + http://bugs.developers.facebook.com/show_bug.cgi?id=212 fixed
+ + http://bugs.developers.facebook.com/show_bug.cgi?id=103 fixed
+
+2007 Jul 13
+ + Add some more common parameter names to FacebookParam enum
+ + FacebookParam instances can now return their names with and without the "fb_sig_" prefix
+ + FacebookRestClient remembers the current user ID and session key rather  than having to query it from the server each time
+ + Feed story body is optional
+ + Feed notification parameters renamed
+ + Facebook param extraction that works with a map from HttpServletRequest
+ + Stripping/adding fb_sig_ prefix for some parameters
+ + Helper method for profile field name equality
+
+2007 May 24
+ + Added FacebookParam and FacebookSignatureUtil
+ + Factored out signature calculations from FacebookRestClient to FacebookSignatureUtil
+ + Added the Platform API methods and fields
+
+2007 Mar 12
+ + Added batch version of photos_addTag to FacebookRestClient
+ + Added JSON library from json.org to bin directory as JSON.jar
+
+2007 Mar 8
+ + ExampleClient prints helpful message when credentials not specified in settings.conf.
+ + Added photo uploading methods to FacebookRestClient and FacebookMethod:
+   * photos_upload
+   * photos_createAlbum
+   * photos_addTag
+
+Changes prior to 2007 Mar 8:
+ + Support for fql_query added to the library
+ + Library upgraded to API 1.0
+

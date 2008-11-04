@@ -1,0 +1,41 @@
+<html>
+  <head>
+  	<!-- A sample resizer script that enables cross-domain resizing of an iframe in your web site. It relies on a script
+		  defined in your web site's page called "updateIFrame" that takes an iframe element ID, a new width, and a new height to resize that
+		  ID to.
+		  
+		  Based almost entirely on original tutorial code at: http://blog.johnmckerrell.com/2006/10/22/resizing-iframes-across-domains/
+    -->
+    <title>Resizing Page</title>
+    <script type="text/javascript">
+      function onLoad() {
+        var params = window.location.search.substring( 1 ).split( '&' );
+        var height;
+        var width;
+        var id;
+        for( var i = 0, l = params.length; i < l; ++i ) {
+          var parts = params[i].split( '=' );
+          switch( parts[0] ) {
+          case 'height':
+            height = parseInt( parts[1] );
+            break;
+          case 'width':
+            width = parseInt( parts[1] );
+            break;
+          case 'id':
+          	id = parts[1];
+          	break;
+          }
+        }
+        if( typeof( height ) == 'number' ) {
+          window.top.updateIFrame( id, width, height );
+        }
+      }
+
+    window.onload = onLoad;
+    </script>
+  </head>
+  <body>
+    <p>Resizing IFrame...</p>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!-- Unit tests for the M3 project -->
+
+<project name="m3-unit-tests" default="all-tests" basedir=".">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Default Properties -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="m3" />
+	<property name="group" value="unit" />
+	<property name="build.dir" value="${root.dir}/build" />
+
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+
+	<path id="m3.test.path">
+		<pathelement dir="${root.dir}/api/clients/php"/>
+	</path>
+	
+	<!-- 
+		To run a single or group of unti tests
+		phing -Dsuite=XXX -Dtest=RunSomeTestCase
+	-->
+	<target name="test-unit" description="Run a single test -Dsuite=XXX -Dtest=RunSomeTest" >
+		<phing phingfile='${build-test}' target='test-unit' haltonfailure='true' inheritRefs="true"/>
+	</target>
+
+	<target name="all-tests" description="Run all tests" depends="util-tests,event-tests" />
+
+	<target name="util-tests" description="Run the Util tests">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs="true" >
+			<property name="suite" value="util" />
+		</phing>
+	</target>
+
+	<target name="event-tests" description="Run the Event tests">
+		<phing phingfile='${build-test}' target='test-suite' haltonfailure='true' inheritRefs="true">
+			<property name="suite" value="event" />
+		</phing>
+	</target>
+
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">
+		<phing phingfile='${build-test}' target='clean' haltonfailure='true' inheritRefs="true"/>
+	</target>
+
+</project>

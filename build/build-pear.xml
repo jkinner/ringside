@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+
+<project name="ringside.build.pear" default="pear.dist" basedir="..">
+
+	<includepath classpath="build/vendor/d51/includes" />
+	<taskdef classname="phing.tasks.ext.d51PearPkg2Task" name="pear" />
+
+	<includepath classpath="build/vendor/salty/includes" />
+	<taskdef classname="Salty.PEAR.Server.SaltyTask" name="salty" />
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- locations where the generated artifacts will go -->
+	<property name="pear.dir" value="./dist/pear" />
+	<property name="pear.src" value="${pear.dir}/src" />	
+	<property name="pear.distro" value="${pear.dir}/distro" />
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<if>
+		<isset property="env.BUILD_NUMBER" />
+		<then>
+			<property name="pkg.version" value="${pkg.version.base}.${env.BUILD_NUMBER}" />
+		</then>
+		<else>
+			<property name="pkg.version" value="${pkg.version.base}.0" />
+		</else>
+	</if>
+
+	<!-- Prep and create source directory to build pear package. -->
+	<target name="pear.src" description="Build the sourcing distribution for PEAR.">
+
+		<phingcall target="project.do">
+			<property name="project.name" value="api" />
+			<property name="project.vendors" value="facebook" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="social" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="web" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="m3" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="system-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="extension-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="demo-apps" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+
+		<phingcall target="project.do">
+			<property name="project.name" value="build" />
+			<property name="project.vendors" value="" />
+		</phingcall>
+		
+		<copy todir="${pear.src}/ringside">
+			<fileset dir="build/public">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<copy file="LocalSettings.php.sample" todir="${pear.src}/${web.root}" />
+
+	</target>
+
+	<target name="pear.dist"
+			description="Create the distribution package.xml and the TAR file"
+			depends="pear.src">
+
+		<echo>Channel is ${pkg.channel}</echo>
+		<pear dir="${pear.src}" baseinstalldir="/">
+			<channel>${pkg.channel}</channel>
+			<name>ringside</name>
+			<summary>${pkg.summary}</summary>
+			<description>${pkg.description}</description>
+			<notes>${pkg.notes}</notes>
+			<lead user="ringside" name="Ringside Development Team" email="dev@ringsidenetworks.com" />
+			<license>${pkg.license}</license>
+
+			<version release="${pkg.version}" api="${pkg.version}" />
+			<stability release="${pkg.stability}" api="${pkg.stability}" />
+
+			<dependencies>
+				<php minimum_version="5.2.0" />
+				<pear minimum_version="1.6.0" recommended_version="1.6.1" />
+				<package name="Cache_Lite" channel="pear.php.net" recommended_version="1.7.2" minimum_version="1.7.0" />
+				<extension name="curl" />
+				<extension name="tidy" minimum_version="2.0"/>
+				<extension name="dom" />
+			</dependencies>
+
+			<dirroles key="${web.root}" value="www" />
+			<dirroles key="ringside" value="php" />
+			<dirroles key="ringsideidm" value="php" />
+			<dirroles key="facebook" value="php" />
+
+			<postInstall script="ringside/pear/setup.php">
+				<paramgroup name="Database" instructions="Chance to pre configure database settings.">
+					<param name="RS_DB_TYPE" prompt="What is the type of the database?" type="string" default="mysql" />
+					<param name="RS_DB_NAME" prompt="What is the name of the database?" type="string" default="ringfb" />
+					<param name="RS_DB_SERVER" prompt="What is the server and port for Mysql?" type="string" default="localhost:3306" />
+					<param name="RS_DB_USERNAME" prompt="Database username for connection?" type="string" default="root" />
+					<param name="RS_DB_PASSWORD" prompt="Database password for connection?" type='string' default='NONE' />
+				</paramgroup>
+				<paramgroup name="Urls" instructions="Chance to preconfigure correct needed urls.">
+					<param name="RS_WEB_ROOT" prompt="Root URL for references?" type="string" default="/ringside" />
+				</paramgroup>
+			</postInstall>
+
+		</pear>
+
+		<exec command="pear package" dir="${pear.src}" passthru="true" />
+		<mkdir dir="${pear.distro}"/>
+		<move file="${pear.src}/ringside-${pkg.version}.tgz" todir="${pear.distro}" />
+
+	</target>
+
+	<target name="project.do">
+		<!-- Copy the include path files -->
+		<copy todir="${pear.src}">
+			<fileset dir="${project.name}/includes">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the web files -->
+		<copy todir="${pear.src}/${web.root}">
+			<fileset dir="${project.name}/public">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the configuration files -->
+		<copy todir="${pear.src}/ringside/sql">
+			<fileset dir="${project.name}/config">
+				<include name="**/*" />
+				<exclude name="LocalSettings.php.sample"/>
+			</fileset>
+		</copy>
+
+		<!-- Copy the client to the include path -->
+		<if>
+			<available file="${project.name}/clients/php" />
+			<then>
+				<copy todir="${pear.src}">
+					<fileset dir="${project.name}/clients/php">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+			</then>
+		</if>
+
+		<!-- Push vendor related activity to include path -->
+		<!-- TODO how to execute on PEAR updates if need be -->
+		<foreach
+			list="${project.vendors}"
+			target="vendor.do"
+			param="vendor.name"
+			delimiter="," />
+	</target>
+
+	<target name="vendor.do">
+		<copy todir="${pear.src}">
+			<fileset dir="${project.name}/vendor/${vendor.name}/includes/">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="pear.release" description="release a build into the channel">
+		<salty
+			username="${channel.username}" 
+			password="${channel.password}" 
+			uri="${channel.uri}"
+			admin="${channel.adminpage}"
+			file="${pear.distro}/ringside-${pkg.version}.tgz" />
+	</target>
+	
+	<target name="clean">
+		<delete
+			dir="${pear.dir}"
+			includeemptydirs="true"
+			verbose="false"
+			failonerror="true" />
+	</target>
+
+</project>

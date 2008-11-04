@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!--
+This builds the clients distribution.  These clients can be used in
+social applications so those applications can talk to the Ringside server.
+-->
+
+<project name="ringside.build.clients" default="build.clients.distros" basedir="..">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<property name="clients.dir" value="./dist/clients" />
+	<property name="clients.src.dir" value="${clients.dir}/src" />
+	<property name="clients.distro.dir" value="${clients.dir}/distro" />
+
+	<if>
+		<isset property="env.BUILD_NUMBER" />
+		<then>
+			<property name="pkg.version" value="${pkg.version.base}.${env.BUILD_NUMBER}" />
+		</then>
+		<else>
+			<property name="pkg.version" value="${pkg.version.base}.0" />
+		</else>
+	</if>
+	
+	<!-- Prep and create source directory to build distribution. -->
+	<target name="build.clients.src"
+		    description="Build a source directory to create the distributions from.">
+
+		<mkdir dir="${clients.src.dir}"/>
+
+		<!-- API -->
+		<copy todir="${clients.src.dir}">
+			<fileset dir="api/clients/php">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Social -->
+		<copy todir="${clients.src.dir}">
+			<fileset dir="social/clients/php">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- M3 -->
+		<copy todir="${clients.src.dir}">
+			<fileset dir="m3/clients/php">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Extension apps -->
+		<copy todir="${clients.src.dir}">
+			<fileset dir="extension-apps/clients/php">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<!-- Build the distro files for distribution -->
+	<target name="build.clients.distros"
+		    description="Create the distro files for distribution"
+		    depends="build.clients.src">
+
+		<mkdir dir="${clients.distro.dir}"/>
+		<tar destfile="${clients.distro.dir}/ringside-client-${pkg.version}.tar.gz"
+			 compression="gzip"
+			 basedir="${clients.src.dir}" />
+		<zip destfile="${clients.distro.dir}/ringside-client-${pkg.version}.zip"
+			 basedir="${clients.src.dir}" />
+	</target>
+
+	<target name="clean"
+		    description="remove the build src and distro directories">
+		<delete dir="${clients.dir}" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+
+</project>

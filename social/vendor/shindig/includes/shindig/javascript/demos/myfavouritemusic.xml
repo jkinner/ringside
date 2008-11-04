@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="My Favorite Music">
+    <Require feature="opensocial-0.7"/>
+    <Require feature="setprefs"/>
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
+  <Content type="html">
+  
+  <![CDATA[
+
+  <div id="overlord">
+  
+    <div id="loading">Loading...</div>
+    <div id="updating" style="display:none;">Updating...</div>
+    <div id="area"></div>
+
+    <div id="lastfmAccount" class="lastfmAccount">
+        <div id="hadALastfmAccount" style="display:none;" class="strongLinks">
+          <p><a id="haveAccountLink" href="javascript:;" onclick="$('setUsername').toggle();_IG_AdjustIFrameHeight();new Effect.ScrollTo('setUsername');return false;">Have a Last.fm account? Click here.</a></p>
+        </div>
+        <form id="setUsername" style="display:none;">
+          <input type="text" id="username" />
+          <input type="submit" value="That's me!" />
+          <span id="cancelChangeUsername">| <a href="javascript:;" class="cancel" id="">cancel</a></span>
+        </form>
+    </div>
+    <div id="placeholder"></div>
+
+  </div>
+
+  <!--cript src="http://playground.audioscrobbler.com/opensocial/goog/common.js"></script-->
+  <!--cript src="http://playground.audioscrobbler.com/opensocial/goog/SocialNorms.js"></script-->
+  <style>
+    @import url(http://87.117.229.54/opensocial/main.5.css?13);
+    @import url(http://87.117.229.54/opensocial/canvas.1.css);
+  </style>
+  <script type="text/javascript" src="http://cdn.last.fm/javascript/lib/prototype.js"></script>
+  <script type="text/javascript" src="http://cdn.last.fm/javascript/lib/scriptaculous.js"></script>
+  <script type="text/javascript" src="http://cdn.last.fm/javascript/source/flashplayer_inline.js"></script>
+  <script type="text/javascript" src="http://cdn.last.fm/javascript/11/flashpreview.js"></script>
+
+  <script src="http://cdn.last.fm/opensocial/lfm.4.js"></script>
+ 
+  ]]>
+  </Content>
+</Module>

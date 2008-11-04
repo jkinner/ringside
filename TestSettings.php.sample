@@ -1,0 +1,24 @@
+<?php
+
+$myHostPort = "RS_WEBSERVER_HOST_PORT";
+
+# Turns off Noisy Warning messages caused by the Facebook Rest Client
+$GLOBALS['facebook_config']['debug']=0;
+
+## Database configuration setttings for setting up mock data.
+$db_type = 'RS_DB_TYPE';
+$db_server = 'RS_DB_SERVER';
+$db_name = 'RS_DB_NAME';
+$db_username = 'RS_DB_USERNAME';
+$db_password = 'RS_DB_PASSWORD';
+
+## URL locations for Web, Social, and API endpoints.
+$webUrl = "http://$myHostPortRS_WEB_ROOT";
+$serverUrl = "http://$myHostPortRS_API_ROOT/restserver.php";
+$socialUrl = "http://$myHostPortRS_SOCIAL_ROOT";
+
+## URL for location of Demo applications
+$canvasUrl = "http://$myHostPortRS_WEB_ROOT/canvas.php";
+$demoUrl = "http://$myHostPortRS_DEMO_ROOT";
+
+?>

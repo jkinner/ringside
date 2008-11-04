@@ -1,0 +1,44 @@
+This is a very simple MVC framework modeled off of Ruby on Rails
+
+The relevant directory structure is:
+
+->App
+-->Controllers (opening files, accessing HTTP parameters, rendering output etc..)
+-->Models (any DB objects and their business logic)
+-->Views (HTML plus a little PHP to iterate arrays etc..)
+
+->Public
+-->images
+-->js
+-->stylesheets
+
+index.php (this file opens the appropriate classes depending on the GET requests, it uses PHP's __autoload function)
+
+There are 2 abstract classes in the controllers file, application_controller and ringside_controller
+
+application_controller -> the backbone of this simple framework
+ringside_controller -> uses Ringside's PHP client library to connect to the Ringside rest server
+
+all other classes in the controllers folder extend the ringside abstract class which extends the application controller.
+
+the methods inside of the controller are also known as "actions", each public method has a corresponding PHP file
+in the views directory (with the same name as the method)
+
+**MAPPING URLS TO CONTROLLERS AND ACTIONS
+
+http://example.com/?controller_name&some_action
+
+-index.php in the root of this structure must explicitly define the GET parameters that map to controllers
+--application_controller automatically searches the parameter list for any methods defined in the controller you have landed on
+--if multiple actions are specified (?controller_name&some_action_&and_another_action), obviously only one can be rendered, so the first one is used
+--if an action that doesn't exist, or no action is specified, the index method is rendered
+--actions prefixed with an underscore are called "partials", partials are often used for AJAX requests because the render without the layout
+
+So, a real world example:
+
+http://example.com/?communities&feed
+
+the above URL would render the feed method and view in the communities controller
+
+http://example.com/?communities&feed&index
+the above URL has two methods, since only one can be displayed, it just uses the first one (feed)

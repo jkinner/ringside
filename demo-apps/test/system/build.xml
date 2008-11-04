@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<project name="demo-apps-system-tests" default="all-tests" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Default Properties for managing OpenFB -->
+	<property name="root.dir" value="../../.." />
+	<property name="project" value="demo-apps" />
+	<property name="group" value="system" />
+	<property name="build.dir" value="${root.dir}/build" />
+
+	<property name="build-test" value="${build.dir}/build-test.xml" />
+
+	<includepath classpath="${root.dir}/demo-apps/test/system/includes" />
+
+	<!-- 
+		To run a single or group of unti tests
+		phing -Dsuite=XXX -Dtest=RunSomeTestCase
+	-->
+	<target name="test-unit" description="Run a single test -Dsuite=XXX -Dtest=RunSomeTest" >
+		<phing phingfile='${build-test}' target='test-unit' haltonfailure='true' />
+	</target>
+			
+	<target name="all-tests" description="Run all tests"
+		    depends="trail_map_1-tests,
+		             trail_map_3-tests,
+		             trail_map_4-tests" />
+	
+	<target name="trail_map_1-tests" description="Run test's for demo #1.">
+		<phing phingfile='${build-test}' target='web-suite' haltonfailure='true' >
+	    	<property name="suite" value="trail_map_1" />
+		</phing>
+	</target>
+	
+	<target name="trail_map_3-tests" description="Run test's for demo #3.">
+		<phing phingfile='${build-test}' target='web-suite' haltonfailure='true' >
+	    	<property name="suite" value="trail_map_3" />
+		</phing>
+	</target>
+	
+	<target name="trail_map_4-tests" description="Run test's for demo #4.">
+		<phing phingfile='${build-test}' target='web-suite' haltonfailure='true' >
+	    	<property name="suite" value="trail_map_4" />
+		</phing>
+	</target>
+	
+	<!-- clean temp files -->
+	<target name="clean" description="Removes the Reports dir.">		
+		<phing phingfile='${build-test}' target='clean' haltonfailure='true' />
+	</target>
+	
+</project>

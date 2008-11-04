@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<!--
+    Supports the commans provided by Doctrine tailored for Ringside.
+    The build can export and database and turn it into Doctrin files.
+    It can also turn your model into SQL or export it to a database. 
+-->
+
+<project name="ringside.build.development" default="usage" basedir="..">
+
+	<includepath classpath="build/includes" />
+	<includepath classpath="api/includes" />
+
+	<taskdef classname="ringside.phing.DoctrineImportTask" name="db-import" />
+	<taskdef classname="ringside.phing.DoctrineExportTask" name="db-export" />
+	<taskdef classname="ringside.phing.DoctrineSqlTask" name="db-sql" />
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<property name="dir.generated" value="${dist.dir}/doctrine/ringside/dao/records" />
+	<property name="dir.records" value="api/includes/ringside/api/dao/records" />
+	
+	<target name="usage" description="Usage">
+		<echo>
+			There are two main targets, import and export between DB and Doctrine.
+			You can use the sql target to generate a .sql file for use when manually creating your schema.
+		</echo>
+	</target>
+
+	<target name="import" description="Doctrine import">
+		<db-import dir="${dir.generated}">
+			<dsn>
+				<type>${db.type}</type>
+				<username>${db.user}</username>
+				<database>${db.name}</database>
+				<password>${db.password}</password>
+				<server>${db.server}</server>
+			</dsn>
+		</db-import>
+
+		<move todir="${dir.generated}" overwrite="true">
+			<fileset dir="${dir.generated}">
+				<include pattern="*.php" />
+				<exclude pattern="Ringside*.php" />
+			</fileset>
+			<mapper type="glob" from="*.php" to="Ringside*.php" />
+		</move>
+
+		<reflexive>
+			<fileset dir="${dir.generated}">
+				<include pattern="Ringside*.php" />
+			</fileset>
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="class (.*) extends" replace="class Ringside$1 extends"/>
+				</replaceregexp>
+			</filterchain>
+		</reflexive>
+	</target>
+
+	<target name="sql" description="Doctrine classes to SQL">
+		<mkdir dir="${dist.dir}"/>
+		<echo>Writing SQL to ${dist.dir}/${db.type}_ringside.sql</echo>
+		<db-sql dir="${dir.records}" out="${dist.dir}/${db.type}_ringside.sql">
+			<dsn>
+				<type>${db.type}</type>
+				<username>${db.user}</username>
+				<database>${db.name}</database>
+				<password>${db.password}</password>
+				<server>${db.server}</server>
+			</dsn>
+		</db-sql>
+	</target>
+
+	<target name="export" description="Doctrine classes to DB">
+		<db-export dir="${dir.generated}">
+			<dsn>
+				<type>${db.type}</type>
+				<username>${db.user}</username>
+				<database>${db.name}</database>
+				<password>${db.password}</password>
+				<server>${db.server}</server>
+			</dsn>
+		</db-export>
+	</target>
+
+	<target name="clean">
+		<delete dir="${dir.generated}" />
+	</target>
+
+</project>

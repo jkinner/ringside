@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<!--
+    Migrates LocalSettings.php.sample and TestSettings.php.sample to useable
+    configuration files.
+-->
+
+<project name="ringside.build.config" default="settings" basedir="..">
+
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+
+	<!-- Load build properties; prefer overrides in your build.local.properties -->
+	<property file="build/build.local.properties" />
+	<property file="build/build.properties" />
+
+	<!-- the names of the files this script will produce -->
+	<property name="LocalSettings" value="LocalSettings.php" />
+	<property name="TestSettings" value="TestSettings.php" />
+
+	<target name="settings" description="Create all settings files" depends="local-settings,test-settings" />
+
+	<target name="local-settings" description="Create a usable LocalSettings.php file.">
+
+		<copy toFile="${LocalSettings}" file="LocalSettings.php.sample" overwrite="true">
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="RS_DB_TYPE" replace="${db.type}" />
+					<regexp pattern="RS_DB_SERVER" replace="${db.server}" />
+					<regexp pattern="RS_DB_NAME" replace="${db.name}" />
+					<regexp pattern="RS_DB_USERNAME" replace="${db.user}" />
+					<regexp pattern="RS_DB_PASSWORD" replace="${db.password}" />
+					<regexp pattern="RS_WEB_ROOT" replace="${web.root}" />
+					<regexp pattern="RS_SOCIAL_ROOT" replace="${social.root}" />
+					<regexp pattern="RS_API_ROOT" replace="${api.root}" />
+					<regexp pattern="RS_DEMO_ROOT" replace="${demo.root}" />
+					<regexp pattern="socialApiKey.*=.*\'\'" replace="socialApiKey = '${social.key}'" />
+					<regexp pattern="socialSecretKey.*=.*\'\'" replace="socialSecretKey = '${social.secret}'" />
+					<regexp pattern="serverUrl = (.*)\$webRoot" replace="serverUrl = \1${api.root}" />
+					<regexp pattern="RS_WEBSERVER_HOST_PORT" replace="${webserver.hostport}" />
+					<regexp pattern="RS_APACHE_DIR" replace="${m3.webserver.install.dir}" />
+					<regexp pattern="RS_DATA_DIR" replace="${project.basedir}/data" />
+				</replaceregexp>
+			</filterchain>
+		</copy>
+
+	</target>
+
+	<target name="test-settings" description="Create usable TestSettings.php">
+
+		<copy toFile="${TestSettings}" file="TestSettings.php.sample" overwrite="true">
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="RS_WEBSERVER_HOST_PORT" replace="${webserver.hostport}" />
+					<regexp pattern="RS_DB_USERNAME" replace="${db.user}" />
+					<regexp pattern="RS_DB_PASSWORD" replace="${db.password}" />
+					<regexp pattern="RS_DB_SERVER" replace="${db.server}" />
+					<regexp pattern="RS_DB_NAME" replace="${db.name}" />
+					<regexp pattern="RS_DB_TYPE" replace="${db.type}" />
+					<regexp pattern="RS_WEB_ROOT" replace="${web.root}" />
+					<regexp pattern="RS_API_ROOT" replace="${api.root}" />
+					<regexp pattern="RS_SOCIAL_ROOT" replace="${social.root}" />
+					<regexp pattern="RS_DEMO_ROOT" replace="${demo.root}" />
+				</replaceregexp>
+			</filterchain>
+		</copy>
+	</target>
+
+</project>

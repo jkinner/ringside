@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<project name="system-apps-profile-tests" default="tests" basedir=".">
+	
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	
+	<!-- Default Properties -->
+	<property name="src.dir" value="../../includes" />
+	<property name="conf.dir" value="./conf" />
+	<property name="test.dir" value="." />
+	<property name="clients.dir" value="../../clients" />	
+	<property name="reports.dir" value="./reports" />
+	<property name="date.append" value="" description="If you would like each run to generate test and coverage in a directory override this with something like curly DATE curly" />
+
+	<!-- Set deployment properties and other local settings, prefer overrides in your build.local.properties -->
+	<property file="build.local.properties" />
+	
+	<path id="test.path">
+		<pathelement dir="../../public"/>
+		<pathelement dir="../../../api/includes"/>
+		<pathelement dir="../../../social/includes"/>
+		<pathelement dir="../../.."/>
+		<pathelement dir="../../../api/clients/php"/>
+   		<pathelement dir="${src.dir}"/>
+   		<pathelement dir="${conf.dir}"/>
+		<pathelement dir="${test.dir}"/>
+		
+	</path>
+
+	<target name="unittest" description="Run the handler tests">
+		<phpunit2 printsummary="false" haltonfailure="false" haltonerror="false">
+  	 		<!-- Add back in haltonskipped="false" if you have the updated phing -->
+  	 		<formatter type="plain" usefile="false" />
+  				<batchtest>
+					<classpath refid="test.path" />
+	    			<fileset dir="${test.dir}">
+		      			<include name="api/${test.unit}.php"/>
+	    			</fileset>
+  				</batchtest>
+		</phpunit2>
+	
+	</target>	
+
+	<target name="tests" description="Run the tests" >
+	    <phingcall target="test-suite"><property name="suite" value="." /></phingcall>
+	</target>
+	
+	<target name="test-suite" description="Run some test suite">
+		<mkdir dir="${reports.dir}/${suite}${date.append}/tests" />
+
+		<!-- **** WARNING: IF YOU CHECK IN WITH HALTON* SET TO FALSE, YOU MAY BE FORCED TO WEAR A FUNNY HAT FOR UP TO ONE (1) WEEK **** -->
+		<phpunit2 codecoverage="false" printsummary="true" haltonfailure="false" haltonerror="false" >
+  	 		<formatter type="xml" todir="${reports.dir}/${suite}${date.append}" outfile="tests.xml" />			
+  				<batchtest>
+					<classpath refid="test.path" />
+	    			<fileset dir="${test.dir}">
+	    				<include name="*TestCase.php"/>   				
+	    			</fileset>
+	    			
+  				</batchtest>
+		</phpunit2>
+
+		<!-- phpunit2report infile="${reports.dir}/${suite}${date.append}/tests.xml" format="frames" todir="${reports.dir}/${suite}${date.append}/tests" styledir="${conf.dir}"/>
+		<echo>here</echo>
+		<if>
+			<isset property="coverage"/>
+			<then>
+				<coverage-report outfile="${reports.dir}/${suite}${date.append}/coverage.xml">
+				  <report todir="${reports.dir}/${suite}${date.append}/coverage" styledir="${conf.dir}"/>
+				</coverage-report>
+			</then>
+		</if> -->
+	</target>
+	
+	<target name="clean" description="Erase the reports directory which contains all test information">
+		<delete dir="${reports.dir}" />
+	</target>
+	
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="FacebookSignerTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/FacebookSignerTestCase.php" tests="4" failures="0" errors="0" time="0.003756">
+    <testsuite name="FacebookSignerTestCase::testSigning" tests="4" failures="0" errors="0" time="0.003756">
+      <testcase name="testSigning" class="FacebookSignerTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/FacebookSignerTestCase.php" line="48" time="0.000871"/>
+      <testcase name="testSigning" class="FacebookSignerTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/FacebookSignerTestCase.php" line="48" time="0.001072"/>
+      <testcase name="testSigning" class="FacebookSignerTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/FacebookSignerTestCase.php" line="48" time="0.000894"/>
+      <testcase name="testSigning" class="FacebookSignerTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/FacebookSignerTestCase.php" line="48" time="0.000919"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="ParameterReaderTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/ParameterReaderTestCase.php" tests="3" failures="0" errors="0" time="0.003349">
+    <testsuite name="ParameterReaderTestCase::testParameterReader" tests="3" failures="0" errors="0" time="0.003349">
+      <testcase name="testParameterReader" class="ParameterReaderTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/ParameterReaderTestCase.php" line="106" time="0.001080"/>
+      <testcase name="testParameterReader" class="ParameterReaderTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/ParameterReaderTestCase.php" line="106" time="0.001129"/>
+      <testcase name="testParameterReader" class="ParameterReaderTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/ParameterReaderTestCase.php" line="106" time="0.001140"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="RingsideApiClientsTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/RingsideApiClientsTestCase.php" tests="2" failures="0" errors="0" time="0.003136">
+    <testcase name="testNetworkIds" class="RingsideApiClientsTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/RingsideApiClientsTestCase.php" line="66" time="0.001525"/>
+    <testcase name="testNetworkRedirect" class="RingsideApiClientsTestCase" file="/ringside/workspace/ringside/api/test/unit/client/php/RingsideApiClientsTestCase.php" line="91" time="0.001611"/>
+  </testsuite>
+</testsuites>

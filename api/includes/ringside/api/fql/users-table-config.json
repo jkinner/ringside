@@ -1,0 +1,577 @@
+
+[
+	{	
+		"globalProperties":true,
+		"rootTableName":"users",
+		"rootObjectName":"user",
+		"keyField":"uid"		
+	},
+
+	{
+		"name":"uid",
+	 	"type":"simple",
+	 	"sourceTable":"users",
+	 	"sourceField":"id",	 	
+	 	"treePath":"user"
+	},
+	
+	{
+		"name":"books",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"books",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"about_me",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"about",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"activities",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"activities",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"birthday",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"dob",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"first_name",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"first_name",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"interests",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"interests",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"last_name",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"last_name",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"movies",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"movies",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"music",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"music",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"name",
+		"type":"simple",
+		"sourceSQL":"concat(users_profile_basic.first_name, ' ', users_profile_basic.last_name)",
+		"sourceTable":"users_profile_basic",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"pic",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"pic_url",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"pic_big",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"pic_big_url",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"pic_small",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"pic_small_url",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"pic_square",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"pic_square_url",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"political",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"political",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"quotes",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"quotes",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"relationship_status",
+		"type":"simple",
+		"sourceTable":"users_profile_rel",
+		"sourceField":"status",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"profile_update_time",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"modified",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"religion",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"religion",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"sex",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"sex",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"significant_other_id",
+		"type":"simple",
+		"sourceTable":"users_profile_rel",
+		"sourceField":"significant_other",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"timezone",
+		"type":"simple",
+		"sourceTable":"users_profile_basic",
+		"sourceField":"timezone",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"tv",
+		"type":"simple",
+		"sourceTable":"users_profile_personal",
+		"sourceField":"tv",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user"
+	},
+	
+	{
+		"name":"notes_count",
+		"type":"simple",
+		"sourceTable":"mail_messages",
+		"sourceSQL":"(select count(uid) from mail_messages where mail_messages.uid={USER_ID})",
+		"innerJoinFieldLeft":"uid",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",		
+		"treePath":"user"
+	},
+	
+	{
+		"name":"is_app_user",
+		"type":"simple",
+		
+		"sourceTable":"users_app",		
+		"sourceSQL":"ifnull(users_app.enabled,0)",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"extraJoinSQL":"AND users_app.app_id={APP_ID}",
+		"treePath":"user"
+		
+	},
+	
+	{
+		"name":"has_added_app",
+		"type":"simple",
+		
+		"sourceTable":"users_app",
+		"sourceSQL":"if(users_app.enabled,1,0)",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"extraJoinSQL":"AND users_app.app_id={APP_ID}",
+		"treePath":"user"		
+	},
+	
+	{
+		"name":"wall_count",
+		"type":"simple",
+		"sourceTable":"",
+		"sourceSQL":"0",		
+		"treePath":"user"		
+	},
+	
+	{
+		"name":"hs_info",
+		"type":"simple",
+		"sourceTable":"",
+		"sourceSQL":"NULL",		
+		"treePath":"user"		
+	},
+	
+	{
+		"name":"meeting_for",
+		"type":"simple",
+		"sourceTable":"users_profile_rel",
+		"sourceField":"meeting_for",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user",
+		"explode":true,
+		"explodeName":"seeking"
+	},
+	
+	{
+		"name":"meeting_sex",
+		"type":"simple",
+		"sourceTable":"users_profile_rel",
+		"sourceField":"meeting_sex",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		"treePath":"user",
+		"explode":true,
+		"explodeName":"sex"
+	},
+	
+	
+	{
+		"name":"affiliations",
+		"type":"complex",
+		
+		"outerJoinTableLeft":"users_profile_networks",
+		"outerJoinFieldLeft":"user_id",
+		"outerJoinTableRight":"users",
+		"outerJoinFieldRight":"id",
+		
+		"innerJoinTableLeft":"networks",
+		"innerJoinFieldLeft":"id",
+		"innerJoinTableRight":"users_profile_networks",
+		"innerJoinFieldRight":"network_id",
+		
+		"sourceTable":"networks",
+					
+		"treePath":"user/affiliations/affiliation",
+		"isList":true,
+		"values":
+		[
+			{
+				"name":"nid",				
+				"sourceField":"id"				
+			},
+			{
+				"name":"name",				
+				"sourceField":"name"
+			}
+		]
+	},
+	
+	{
+		"name":"status",
+		"type":"complex",
+		
+		"innerJoinTableLeft":"status",
+		"innerJoinFieldLeft":"uid",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		
+		"sourceTable":"status",
+					
+		"treePath":"user/status",		
+		"values":
+		[
+			{
+				"name":"message",				
+				"sourceField":"status"				
+			},
+			{
+				"name":"time",				
+				"sourceField":"modified"
+			}
+		]
+	},
+	
+	{
+		"name":"education_history",
+		"type":"complex",
+		
+		"outerJoinTableLeft":"users_profile_school",
+		"outerJoinFieldLeft":"user_id",
+		"outerJoinTableRight":"users",
+		"outerJoinFieldRight":"id",
+		
+		"innerJoinTableLeft":"schools",
+		"innerJoinFieldLeft":"id",
+		"innerJoinTableRight":"users_profile_school",
+		"innerJoinFieldRight":"school_id",
+		
+		"sourceTable":"schools",
+					
+		"treePath":"user/education_history/education_info",
+		"isList":true,
+		"values":
+		[
+			{
+				"name":"name",				
+				"sourceField":"name"
+			},
+			{
+				"name":"year",
+				"sourceTable":"users_profile_school",
+				"sourceField":"grad_year"
+			},
+			{
+				"name":"concentrations",
+				"sourceField":"concentrations",
+				"sourceTable":"users_profile_school",
+				"explode":"true",
+				"explodeName":"concentration"
+			}	
+		]
+	},
+	
+	{
+		"name":"current_location",
+		"type":"complex",
+		
+		"innerJoinTableLeft":"users_profile_contact",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		
+		"sourceTable":"users_profile_contact",
+		"alternateTableName":"currentLocTable",
+		
+		"extraJoinSQL":"AND currentLocTable.is_current=TRUE",
+					
+		"treePath":"user/current_location",
+		
+		"values":
+		[
+			{
+				"name":"city",				
+				"sourceField":"city"
+			},
+			{
+				"name":"state",				
+				"sourceField":"state"
+			},
+			{
+				"name":"country",				
+				"sourceField":"country"
+			},
+			{
+				"name":"zip",				
+				"sourceField":"zip"
+			}
+		]
+	},
+	 
+	{
+		"name":"hometown_location",
+		"type":"complex",
+		
+		"innerJoinTableLeft":"users_profile_contact",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		
+		"sourceTable":"users_profile_contact",
+		"alternateTableName":"hometownLocTable",
+		
+		"extraJoinSQL":"AND hometownLocTable.is_hometown=TRUE",
+					
+		"treePath":"user/hometown_location",
+		
+		"values":
+		[
+			{
+				"name":"city",				
+				"sourceField":"city"
+			},
+			{
+				"name":"state",				
+				"sourceField":"state"
+			},
+			{
+				"name":"country",				
+				"sourceField":"country"
+			},
+			{
+				"name":"zip",				
+				"sourceField":"zip"
+			}
+		]
+	},
+	
+	{
+		"name":"work_history",
+		"type":"complex",
+		
+		"innerJoinTableLeft":"users_profile_work",
+		"innerJoinFieldLeft":"user_id",
+		"innerJoinTableRight":"users",
+		"innerJoinFieldRight":"id",
+		
+		"sourceTable":"users_profile_work",
+					
+		"treePath":"user/work_history/work_info",
+		"isList":true,
+		"values":
+		[
+			{
+				"name":"company_name",				
+				"sourceField":"employer"
+			},
+			{
+				"name":"position",				
+				"sourceField":"position"
+			},
+			{
+				"name":"description",				
+				"sourceField":"description"
+			},
+			{
+				"name":"start_date",				
+				"sourceField":"start_date"
+			},
+			{
+				"name":"end_date",				
+				"sourceField":"end_date"
+			},
+			{
+				"name":"city",				
+				"sourceField":"city",
+				"subField":"location"
+			},
+			{
+				"name":"state",				
+				"sourceField":"state",
+				"subField":"location"
+			},
+			{
+				"name":"country",				
+				"sourceField":"country",
+				"subField":"location"
+			}
+			
+				
+			
+		]
+	}
+		
+]

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="hello world example">
+		<Require feature="opensocial-0.7"/>
+	</ModulePrefs>
+	<Content type="html" view="default">
+	<![CDATA[
+		<script>
+			/**
+			 * This function will be called when the container has gotten
+			 * a response from the server from your two open social requests.
+			 * It is responsible for rendering the HTML for displaying your name
+			 * and the name of your friends.
+			 */
+			function onLoadFriends(data) {
+				var viewer = data.get('viewer').getData();
+				var viewerFriends = data.get('viewerFriends').getData();
+
+  				document.getElementById('main').innerHTML = '<h2>Hello '+viewer.getDisplayName()+'</h2>';
+
+				html = new Array();
+				//html.push('<h2>Hello '+viewer.getDisplayName()+'</h2>');
+				html.push('<ul>');
+				viewerFriends.each(
+					function(person) {
+						var line="<li>" + person.getDisplayName() + " ";
+						if(person.getField(opensocial.Person.Field.THUMBNAIL_URL)!=''){
+							line=line+" <img src='"+person.getField(opensocial.Person.Field.THUMBNAIL_URL)+"'/>";
+						}
+						line=line+"</li>";
+ 						html.push(line);
+ 					}
+ 				);
+  				html.push('</ul>');
+  				document.getElementById('friends').innerHTML = html.join('');
+			}
+			
+			/**
+			 * This function creates a newDataRequest object which is
+			 * a collection of multiple open social requests which will
+			 * be executed in a single batch. The onLoadFriends function will
+			 * be called when this information has been returned.
+			 */
+			function loadFriends() {
+  				var req = opensocial.newDataRequest();
+  				
+  				// If not in a ringside Iframe, redirect for authentication
+  				opensocial.requiresLogin('5bcf83f48c7e3c7ebd2a5352642335af');
+  				
+  				// Ask for this user's name and their friends in one request.
+  				req.add(req.newFetchPersonRequest('VIEWER'), 'viewer');
+  				req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'), 'viewerFriends');
+  				req.send(onLoadFriends);
+			}
+
+			/**
+			 * Init will be called when the gadget IFrame is completely loaded.
+			 */
+			function init() {
+  				loadFriends();
+			}
+			
+			gadgets.util.registerOnLoadHandler(init);
+			
+		</script>
+
+<h1>Open Social Hello World Sample</h1>
+
+<div id='main'>
+</div>
+	Your friends are:
+	<div id='friends'></div>
+]]>
+	</Content>
+</Module>
