@@ -38,10 +38,28 @@ class SiteConnectClient {
         $this->ringside->api_client->setNetworkKey($site_key);
     }
     
-    public function createSession($uid) {
+    public function createSession($uid, $next = null) {
+        error_log("Creating a redirecting SiteConnect session for $uid");
+        if ( $next == null )
+        {
+            $next = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        }
+        
+        // This bounces the user off the Site Connect server to establish the social session cookie
         $session = $this->ringside->api_client->auth_createSiteConnectSession($uid);
-        error_log(var_export($session['social_session'], true));
-        return $session['social_session'];
+        error_log("Created new session for $uid: ".var_export($session, true));
+        $params = 
+            array(
+            	'social_session_key' => $session['social_session']['session_id'],
+               'next' => $next
+            );
+        error_log("Signing params: ".var_export($params, true)." with secret '".$this->ringside->secret."'");
+        $sig = Facebook::generate_sig($params, $this->ringside->secret);
+        $next = urlencode($next);
+        header('Location: '.$this->ringside->get_social_url().'/siteconnect.php?network_key='.$this->ringside->api_client->getNetworkKey().'&social_session_key='.$session['social_session']['session_id'].'&next='.$next.'&sig='.$sig);
+        
+        // This will redirect
+        exit;
     }
     
     public function createAdHocNetwork($authUrl, $loginUrl, $canvasUrl, $webUrl) {

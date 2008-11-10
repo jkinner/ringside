@@ -189,6 +189,7 @@ EOF
             $apiClientSocial = new RingsideApiClientsRest( RingsideSocialConfig::$apiKey, RingsideSocialConfig::$secretKey, $apiSessionKey );
 
             $callback = "System Application " . $this->canvasUrl;
+            error_log("Rendering system application $callback");
             $fbmlText = $this->renderLocal( RingsideSocialConfig::$apiKey,  RingsideSocialConfig::$secretKey, $apiSessionKey, $socialClient );
             if  ( isset ( $coreApp->canvas_type ) && $coreApp->canvas_type == RingsideAppsCommon::CANVASTYPE_IFRAME ) {
                $text = $fbmlText;
@@ -385,7 +386,12 @@ EOF
       	if ( $this->path == '/' || $this->path == '' ) {
       		$this->path = 'index.php';
       	}
-      	$loaded = $this->_load( 'apps.'.$this->canvasUrl, $this->path  );
+      	
+      	$canvasMatch = array();
+      	preg_match(',^([^/]*),', $this->canvasUrl, $canvasMatch);
+      	error_log("Canvas matches for {$this->canvasUrl}: ".var_export($canvasMatch, true));
+      	error_log("Path is $this->path");
+      	$loaded = $this->_load( 'apps.'.$canvasMatch[1], $this->path  );
       	
          if ( $loaded === false ) {
             $this->error = "No such application is available.";
@@ -411,7 +417,6 @@ EOF
    
    private function _load($package, $file) {
       // lastLevel = error_reporting( E_ERROR );
-      
       // save the first parameters after the ? from the path parameter into the $_GET variable
       // we only need to do this for the first assignment because everything afterwards
       // is somehow being handled by PHP
@@ -430,9 +435,41 @@ EOF
       
       $package = str_replace( '.', '/', $package );
       $old_request = &$_REQUEST;
+      $old_server = &$_SERVER;
       $_REQUEST = array_merge($_GET, $_POST);
-      $result = include ( $package . '/' . $file );
+      // Fix up $_SERVER variables to match being called remotely
+      if ( isset($_SERVER['PATH_INFO']) )
+      {
+          $_SERVER['PATH_INFO'] = str_replace('/'.$this->canvasUrl, '', $_SERVER['PATH_INFO']);
+      }
+      $result = false;
+//      set_time_limit(3);
+      /*
+       * This logic might actually need to be reversed, but it will try to load the full URL. If the URL cannot
+       * be loaded, the _last_ segment is removed until the string is empty, in which case it falls through to index.php. 
+       */
+      while ( $result === false )
+      {
+          error_log("Attempting load of $package/$file");
+          if ( ($result = @include ( $package . '/' . $file )) || $file == 'index.php')
+          {
+              break;
+          }
+          
+          $slashidx = strrpos('/', $file);
+          if ( $slashidx > 0 )
+          {
+              $file = substr($file, 0, $slashidx);
+          }
+          else
+          {
+              // This is the loop termination condition. Change above if this also changes.
+              $file = 'index.php';
+          }
+      }
       $_REQUEST = &$old_request;
+      $_SERVER = &$old_server;
+      
       if ( $result === false ) {
          error_log( $package . '/' . $file . " not loaded " );
       }

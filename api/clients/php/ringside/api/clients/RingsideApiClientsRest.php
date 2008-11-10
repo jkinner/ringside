@@ -110,6 +110,11 @@ class RingsideApiClientsRest extends FacebookRestClient {
 		$this->network_key = $networkKey;
 	}
 
+	public function getNetworkKey()
+	{
+	    return $this->network_key;
+	}
+	
 	/**
 	 * Set the default server to route requests to.
 	 * We control the default namespaces and how they route.
@@ -175,7 +180,7 @@ class RingsideApiClientsRest extends FacebookRestClient {
 	}
 	
 	public function auth_createSiteConnectSession($uid) {
-	    $result = $this->call_method('ringside.auth.createSiteConnectSession', array("user_network_key" => $this->network_key, 'uid' => $uid));
+	    $result = $this->call_method('ringside.auth.createSiteconnectSession', array("user_network_key" => $this->network_key, 'uid' => $uid));
 	    return $result;
 	}
 	/**

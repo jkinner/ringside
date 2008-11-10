@@ -57,7 +57,7 @@ class RingsideSocialServerWidgetRender
 
         //Determine if we need to be inside an iframe or not
         //Probably need to configure this at a app level in the future instead of qs!
-        if($params['sandboxed']=='false') 
+        if(isset($params['sandboxed']) && $params['sandboxed']=='false') 
         {
             $scriptOut = self::generateNonSandboxedCode($params);			    
         } else {
@@ -89,18 +89,19 @@ class RingsideSocialServerWidgetRender
     private static function generateSandboxedCode (&$params){     	
         
         //Allow for custimaztaions to the iframe
-        $width = "200px";
-        $height = "400px";  	
-        if($params['width'] != null) $width = $params['width'];
-        if($params['height'] != null) $height = $params['height'];
-    	
+        $width = isset($params['width'])?$params['width']:"200px";
+        $height = isset($params['height'])?$params['height']:"400px";  	
+
+        // Sanitize to prevent HTML injection
+        $width = preg_replace(',[^A-Za-z0-9],', '', $width);
+        $height = preg_replace(',[^A-Za-z0-9],', '', $height);
         
         //Determine the render url that the Iframe will be set to
-        $renderUrl = RingsideApiClientsConfig::$socialUrl . "/render.php";
+        $renderUrl = 'http://' . $_SERVER['HTTP_HOST'] . "/render.php";
     	
         //Build the JavaScript that will output the iframe
-        $iframeCode = "document.write(\"<iframe src='%s?%s&app=%s' style='width:%s;height:%s' frameborder='0'></iframe>\");";
-        $scriptOut = sprintf($iframeCode, $renderUrl, $_SERVER['QUERY_STRING'], $params['app'], $width, $height);
+        $iframeCode = "document.write(\"<iframe id='if_%s' src='%s?%s&app=%s' width='%s' height='%s' frameborder='0'></iframe>\");";
+        $scriptOut = sprintf($iframeCode, $params['api_key'], $renderUrl, $_SERVER['QUERY_STRING'], $params['app'], $width, $height);
         
         return $scriptOut;
             

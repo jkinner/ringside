@@ -69,6 +69,7 @@ class RingsideSocialServerRender
 */
 		// Recreate Session if we have it
 		error_log("Parameters for widget render are: ".var_export($params, true));
+		error_log("PHPSESSID=".(isset($_COOKIE['PHPSESSID'])?$_COOKIE['PHPSESSID']:'<empty>'));
 		if(array_key_exists('social_session_key', $params))
 		{
 			$session_key = $params['social_session_key'];
@@ -89,6 +90,7 @@ class RingsideSocialServerRender
 		} else if ( isset($_COOKIE['PHPSESSID']) ) {
 			// Optimization if user is already logged into web front-end
 			$network_session = new RingsideSocialSession($_COOKIE['PHPSESSID']);
+			error_log("PHPSESSID says session is as follows: ".var_export($network_session, true));
 			$uid = $network_session->getUserId();
 			
 			if(! isset($uid)){
@@ -103,10 +105,16 @@ class RingsideSocialServerRender
 			$network_session = $trust->getAnonymousSession();
 		}
 
-		if ( null == $network_session->getApiSessionKey($params['api_key']) ) {
+		$api_session_key = $network_session->getApiSessionKey($params['api_key']); 
+		if ( null == $api_session_key ) {
 		    $rest = RingsideSocialUtils::getAdminClient();
 		    $app_props = $rest->admin_getAppProperties(array('secret_key'), null, null, $params['api_key'], $network_session->getNetwork());
+		    error_log("Adding API key for ".$params['api_key']." to social session for user ".$network_session->getUserID());
 		    RingsideSocialUtils::getApiSessionKey($params['api_key'], $app_props['secret_key'], $network_session);
+		}
+		else
+		{
+		    error_log("Using API session key $api_session_key for user ".$network_session->getUserID());
 		}
 		
 		if(array_key_exists('method', $params))
@@ -155,7 +163,7 @@ class RingsideSocialServerRender
         var wrapper = document.getElementById( 'wrapper' );
         var height = Math.max( document.body.offsetHeight, document.body.scrollHeight );
         var width = Math.max( document.body.offsetWidth, document.body.scrollWidth );
-        iframe.src = '{$params['resizeUrl']}?height='+height+'&width='+width+'&id='+id;
+        iframe.src = '{$domain_props['resize_url']}?height='+height+'&width='+width+'&id='+id;
       }
 </script></head><body onload=\"resizeIframe('if_".$params['api_key']."');\">".$content."<iframe id='xdiframe' width='1' height='1' frameborder='0'/></body></html>";
                 }

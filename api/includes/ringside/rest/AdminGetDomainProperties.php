@@ -63,7 +63,7 @@ class AdminGetDomainProperties extends Api_DefaultRest
 			self::$map['domain_name'] = 'name';
 			self::$map['post_map_url'] = 'postmap_url';
 			self::$map['api_key'] = 'api_key';
-			self::$map['secret_key'] = 'secret_key';
+			self::$map['secret_key'] = 'secret';
 			self::$map['resize_url'] = 'resize_url';
 			self::$map['owner'] = 'owner';
 			self::$map['owner_url'] = 'owner_url';
@@ -99,6 +99,8 @@ class AdminGetDomainProperties extends Api_DefaultRest
 		$response = array();
 		
 		$ds = Api_Bo_DomainService::create();
+		$ks = Api_Bo_KeyService::create();
+		
 		$domain = null;
 		if ( ! isset($this->m_nid) )
 		{
@@ -106,6 +108,9 @@ class AdminGetDomainProperties extends Api_DefaultRest
 		}
 	    $domain = $ds->getDomain($this->m_nid);
 		
+	    $domain_keys = $ks->getKeyset($this->m_nid, $this->m_nid);
+	    $domain = array_merge($domain, $domain_keys);
+	    
 	    error_log("Retrieved domain for ".$this->m_nid.":".var_export($domain, true));
 		if(! empty($domain))
 		{

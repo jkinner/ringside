@@ -150,6 +150,12 @@ class RingsideSocialUtils {
       return $md5sig;
    }
    
+   /**
+    * Enter description here...
+    *
+    * @param unknown_type $snid
+    * @return RingsideApiClientsRest rest client
+    */
    public static function getAdminClient( $snid = null ) {
       
          try {

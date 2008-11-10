@@ -186,8 +186,8 @@ class Social_DatabaseIdMappingService extends Social_IdMappingService
         try
         {
             // Find a mapping for either (or both!) subject(s)
-            $existing_map = $manager->getTable(self::PRINCIPAL_MAP_COMPONENT)->findOneBySubject($app_id, $existing_network_id, $existing_uid);
-            $new_map = $manager->getTable(self::PRINCIPAL_MAP_COMPONENT)->findOneBySubject($app_id, $new_network_id, $new_uid);
+            $existing_map = $this->tables[self::PRINCIPAL_MAP_COMPONENT]->findOneBySubject($app_id, $existing_network_id, $existing_uid);
+            $new_map = $this->tables[self::PRINCIPAL_MAP_COMPONENT]->findOneBySubject($app_id, $new_network_id, $new_uid);
             $existing_principal_id = isset($existing_map) && false !== $existing_map?$existing_map->principal_id:null;
             $new_principal_id = isset($new_map) && false !== $new_map?$new_map->principal_id:null;
             if ( null != $new_principal_id )
