@@ -43,7 +43,7 @@ $override_from_query_string = array(
   session_cache_limiter( 'none' );
 
 	$server = new RingsideSocialServerRender( );
-	if($_REQUEST['format']=='JSON'){
+	if(isset($_REQUEST['format']) && $_REQUEST['format']=='JSON'){
 		// The widget requires JSON for cross domain support
 		$json_response=null;
 		$responseHTML = '';
@@ -97,6 +97,7 @@ $override_from_query_string = array(
     	    $params['path'] = $matches[3];
     	    $params['resizeUrl'] = $_REQUEST['resizeUrl'];
 	    } else {
+	    	error_log("Failed to match PATH_INFO ".$_SERVER['PATH_INFO']);
 	        $params = $_REQUEST;
 	    }
 	    foreach ( $override_from_query_string as $override ) {

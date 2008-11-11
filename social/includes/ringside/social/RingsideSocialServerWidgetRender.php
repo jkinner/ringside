@@ -100,8 +100,23 @@ class RingsideSocialServerWidgetRender
         $renderUrl = 'http://' . $_SERVER['HTTP_HOST'] . "/render.php";
     	
         //Build the JavaScript that will output the iframe
-        $iframeCode = "document.write(\"<iframe id='if_%s' src='%s?%s&app=%s' width='%s' height='%s' frameborder='0'></iframe>\");";
-        $scriptOut = sprintf($iframeCode, $params['api_key'], $renderUrl, $_SERVER['QUERY_STRING'], $params['app'], $width, $height);
+        $scriptOut = '';
+        if ( isset($params['social_session_key']) && isset($params['api_key']) )
+        {
+        	$social_session_key = $params['social_session_key'];
+        	$api_key = $params['api_key'];
+        	unset($params['social_session_key']);
+        	unset($params['api_key']);
+        	unset($params['app']);
+        	// Parse important query string parameters into URL's PATH_INFO
+        	$iframeCode = "document.write(\"<iframe id='if_%s' src='%s/%s/%s%s?%s' width='%s' height='%s' frameborder='0'></iframe>\");";
+        	$scriptOut = sprintf($iframeCode, $api_key, $renderUrl, $social_session_key, $api_key, isset($_SERVER['PATH_INFO'])?$_SERVER['PATH_INFO']:'/', http_build_query($params), $width, $height);
+        }
+        else
+        {
+        	$iframeCode = "document.write(\"<iframe id='if_%s' src='%s?%s&app=%s' width='%s' height='%s' frameborder='0'></iframe>\");";
+        	$scriptOut = sprintf($iframeCode, $params['api_key'], $renderUrl, $_SERVER['QUERY_STRING'], $params['app'], $width, $height);
+        }
         
         return $scriptOut;
             

@@ -43,6 +43,11 @@ done
 
 DEPLOYDIR=${DEPLOYDIR:-$MYDIR}
 
+(CHECKDIR=`pwd`; cd -P $DEPLOYDIR; if [ $CHECKDIR = `pwd` ]; then exit 2; fi)
+if [ $? -eq 2 ]; then
+  echo Deployment directory cannot also be source directory
+  exit 2
+fi;
 echo Creating deployable unit in $DEPLOYDIR from `pwd` running in $PWD
 
 if [ -f "$DEPLOYDIR" ]; then
