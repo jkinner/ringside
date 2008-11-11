@@ -1,0 +1,11 @@
+# HTACCESS FILE FOR DEPLOYED RINGSIDE INSTANCES
+# 
+# If you copy this example file to .htaccess, the build_deployable.sh
+# script will copy it into your destination directory. Otherwise, copy
+# this file into the deployable directory (the -d argument to
+# build_deployable.sh) and edit any values you may need.
+#
+# You should only have to replace the path to PEAR or any
+# environment-specific overrides you may need
+
+php_value include_path .:includes:/usr/share/pear

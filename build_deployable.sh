@@ -83,6 +83,22 @@ done
 
 #mkdir -p "$DEPLOYDIR"/config
 #cp api/config/ringside-schema.sql "$DEPLOYDIR"/config
+if [ -f .htaccess ]; then
+  if [ $DRYRUN -ne 1 ]; then
+    cp .htaccess "$DEPLOYDIR"/.htaccess
+  else
+    echo "Copying .htaccess to $DEPLOYDIR/.htaccess"
+  fi
+fi
+
+if [ -f .htaccess-`basename $DEPLOYDIR` ]; then
+  if [ $DRYRUN -ne 1 ]; then
+    cp .htaccess-`basename $DEPLOYDIR` "$DEPLOYDIR"/.htaccess
+  else
+    echo Copying .htaccess-`basename $DEPLOYDIR` to "$DEPLOYDIR"/.htaccess
+  fi
+fi
+
 if [ $DRYRUN -ne 1 ]; then
   cp LocalSettings.php.sample "$DEPLOYDIR"
 fi
